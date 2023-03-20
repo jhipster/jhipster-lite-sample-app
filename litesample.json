@@ -1,0 +1,9 @@
+{
+  "projectFolder": "/home/pgrimaud/projects/jhipster/jhipster-lite-sample-app",
+  "commit": false,
+  "parameters": {
+    "projectName": "JHipster Lite Sample Application",
+    "baseName": "litesample",
+    "packageName": "tech.jhipster.lite.sample"
+  }
+}

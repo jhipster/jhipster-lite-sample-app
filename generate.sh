@@ -83,7 +83,7 @@ applyModules \
   "vue-core"
 
 applyModules \
-  "github-actions" \
+  # "github-actions" \
   "sonar-qube-java-backend-and-frontend"
 
 applyModules \

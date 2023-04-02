@@ -255,5 +255,29 @@
       "baseName" : "litesample",
       "packageName" : "tech.jhipster.lite.sample"
     }
+  }, {
+    "module" : "github-actions",
+    "date" : "2023-03-28T16:33:14.109503217Z",
+    "properties" : {
+      "packageName" : "tech.jhipster.lite.sample",
+      "projectName" : "JHipster Lite Sample Application",
+      "baseName" : "litesample"
+    }
+  }, {
+    "module" : "github-actions",
+    "date" : "2023-03-28T16:38:53.928822997Z",
+    "properties" : {
+      "packageName" : "tech.jhipster.lite.sample",
+      "projectName" : "JHipster Lite Sample Application",
+      "baseName" : "litesample"
+    }
+  }, {
+    "module" : "github-actions",
+    "date" : "2023-03-28T17:19:03.958821006Z",
+    "properties" : {
+      "packageName" : "tech.jhipster.lite.sample",
+      "projectName" : "JHipster Lite Sample Application",
+      "baseName" : "litesample"
+    }
   } ]
 }

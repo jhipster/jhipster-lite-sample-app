@@ -28,11 +28,6 @@ npm install
 ```
 
 ```bash
-docker compose -f src/main/docker/sonar.yml up -d
-./mvnw clean verify sonar:sonar
-```
-
-```bash
 docker compose -f src/main/docker/postgresql.yml up -d
 ```
 
@@ -51,7 +46,6 @@ docker compose -f src/main/docker/keycloak.yml up -d
 - [CORS configuration](documentation/cors-configuration.md)
 - [Dev tools](documentation/dev-tools.md)
 - [Vue](documentation/vue.md)
-- [sonar](documentation/sonar.md)
 - [Postgresql](documentation/postgresql.md)
 - [Cucumber](documentation/cucumber.md)
 - [Cucumber authentication](documentation/cucumber-authentication.md)

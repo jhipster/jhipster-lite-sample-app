@@ -20,10 +20,13 @@ git rebase $GIT_REMOTE/$GIT_MAIN_BRANCH
 version=$1
 
 echo "*** Deleting files and folders..."
-find . -maxdepth 1 -not -name "generate.sh" -not -name "litesample.json" -type f -delete
+find . -maxdepth 1 \
+  -not -name "generate.sh" \
+  -not -name "litesample.json" \
+  -type f -delete
 rm -rf src
 rm -rf node_modules
-rm -rf documentation .husky .jhipster .mvn .github
+rm -rf documentation .husky .jhipster .mvn
 
 payload=litesample.json
 

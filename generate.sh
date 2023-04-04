@@ -8,28 +8,6 @@ show_syntax() {
   exit 1
 }
 
-if [ "$#" -ne 1 ]; then
-  show_syntax
-fi
-
-echo "*** Git: update project..."
-git switch $GIT_MAIN_BRANCH
-git fetch $GIT_REMOTE
-git rebase $GIT_REMOTE/$GIT_MAIN_BRANCH
-
-version=$1
-
-echo "*** Deleting files and folders..."
-find . -maxdepth 1 \
-  -not -name "generate.sh" \
-  -not -name "litesample.json" \
-  -type f -delete
-rm -rf src
-rm -rf node_modules
-rm -rf documentation .husky .jhipster .mvn
-
-payload=litesample.json
-
 applyModules() {
   for module in $@
   do
@@ -55,6 +33,27 @@ applyModules() {
     fi;
   done
 }
+
+if [ "$#" -ne 1 ]; then
+  show_syntax
+fi
+
+version=$1
+payload=litesample.json
+
+echo "*** Git: update project..."
+git switch $GIT_MAIN_BRANCH
+git fetch $GIT_REMOTE
+git rebase $GIT_REMOTE/$GIT_MAIN_BRANCH
+
+echo "*** Deleting files and folders..."
+find . -maxdepth 1 \
+  -not -name "generate.sh" \
+  -not -name "litesample.json" \
+  -type f -delete
+rm -rf src
+rm -rf node_modules
+rm -rf documentation .husky .jhipster .mvn
 
 echo "*** Applying modules..."
 
@@ -86,7 +85,6 @@ applyModules \
   "vue-core"
 
 applyModules \
-  # "github-actions" \
   "sonar-qube-java-backend-and-frontend"
 
 applyModules \

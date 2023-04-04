@@ -239,5 +239,13 @@
       "baseName" : "litesample",
       "packageName" : "tech.jhipster.lite.sample"
     }
+  }, {
+    "module" : "sonar-qube-java-backend-and-frontend",
+    "date" : "2023-04-04T06:41:30.120470531Z",
+    "properties" : {
+      "projectName" : "JHipster Lite Sample Application",
+      "baseName" : "litesample",
+      "packageName" : "tech.jhipster.lite.sample"
+    }
   } ]
 }

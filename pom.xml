@@ -43,6 +43,8 @@
     <cucumber.version>7.11.2</cucumber.version>
     <testng.version>7.7.1</testng.version>
     <json-web-token.version>0.11.5</json-web-token.version>
+    <sonar-maven-plugin.version>3.9.1.2184</sonar-maven-plugin.version>
+    <properties-maven-plugin.version>1.1.0</properties-maven-plugin.version>
   </properties>
 
   <dependencyManagement>
@@ -435,6 +437,11 @@
             <verbose>false</verbose>
           </configuration>
         </plugin>
+        <plugin>
+          <groupId>org.sonarsource.scanner.maven</groupId>
+          <artifactId>sonar-maven-plugin</artifactId>
+          <version>${sonar-maven-plugin.version}</version>
+        </plugin>
       </plugins>
     </pluginManagement>
     <plugins>
@@ -624,6 +631,24 @@
             <configuration>
               <arguments>run test</arguments>
               <npmInheritsProxyConfigFromMaven>false</npmInheritsProxyConfigFromMaven>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>properties-maven-plugin</artifactId>
+        <version>${properties-maven-plugin.version}</version>
+        <executions>
+          <execution>
+            <phase>initialize</phase>
+            <goals>
+              <goal>read-project-properties</goal>
+            </goals>
+            <configuration>
+              <files>
+                <file>sonar-project.properties</file>
+              </files>
             </configuration>
           </execution>
         </executions>

@@ -28,16 +28,16 @@ npm install
 ```
 
 ```bash
+docker compose -f src/main/docker/sonar.yml up -d
+./mvnw clean verify sonar:sonar
+```
+
+```bash
 docker compose -f src/main/docker/postgresql.yml up -d
 ```
 
 ```bash
 docker compose -f src/main/docker/keycloak.yml up -d
-```
-
-```bash
-docker compose -f src/main/docker/sonar.yml up -d
-./mvnw clean verify sonar:sonar
 ```
 
 <!-- jhipster-needle-startupCommand -->
@@ -51,12 +51,12 @@ docker compose -f src/main/docker/sonar.yml up -d
 - [CORS configuration](documentation/cors-configuration.md)
 - [Dev tools](documentation/dev-tools.md)
 - [Vue](documentation/vue.md)
+- [sonar](documentation/sonar.md)
 - [Postgresql](documentation/postgresql.md)
 - [Cucumber](documentation/cucumber.md)
 - [Cucumber authentication](documentation/cucumber-authentication.md)
 - [Kipe expression](documentation/kipe-expression.md)
 - [Kipe authorization](documentation/kipe-authorization.md)
 - [Dummy](documentation/dummy.md)
-- [sonar](documentation/sonar.md)
 
 <!-- jhipster-needle-documentation -->

@@ -21,30 +21,30 @@
     <maven.version>3.6.0</maven.version>
     <junit-jupiter.version>5.9.2</junit-jupiter.version>
     <assertj.version>3.24.2</assertj.version>
-    <mockito.version>5.2.0</mockito.version>
-    <jacoco.version>0.8.8</jacoco.version>
-    <maven-enforcer-plugin.version>3.2.1</maven-enforcer-plugin.version>
+    <mockito.version>5.3.0</mockito.version>
+    <jacoco.version>0.8.9</jacoco.version>
+    <maven-enforcer-plugin.version>3.3.0</maven-enforcer-plugin.version>
     <compiler-plugin.version>3.11.0</compiler-plugin.version>
     <surefire-plugin.version>3.0.0</surefire-plugin.version>
     <failsafe-plugin.version>3.0.0-M5</failsafe-plugin.version>
     <commons-lang3.version>3.12.0</commons-lang3.version>
-    <spring-boot.version>3.0.5</spring-boot.version>
+    <spring-boot.version>3.0.6</spring-boot.version>
     <reflections.version>0.10.2</reflections.version>
     <archunit-junit5.version>1.0.1</archunit-junit5.version>
     <git-commit-id-plugin.version>5.0.0</git-commit-id-plugin.version>
-    <node.version>v18.15.0</node.version>
-    <npm.version>9.6.3</npm.version>
+    <node.version>v18.16.0</node.version>
+    <npm.version>9.6.5</npm.version>
     <checksum-maven-plugin.version>1.11</checksum-maven-plugin.version>
     <maven-antrun-plugin.version>3.1.0</maven-antrun-plugin.version>
     <frontend-maven-plugin.version>1.12.1</frontend-maven-plugin.version>
+    <sonar-maven-plugin.version>3.9.1.2184</sonar-maven-plugin.version>
+    <properties-maven-plugin.version>1.1.0</properties-maven-plugin.version>
     <testcontainers.version>1.17.6</testcontainers.version>
-    <liquibase.version>4.20.0</liquibase.version>
+    <liquibase.version>4.21.1</liquibase.version>
     <springdoc-openapi-starter-webmvc.version>2.1.0</springdoc-openapi-starter-webmvc.version>
     <cucumber.version>7.11.2</cucumber.version>
     <testng.version>7.7.1</testng.version>
     <json-web-token.version>0.11.5</json-web-token.version>
-    <sonar-maven-plugin.version>3.9.1.2184</sonar-maven-plugin.version>
-    <properties-maven-plugin.version>1.1.0</properties-maven-plugin.version>
   </properties>
 
   <dependencyManagement>

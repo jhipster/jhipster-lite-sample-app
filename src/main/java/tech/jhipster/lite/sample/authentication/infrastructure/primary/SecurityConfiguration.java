@@ -34,7 +34,7 @@ import org.springframework.security.web.csrf.CsrfFilter;
 import org.springframework.security.web.header.writers.ReferrerPolicyHeaderWriter;
 import org.springframework.web.filter.CorsFilter;
 import tech.jhipster.lite.sample.authentication.domain.Role;
-import tech.jhipster.lite.sample.common.domain.Generated;
+import tech.jhipster.lite.sample.common.domain.ExcludeFromGeneratedCodeCoverage;
 
 @Configuration
 @EnableWebSecurity
@@ -132,7 +132,7 @@ public class SecurityConfiguration {
   }
 
   @Bean
-  @Generated(reason = "Only called with a valid client registration repository")
+  @ExcludeFromGeneratedCodeCoverage(reason = "Only called with a valid client registration repository")
   public JwtDecoder jwtDecoder(ClientRegistrationRepository clientRegistrationRepository, RestTemplateBuilder restTemplateBuilder) {
     NimbusJwtDecoder jwtDecoder = JwtDecoders.fromOidcIssuerLocation(issuerUri);
 

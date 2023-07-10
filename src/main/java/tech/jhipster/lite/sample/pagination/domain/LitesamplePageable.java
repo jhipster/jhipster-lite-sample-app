@@ -2,7 +2,7 @@ package tech.jhipster.lite.sample.pagination.domain;
 
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
-import tech.jhipster.lite.sample.common.domain.Generated;
+import tech.jhipster.lite.sample.common.domain.ExcludeFromGeneratedCodeCoverage;
 import tech.jhipster.lite.sample.error.domain.Assert;
 
 public class LitesamplePageable {
@@ -33,13 +33,13 @@ public class LitesamplePageable {
   }
 
   @Override
-  @Generated
+  @ExcludeFromGeneratedCodeCoverage
   public int hashCode() {
     return new HashCodeBuilder().append(page).append(pageSize).build();
   }
 
   @Override
-  @Generated
+  @ExcludeFromGeneratedCodeCoverage
   public boolean equals(Object obj) {
     if (this == obj) {
       return true;

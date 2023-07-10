@@ -11,11 +11,11 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.AutoConfigureBefore;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import tech.jhipster.lite.sample.common.domain.Generated;
+import tech.jhipster.lite.sample.common.domain.ExcludeFromGeneratedCodeCoverage;
 
 @Configuration
 @AutoConfigureBefore(SpringdocConfiguration.class)
-@Generated(reason = "Not called by integration tests")
+@ExcludeFromGeneratedCodeCoverage(reason = "Not called by integration tests")
 class SpringdocOAuth2Configuration {
 
   @Value("${springdoc.oauth2.authorization-url}")

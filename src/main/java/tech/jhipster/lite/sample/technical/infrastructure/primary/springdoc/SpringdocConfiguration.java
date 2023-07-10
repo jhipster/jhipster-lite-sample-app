@@ -8,10 +8,10 @@ import org.springdoc.core.models.GroupedOpenApi;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import tech.jhipster.lite.sample.common.domain.Generated;
+import tech.jhipster.lite.sample.common.domain.ExcludeFromGeneratedCodeCoverage;
 
 @Configuration
-@Generated(reason = "Not testing technical configuration")
+@ExcludeFromGeneratedCodeCoverage(reason = "Not testing technical configuration")
 class SpringdocConfiguration {
 
   @Value("${application.version:undefined}")

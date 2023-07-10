@@ -5,10 +5,10 @@ import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.core.env.Environment;
-import tech.jhipster.lite.sample.common.domain.Generated;
+import tech.jhipster.lite.sample.common.domain.ExcludeFromGeneratedCodeCoverage;
 
 @SpringBootApplication
-@Generated(reason = "Not testing logs")
+@ExcludeFromGeneratedCodeCoverage(reason = "Not testing logs")
 public class LitesampleApp {
 
   private static final Logger log = LoggerFactory.getLogger(LitesampleApp.class);

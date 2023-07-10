@@ -13,7 +13,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Service;
-import tech.jhipster.lite.sample.common.domain.Generated;
+import tech.jhipster.lite.sample.common.domain.ExcludeFromGeneratedCodeCoverage;
 import tech.jhipster.lite.sample.error.domain.Assert;
 
 @Service
@@ -24,7 +24,7 @@ class AccessEvaluator {
   private final AccessChecker<?> defaultEvaluator;
   private final Map<Class<?>, AccessChecker<?>> evaluators;
 
-  @Generated(reason = "Ignored log conditional")
+  @ExcludeFromGeneratedCodeCoverage(reason = "Ignored log conditional")
   public AccessEvaluator(List<AccessChecker<?>> checkers) {
     evaluators = new ConcurrentHashMap<>(checkers.stream().collect(Collectors.toMap(this::getCheckerResourceClass, Function.identity())));
 

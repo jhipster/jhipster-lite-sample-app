@@ -4,9 +4,9 @@ import java.util.function.Supplier;
 import org.springframework.security.access.expression.SecurityExpressionRoot;
 import org.springframework.security.access.expression.method.MethodSecurityExpressionOperations;
 import org.springframework.security.core.Authentication;
-import tech.jhipster.lite.sample.common.domain.Generated;
+import tech.jhipster.lite.sample.common.domain.ExcludeFromGeneratedCodeCoverage;
 
-@Generated(reason = "Spring glue bean")
+@ExcludeFromGeneratedCodeCoverage(reason = "Spring glue bean")
 class KipeMethodSecurityExpressionRoot extends SecurityExpressionRoot implements MethodSecurityExpressionOperations {
 
   private final AccessEvaluator evaluator;

@@ -1,6 +1,7 @@
 package tech.jhipster.lite.sample.authentication.infrastructure.primary;
 
 import static org.springframework.security.config.Customizer.withDefaults;
+import static org.springframework.security.web.util.matcher.AntPathRequestMatcher.*;
 
 import java.time.Duration;
 import java.util.HashSet;
@@ -32,7 +33,9 @@ import org.springframework.security.oauth2.server.resource.authentication.JwtAut
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.csrf.CsrfFilter;
 import org.springframework.security.web.header.writers.ReferrerPolicyHeaderWriter;
+import org.springframework.security.web.servlet.util.matcher.MvcRequestMatcher;
 import org.springframework.web.filter.CorsFilter;
+import org.springframework.web.servlet.handler.HandlerMappingIntrospector;
 import tech.jhipster.lite.sample.authentication.domain.Role;
 import tech.jhipster.lite.sample.common.domain.ExcludeFromGeneratedCodeCoverage;
 
@@ -45,13 +48,19 @@ public class SecurityConfiguration {
 
   private final ApplicationSecurityProperties applicationSecurityProperties;
   private final CorsFilter corsFilter;
+  private final HandlerMappingIntrospector introspector;
 
   @Value("${spring.security.oauth2.client.provider.oidc.issuer-uri}")
   private String issuerUri;
 
-  public SecurityConfiguration(CorsFilter corsFilter, ApplicationSecurityProperties applicationSecurityProperties) {
+  public SecurityConfiguration(
+    CorsFilter corsFilter,
+    ApplicationSecurityProperties applicationSecurityProperties,
+    HandlerMappingIntrospector introspector
+  ) {
     this.corsFilter = corsFilter;
     this.applicationSecurityProperties = applicationSecurityProperties;
+    this.introspector = introspector;
   }
 
   @Bean
@@ -59,14 +68,14 @@ public class SecurityConfiguration {
     return web ->
       web
         .ignoring()
-        .requestMatchers(HttpMethod.OPTIONS, "/**")
-        .requestMatchers("/app/**")
-        .requestMatchers("/i18n/**")
-        .requestMatchers("/content/**")
-        .requestMatchers("/swagger-ui/**")
-        .requestMatchers("/swagger-ui.html")
-        .requestMatchers("/v3/api-docs/**")
-        .requestMatchers("/test/**");
+        .requestMatchers(antMatcher(HttpMethod.OPTIONS, "/**"))
+        .requestMatchers(antMatcher("/app/**"))
+        .requestMatchers(antMatcher("/i18n/**"))
+        .requestMatchers(antMatcher("/content/**"))
+        .requestMatchers(antMatcher("/swagger-ui/**"))
+        .requestMatchers(antMatcher("/swagger-ui.html"))
+        .requestMatchers(antMatcher("/v3/api-docs/**"))
+        .requestMatchers(antMatcher("/test/**"));
   }
 
   @Bean
@@ -83,15 +92,15 @@ public class SecurityConfiguration {
           permissions.policy("camera=(), fullscreen=(self), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), midi=(), payment=(), sync-xhr=()"))
       )
       .authorizeHttpRequests(authz -> authz
-        .requestMatchers("/api/authenticate").permitAll()
-        .requestMatchers("/api/auth-info").permitAll()
-        .requestMatchers("/api/admin/**").hasAuthority(Role.ADMIN.key())
-        .requestMatchers("/api/**").authenticated()
-        .requestMatchers("/management/health").permitAll()
-        .requestMatchers("/management/health/**").permitAll()
-        .requestMatchers("/management/info").permitAll()
-        .requestMatchers("/management/prometheus").permitAll()
-        .requestMatchers("/management/**").hasAuthority(Role.ADMIN.key())
+        .requestMatchers(new MvcRequestMatcher(introspector, "/api/authenticate")).permitAll()
+        .requestMatchers(new MvcRequestMatcher(introspector, "/api/auth-info")).permitAll()
+        .requestMatchers(new MvcRequestMatcher(introspector, "/api/admin/**")).hasAuthority(Role.ADMIN.key())
+        .requestMatchers(new MvcRequestMatcher(introspector, "/api/**")).authenticated()
+        .requestMatchers(new MvcRequestMatcher(introspector, "/management/health")).permitAll()
+        .requestMatchers(new MvcRequestMatcher(introspector, "/management/health/**")).permitAll()
+        .requestMatchers(new MvcRequestMatcher(introspector, "/management/info")).permitAll()
+        .requestMatchers(new MvcRequestMatcher(introspector, "/management/prometheus")).permitAll()
+        .requestMatchers(new MvcRequestMatcher(introspector, "/management/**")).hasAuthority(Role.ADMIN.key())
         .anyRequest().authenticated()
       )
       .oauth2Login(withDefaults())

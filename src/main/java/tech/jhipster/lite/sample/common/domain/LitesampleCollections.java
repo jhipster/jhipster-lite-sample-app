@@ -3,6 +3,7 @@ package tech.jhipster.lite.sample.common.domain;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 /**
@@ -61,5 +62,19 @@ public final class LitesampleCollections {
     }
 
     return Collections.unmodifiableList(list);
+  }
+
+  /**
+   * Get an immutable map from the given map
+   *
+   * @param <K> Key type of this map
+   * @param <V> value type of this map
+   * @return An immutable map
+   */
+  public static <K, V> Map<K, V> immutable(Map<K, V> map) {
+    if (map == null) {
+      return Map.of();
+    }
+    return Collections.unmodifiableMap(map);
   }
 }

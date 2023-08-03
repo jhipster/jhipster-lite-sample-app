@@ -22,8 +22,8 @@ import org.springframework.mock.env.MockEnvironment;
 import tech.jhipster.lite.sample.LogsSpy;
 import tech.jhipster.lite.sample.UnitTest;
 
-@ExtendWith(LogsSpy.class)
 @UnitTest
+@ExtendWith(LogsSpy.class)
 class AsyncSpringLiquibaseTest {
 
   private final ConfigurableEnvironment environment = new MockEnvironment();

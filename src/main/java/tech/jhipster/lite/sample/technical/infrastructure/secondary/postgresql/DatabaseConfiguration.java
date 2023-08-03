@@ -7,4 +7,4 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @Configuration
 @EnableTransactionManagement
 @EnableJpaRepositories(basePackages = { "tech.jhipster.lite.sample" }, enableDefaultTransactions = false)
-public class DatabaseConfiguration {}
+class DatabaseConfiguration {}

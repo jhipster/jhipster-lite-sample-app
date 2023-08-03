@@ -1,4 +1,4 @@
-package tech.jhipster.lite.sample.gitinfo.infrastructure.primary;
+package tech.jhipster.lite.sample.technical.infrastructure.primary.gitinfo;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

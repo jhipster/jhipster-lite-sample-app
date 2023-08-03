@@ -4,8 +4,10 @@ import static org.assertj.core.api.Assertions.*;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
@@ -84,6 +86,30 @@ class LitesampleCollectionsTest {
 
       assertThat(list).containsExactly("value");
       assertThatThrownBy(list::clear).isExactlyInstanceOf(UnsupportedOperationException.class);
+    }
+  }
+
+  @Nested
+  @DisplayName("Map")
+  class LitesampleMapTest {
+
+    @Test
+    void shouldGetEmptyImmutableMapFromNullMap() {
+      Map<Object, Object> input = null;
+      Map<Object, Object> map = LitesampleCollections.immutable(input);
+
+      assertThat(map).isEmpty();
+      assertThatThrownBy(map::clear).isExactlyInstanceOf(UnsupportedOperationException.class);
+    }
+
+    @Test
+    void shouldGetImmutableMapFromMutableMap() {
+      Map<String, String> input = new HashMap<>();
+      input.put("key", "value");
+      Map<String, String> map = LitesampleCollections.immutable(input);
+
+      assertThat(map).containsExactly(Map.entry("key", "value"));
+      assertThatThrownBy(map::clear).isExactlyInstanceOf(UnsupportedOperationException.class);
     }
   }
 }

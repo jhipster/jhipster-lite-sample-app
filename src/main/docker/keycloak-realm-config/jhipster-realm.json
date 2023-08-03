@@ -2243,7 +2243,7 @@
     "clientOfflineSessionIdleTimeout": "0",
     "cibaInterval": "5"
   },
-  "keycloakVersion": "21.1.2",
+  "keycloakVersion": "22.0.0",
   "userManagedAccessAllowed": false,
   "clientProfiles": {
     "profiles": []

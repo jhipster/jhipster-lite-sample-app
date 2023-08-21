@@ -7,7 +7,7 @@ import java.math.BigDecimal;
 import org.junit.jupiter.api.Test;
 import tech.jhipster.lite.sample.UnitTest;
 import tech.jhipster.lite.sample.dummy.domain.Amount;
-import tech.jhipster.lite.sample.error.domain.MissingMandatoryValueException;
+import tech.jhipster.lite.sample.shared.error.domain.MissingMandatoryValueException;
 
 @UnitTest
 class BeerOrderTest {

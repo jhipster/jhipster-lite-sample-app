@@ -1,7 +1,7 @@
 package tech.jhipster.lite.sample.dummy.domain.order;
 
 import tech.jhipster.lite.sample.dummy.domain.Amount;
-import tech.jhipster.lite.sample.error.domain.Assert;
+import tech.jhipster.lite.sample.shared.error.domain.Assert;
 
 public record BeerOrderLine(OrderedBeer beer, int quantity) {
   public BeerOrderLine {

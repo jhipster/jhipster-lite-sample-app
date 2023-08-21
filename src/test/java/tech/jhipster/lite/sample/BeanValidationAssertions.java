@@ -7,7 +7,7 @@ import jakarta.validation.Validation;
 import jakarta.validation.Validator;
 import java.util.Set;
 import java.util.function.Predicate;
-import tech.jhipster.lite.sample.error.domain.Assert;
+import tech.jhipster.lite.sample.shared.error.domain.Assert;
 
 public final class BeanValidationAssertions {
 

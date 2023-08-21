@@ -20,7 +20,7 @@ import org.springframework.security.test.context.TestSecurityContextHolder;
 import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.web.servlet.MockMvc;
 import tech.jhipster.lite.sample.IntegrationTest;
-import tech.jhipster.lite.sample.authentication.infrastructure.primary.WithUnauthenticatedMockUser;
+import tech.jhipster.lite.sample.shared.authentication.infrastructure.primary.WithUnauthenticatedMockUser;
 
 @IntegrationTest
 @AutoConfigureMockMvc

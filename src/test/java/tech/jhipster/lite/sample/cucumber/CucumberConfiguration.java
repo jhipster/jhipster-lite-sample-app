@@ -18,8 +18,8 @@ import org.springframework.http.client.SimpleClientHttpRequestFactory;
 import org.springframework.http.converter.StringHttpMessageConverter;
 import org.springframework.web.client.RestTemplate;
 import tech.jhipster.lite.sample.LitesampleApp;
-import tech.jhipster.lite.sample.authentication.infrastructure.primary.TestSecurityConfiguration;
 import tech.jhipster.lite.sample.cucumber.CucumberConfiguration.CucumberRestTemplateConfiguration;
+import tech.jhipster.lite.sample.shared.authentication.infrastructure.primary.TestSecurityConfiguration;
 
 @CucumberContextConfiguration
 @SpringBootTest(

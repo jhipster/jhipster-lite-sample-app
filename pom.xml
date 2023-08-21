@@ -30,7 +30,7 @@
     <commons-lang3.version>3.13.0</commons-lang3.version>
     <spring-boot.version>3.1.2</spring-boot.version>
     <reflections.version>0.10.2</reflections.version>
-    <archunit-junit5.version>1.0.1</archunit-junit5.version>
+    <archunit-junit5.version>1.1.0</archunit-junit5.version>
     <git-commit-id-plugin.version>6.0.0</git-commit-id-plugin.version>
     <node.version>v18.17.0</node.version>
     <npm.version>9.8.1</npm.version>
@@ -40,8 +40,8 @@
     <sonar-maven-plugin.version>3.9.1.2184</sonar-maven-plugin.version>
     <properties-maven-plugin.version>1.2.0</properties-maven-plugin.version>
     <testcontainers.version>1.17.6</testcontainers.version>
-    <liquibase.version>4.23.0</liquibase.version>
-    <springdoc-openapi-starter-webmvc.version>2.1.0</springdoc-openapi-starter-webmvc.version>
+    <liquibase.version>4.23.1</liquibase.version>
+    <springdoc-openapi-starter-webmvc.version>2.2.0</springdoc-openapi-starter-webmvc.version>
     <cucumber.version>7.13.0</cucumber.version>
     <testng.version>7.8.0</testng.version>
     <json-web-token.version>0.11.5</json-web-token.version>

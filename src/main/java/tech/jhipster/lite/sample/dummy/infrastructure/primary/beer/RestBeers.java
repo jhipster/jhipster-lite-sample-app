@@ -3,7 +3,7 @@ package tech.jhipster.lite.sample.dummy.infrastructure.primary.beer;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.util.Collection;
 import tech.jhipster.lite.sample.dummy.domain.beer.Beers;
-import tech.jhipster.lite.sample.error.domain.Assert;
+import tech.jhipster.lite.sample.shared.error.domain.Assert;
 
 @Schema(name = "beers", description = "Some beers")
 class RestBeers {

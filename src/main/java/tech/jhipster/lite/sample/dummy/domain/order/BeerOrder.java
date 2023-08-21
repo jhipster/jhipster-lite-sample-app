@@ -8,7 +8,7 @@ import java.util.Map.Entry;
 import java.util.function.BiFunction;
 import java.util.function.Function;
 import tech.jhipster.lite.sample.dummy.domain.Amount;
-import tech.jhipster.lite.sample.error.domain.Assert;
+import tech.jhipster.lite.sample.shared.error.domain.Assert;
 
 public class BeerOrder {
 

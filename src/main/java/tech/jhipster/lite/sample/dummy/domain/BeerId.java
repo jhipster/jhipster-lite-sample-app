@@ -1,7 +1,7 @@
 package tech.jhipster.lite.sample.dummy.domain;
 
 import java.util.UUID;
-import tech.jhipster.lite.sample.error.domain.Assert;
+import tech.jhipster.lite.sample.shared.error.domain.Assert;
 
 public record BeerId(UUID id) {
   public BeerId {

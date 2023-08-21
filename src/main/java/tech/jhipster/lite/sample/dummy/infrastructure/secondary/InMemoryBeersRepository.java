@@ -10,7 +10,7 @@ import tech.jhipster.lite.sample.dummy.domain.beer.Beer;
 import tech.jhipster.lite.sample.dummy.domain.beer.BeerSellingState;
 import tech.jhipster.lite.sample.dummy.domain.beer.Beers;
 import tech.jhipster.lite.sample.dummy.domain.beer.BeersRepository;
-import tech.jhipster.lite.sample.error.domain.Assert;
+import tech.jhipster.lite.sample.shared.error.domain.Assert;
 
 @Repository
 class InMemoryBeersRepository implements BeersRepository {

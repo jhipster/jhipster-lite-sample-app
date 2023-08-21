@@ -2,13 +2,13 @@ package tech.jhipster.lite.sample.dummy.application;
 
 import static org.assertj.core.api.Assertions.*;
 import static tech.jhipster.lite.sample.dummy.domain.BeersIdentityFixture.*;
-import static tech.jhipster.lite.sample.kipe.application.TestAuthentications.*;
+import static tech.jhipster.lite.sample.shared.kipe.application.TestAuthentications.*;
 
 import java.util.List;
 import org.junit.jupiter.api.Test;
 import tech.jhipster.lite.sample.UnitTest;
-import tech.jhipster.lite.sample.kipe.application.AccessContext;
-import tech.jhipster.lite.sample.kipe.application.LitesampleAuthorizations;
+import tech.jhipster.lite.sample.shared.kipe.application.AccessContext;
+import tech.jhipster.lite.sample.shared.kipe.application.LitesampleAuthorizations;
 
 @UnitTest
 class BeerIdAccessCheckerTest {

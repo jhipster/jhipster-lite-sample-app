@@ -8,7 +8,7 @@ import org.junit.jupiter.api.DisplayNameGeneration;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.core.annotation.AliasFor;
 import org.springframework.security.test.context.support.WithMockUser;
-import tech.jhipster.lite.sample.authentication.infrastructure.primary.TestSecurityConfiguration;
+import tech.jhipster.lite.sample.shared.authentication.infrastructure.primary.TestSecurityConfiguration;
 
 @WithMockUser
 @Target(ElementType.TYPE)

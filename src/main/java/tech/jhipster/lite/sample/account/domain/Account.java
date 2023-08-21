@@ -2,14 +2,14 @@ package tech.jhipster.lite.sample.account.domain;
 
 import java.util.Collection;
 import java.util.stream.Collectors;
-import tech.jhipster.lite.sample.authentication.domain.Role;
-import tech.jhipster.lite.sample.authentication.domain.Roles;
-import tech.jhipster.lite.sample.authentication.domain.Username;
-import tech.jhipster.lite.sample.error.domain.Assert;
-import tech.jhipster.lite.sample.useridentity.domain.Email;
-import tech.jhipster.lite.sample.useridentity.domain.Firstname;
-import tech.jhipster.lite.sample.useridentity.domain.Lastname;
-import tech.jhipster.lite.sample.useridentity.domain.Name;
+import tech.jhipster.lite.sample.shared.authentication.domain.Role;
+import tech.jhipster.lite.sample.shared.authentication.domain.Roles;
+import tech.jhipster.lite.sample.shared.authentication.domain.Username;
+import tech.jhipster.lite.sample.shared.error.domain.Assert;
+import tech.jhipster.lite.sample.shared.useridentity.domain.Email;
+import tech.jhipster.lite.sample.shared.useridentity.domain.Firstname;
+import tech.jhipster.lite.sample.shared.useridentity.domain.Lastname;
+import tech.jhipster.lite.sample.shared.useridentity.domain.Name;
 
 public class Account {
 

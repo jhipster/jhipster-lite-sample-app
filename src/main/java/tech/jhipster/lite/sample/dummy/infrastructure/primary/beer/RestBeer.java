@@ -5,7 +5,7 @@ import io.swagger.v3.oas.annotations.media.Schema.RequiredMode;
 import java.math.BigDecimal;
 import java.util.UUID;
 import tech.jhipster.lite.sample.dummy.domain.beer.Beer;
-import tech.jhipster.lite.sample.error.domain.Assert;
+import tech.jhipster.lite.sample.shared.error.domain.Assert;
 
 @Schema(name = "beer", description = "A beer")
 class RestBeer {

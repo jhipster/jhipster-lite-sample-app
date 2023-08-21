@@ -2,9 +2,9 @@ package tech.jhipster.lite.sample.dummy.application;
 
 import org.springframework.stereotype.Component;
 import tech.jhipster.lite.sample.dummy.domain.beer.BeerToCreate;
-import tech.jhipster.lite.sample.kipe.application.AccessChecker;
-import tech.jhipster.lite.sample.kipe.application.AccessContext;
-import tech.jhipster.lite.sample.kipe.application.LitesampleAuthorizations;
+import tech.jhipster.lite.sample.shared.kipe.application.AccessChecker;
+import tech.jhipster.lite.sample.shared.kipe.application.AccessContext;
+import tech.jhipster.lite.sample.shared.kipe.application.LitesampleAuthorizations;
 
 @Component
 class BeerToCreateAccessChecker implements AccessChecker<BeerToCreate> {

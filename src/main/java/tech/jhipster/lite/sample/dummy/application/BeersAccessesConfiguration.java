@@ -2,8 +2,8 @@ package tech.jhipster.lite.sample.dummy.application;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import tech.jhipster.lite.sample.authentication.domain.Role;
-import tech.jhipster.lite.sample.kipe.domain.RolesAccesses;
+import tech.jhipster.lite.sample.shared.authentication.domain.Role;
+import tech.jhipster.lite.sample.shared.kipe.domain.RolesAccesses;
 
 @Configuration
 class BeersAccessesConfiguration {

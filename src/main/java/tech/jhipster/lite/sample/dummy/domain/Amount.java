@@ -2,7 +2,7 @@ package tech.jhipster.lite.sample.dummy.domain;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
-import tech.jhipster.lite.sample.error.domain.Assert;
+import tech.jhipster.lite.sample.shared.error.domain.Assert;
 
 public record Amount(BigDecimal amount) {
   public static final Amount ZERO = new Amount(BigDecimal.ZERO);

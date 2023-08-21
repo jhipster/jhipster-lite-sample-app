@@ -9,8 +9,8 @@ import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.core.env.Environment;
-import tech.jhipster.lite.sample.common.domain.ExcludeFromGeneratedCodeCoverage;
-import tech.jhipster.lite.sample.error.domain.Assert;
+import tech.jhipster.lite.sample.shared.error.domain.Assert;
+import tech.jhipster.lite.sample.shared.generation.domain.ExcludeFromGeneratedCodeCoverage;
 
 final class ApplicationStartupTraces {
 

@@ -5,7 +5,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.core.env.Environment;
-import tech.jhipster.lite.sample.common.domain.ExcludeFromGeneratedCodeCoverage;
+import tech.jhipster.lite.sample.shared.generation.domain.ExcludeFromGeneratedCodeCoverage;
 
 @SpringBootApplication
 @ExcludeFromGeneratedCodeCoverage(reason = "Not testing logs")

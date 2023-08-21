@@ -1,6 +1,6 @@
 package tech.jhipster.lite.sample.dummy.application;
 
-import tech.jhipster.lite.sample.kipe.domain.Resource;
+import tech.jhipster.lite.sample.shared.kipe.domain.Resource;
 
 enum BeerResource implements Resource {
   BEERS("beers");

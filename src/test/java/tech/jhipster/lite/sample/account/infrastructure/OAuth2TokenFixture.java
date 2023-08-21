@@ -12,7 +12,7 @@ import org.springframework.security.oauth2.core.oidc.user.DefaultOidcUser;
 import org.springframework.security.oauth2.jose.jws.JwsAlgorithms;
 import org.springframework.security.oauth2.jwt.Jwt;
 import org.springframework.security.oauth2.server.resource.authentication.JwtAuthenticationToken;
-import tech.jhipster.lite.sample.authentication.domain.Role;
+import tech.jhipster.lite.sample.shared.authentication.domain.Role;
 
 public final class OAuth2TokenFixture {
 

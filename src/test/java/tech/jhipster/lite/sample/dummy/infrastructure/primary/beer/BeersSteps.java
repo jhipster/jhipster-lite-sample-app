@@ -12,12 +12,13 @@ import tech.jhipster.lite.sample.cucumber.CucumberTestContext;
 
 public class BeersSteps {
 
-  private static final String ADD_BEER_TEMPLATE = """
-      {
-        "name": "{NAME}",
-        "unitPrice": {UNIT_PRICE}
-      }
-      """;
+  private static final String ADD_BEER_TEMPLATE =
+    """
+    {
+      "name": "{NAME}",
+      "unitPrice": {UNIT_PRICE}
+    }
+    """;
 
   @Autowired
   private CucumberRestTemplate rest;

@@ -17,11 +17,11 @@ class RestBeerTest {
 
   static String json() {
     return """
-        {\
-        "id":"5ea9bbb1-3a55-4701-9006-3bbd2878f241",\
-        "name":"Cloak of feathers",\
-        "unitPrice":8.53\
-        }\
-        """;
+    {\
+    "id":"5ea9bbb1-3a55-4701-9006-3bbd2878f241",\
+    "name":"Cloak of feathers",\
+    "unitPrice":8.53\
+    }\
+    """;
   }
 }

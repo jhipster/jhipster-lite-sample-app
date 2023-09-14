@@ -25,7 +25,7 @@ import tech.jhipster.lite.sample.shared.authentication.infrastructure.primary.Wi
 @IntegrationTest
 @AutoConfigureMockMvc
 @WithMockUser(value = "test")
-class AccountsResourceIntTest {
+class AccountsResourceIT {
 
   @Autowired
   private MockMvc mockMvc;

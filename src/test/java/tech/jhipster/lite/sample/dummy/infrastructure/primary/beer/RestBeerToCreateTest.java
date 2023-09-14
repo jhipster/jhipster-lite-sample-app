@@ -20,11 +20,11 @@ class RestBeerToCreateTest {
 
   private String json() {
     return """
-        {
-          "name": "Cloak of feathers",
-          "unitPrice": 8.53
-        }
-        """;
+    {
+      "name": "Cloak of feathers",
+      "unitPrice": 8.53
+    }
+    """;
   }
 
   @Test

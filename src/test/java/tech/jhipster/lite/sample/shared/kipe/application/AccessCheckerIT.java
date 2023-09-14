@@ -14,7 +14,7 @@ import org.springframework.stereotype.Service;
 import tech.jhipster.lite.sample.IntegrationTest;
 
 @IntegrationTest
-class AccessCheckerIntTest {
+class AccessCheckerIT {
 
   @Test
   void canCheckersShouldBeSpringComponents() {

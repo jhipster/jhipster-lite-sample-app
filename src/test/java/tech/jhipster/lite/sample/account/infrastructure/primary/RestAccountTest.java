@@ -20,12 +20,12 @@ class RestAccountTest {
 
   private String json() {
     return """
-        {\
-        "username":"user",\
-        "name":"Paul DUPOND",\
-        "email":"email@company.fr",\
-        "roles":["ROLE_ADMIN"]\
-        }\
-        """;
+    {\
+    "username":"user",\
+    "name":"Paul DUPOND",\
+    "email":"email@company.fr",\
+    "roles":["ROLE_ADMIN"]\
+    }\
+    """;
   }
 }

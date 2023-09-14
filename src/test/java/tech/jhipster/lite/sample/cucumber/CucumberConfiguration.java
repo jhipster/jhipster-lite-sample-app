@@ -16,11 +16,13 @@ import org.springframework.http.client.ClientHttpRequestInterceptor;
 import org.springframework.http.client.ClientHttpResponse;
 import org.springframework.http.client.SimpleClientHttpRequestFactory;
 import org.springframework.http.converter.StringHttpMessageConverter;
+import org.springframework.test.context.ActiveProfiles;
 import org.springframework.web.client.RestTemplate;
 import tech.jhipster.lite.sample.LitesampleApp;
 import tech.jhipster.lite.sample.cucumber.CucumberConfiguration.CucumberRestTemplateConfiguration;
 import tech.jhipster.lite.sample.shared.authentication.infrastructure.primary.TestSecurityConfiguration;
 
+@ActiveProfiles("test")
 @CucumberContextConfiguration
 @SpringBootTest(
   classes = {

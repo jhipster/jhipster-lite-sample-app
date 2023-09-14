@@ -10,7 +10,7 @@ import tech.jhipster.lite.sample.IntegrationTest;
 import tech.jhipster.lite.sample.shared.kipe.domain.KipeDummy;
 
 @IntegrationTest
-class KipeIntTest {
+class KipeIT {
 
   @Autowired
   private KipeApplicationService service;
@@ -28,7 +28,7 @@ class KipeIntTest {
 
   @Test
   @WithMockUser
-  void shouldBeAbleToMakeAuhtorizedUpdate() {
+  void shouldBeAbleToMakeAuthorizedUpdate() {
     assertThatCode(() -> service.update(new KipeDummy("authorized"))).doesNotThrowAnyException();
   }
 }

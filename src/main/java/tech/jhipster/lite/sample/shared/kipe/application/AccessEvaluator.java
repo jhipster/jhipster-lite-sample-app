@@ -39,12 +39,10 @@ class AccessEvaluator {
   private Class<?> getCheckerResourceClass(AccessChecker<?> checker) {
     Class<?> checkerClass = checker.getClass();
 
-    return (Class<?>) (
-      (ParameterizedType) streamParameterizedTypes(checkerClass)
+    return (Class<?>) ((ParameterizedType) streamParameterizedTypes(checkerClass)
         .filter(type -> ((ParameterizedType) type).getRawType().equals(AccessChecker.class))
         .findFirst()
-        .orElseThrow()
-    ).getActualTypeArguments()[0];
+        .orElseThrow()).getActualTypeArguments()[0];
   }
 
   private Stream<Type> streamParameterizedTypes(Class<?> checkerClass) {

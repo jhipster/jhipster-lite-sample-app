@@ -9,7 +9,7 @@ import tech.jhipster.lite.sample.shared.generation.domain.ExcludeFromGeneratedCo
 class RedirectionResource {
 
   private static final String FORBID_EXTENSION_PATTERN = "/{file:[^\\.]*}";
-  private static final String TRAILING_DIR_PATTERN = "/{traillingDir:.*}/";
+  private static final String TRAILING_DIR_PATTERN = "/{trailingDir:.*}/";
 
   @GetMapping(
     value = {

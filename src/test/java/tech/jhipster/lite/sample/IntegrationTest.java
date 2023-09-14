@@ -8,8 +8,10 @@ import org.junit.jupiter.api.DisplayNameGeneration;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.core.annotation.AliasFor;
 import org.springframework.security.test.context.support.WithMockUser;
+import org.springframework.test.context.ActiveProfiles;
 import tech.jhipster.lite.sample.shared.authentication.infrastructure.primary.TestSecurityConfiguration;
 
+@ActiveProfiles("test")
 @WithMockUser
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
@@ -17,5 +19,5 @@ import tech.jhipster.lite.sample.shared.authentication.infrastructure.primary.Te
 @SpringBootTest(classes = { LitesampleApp.class, TestSecurityConfiguration.class })
 public @interface IntegrationTest {
   @AliasFor(annotation = SpringBootTest.class)
-  public String[] properties() default {};
+  String[] properties() default {};
 }

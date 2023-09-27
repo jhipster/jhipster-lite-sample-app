@@ -9,24 +9,23 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.security.core.Authentication;
+import tech.jhipster.lite.sample.Logs;
 import tech.jhipster.lite.sample.LogsSpy;
+import tech.jhipster.lite.sample.LogsSpyExtension;
 import tech.jhipster.lite.sample.UnitTest;
 import tech.jhipster.lite.sample.shared.error.domain.MissingMandatoryValueException;
 import tech.jhipster.lite.sample.shared.kipe.domain.KipeDummy;
 import tech.jhipster.lite.sample.shared.kipe.domain.KipeDummyChild;
 
 @UnitTest
-@ExtendWith({ MockitoExtension.class, LogsSpy.class })
+@ExtendWith({ MockitoExtension.class, LogsSpyExtension.class })
 class AccessEvaluatorTest {
 
   @Mock
   private Authentication authentication;
 
-  private final LogsSpy logs;
-
-  public AccessEvaluatorTest(LogsSpy logs) {
-    this.logs = logs;
-  }
+  @Logs
+  private LogsSpy logs;
 
   @Test
   void shouldNotBuildWithoutObjectChecker() {

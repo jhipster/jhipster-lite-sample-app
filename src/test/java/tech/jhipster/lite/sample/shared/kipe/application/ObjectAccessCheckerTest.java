@@ -7,20 +7,19 @@ import ch.qos.logback.classic.Level;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.security.core.Authentication;
+import tech.jhipster.lite.sample.Logs;
 import tech.jhipster.lite.sample.LogsSpy;
+import tech.jhipster.lite.sample.LogsSpyExtension;
 import tech.jhipster.lite.sample.UnitTest;
 
 @UnitTest
-@ExtendWith(LogsSpy.class)
+@ExtendWith(LogsSpyExtension.class)
 class ObjectAccessCheckerTest {
 
   private static final ObjectAccessChecker checker = new ObjectAccessChecker();
 
-  private final LogsSpy logs;
-
-  public ObjectAccessCheckerTest(LogsSpy logs) {
-    this.logs = logs;
-  }
+  @Logs
+  private LogsSpy logs;
 
   @Test
   void shouldNotAuthorizeActionsOnNullElement() {

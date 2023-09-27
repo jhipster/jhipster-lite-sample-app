@@ -19,21 +19,21 @@ import org.springframework.boot.autoconfigure.liquibase.LiquibaseProperties;
 import org.springframework.core.env.ConfigurableEnvironment;
 import org.springframework.core.env.Environment;
 import org.springframework.mock.env.MockEnvironment;
+import tech.jhipster.lite.sample.Logs;
 import tech.jhipster.lite.sample.LogsSpy;
+import tech.jhipster.lite.sample.LogsSpyExtension;
 import tech.jhipster.lite.sample.UnitTest;
 
 @UnitTest
-@ExtendWith(LogsSpy.class)
+@ExtendWith(LogsSpyExtension.class)
 class AsyncSpringLiquibaseTest {
 
   private final ConfigurableEnvironment environment = new MockEnvironment();
   private final Executor executor = spy(new DirectExecutor());
   private final LiquibaseProperties liquibaseProperties = new LiquibaseProperties();
-  private final LogsSpy logs;
 
-  public AsyncSpringLiquibaseTest(LogsSpy logs) {
-    this.logs = logs;
-  }
+  @Logs
+  private LogsSpy logs;
 
   @Nested
   class AfterPropertiesSetTest {

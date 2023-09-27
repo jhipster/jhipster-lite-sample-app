@@ -47,7 +47,6 @@ docker compose -f src/main/docker/keycloak.yml up -d
 - [Package types](documentation/package-types.md)
 - [Assertions](documentation/assertions.md)
 - [Hexagonal architecture](documentation/hexagonal-architecture.md)
-- [Logs spy](documentation/logs-spy.md)
 - [CORS configuration](documentation/cors-configuration.md)
 - [Dev tools](documentation/dev-tools.md)
 - [Vue](documentation/vue.md)

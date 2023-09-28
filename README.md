@@ -57,5 +57,6 @@ docker compose -f src/main/docker/keycloak.yml up -d
 - [Kipe expression](documentation/kipe-expression.md)
 - [Kipe authorization](documentation/kipe-authorization.md)
 - [Dummy](documentation/dummy.md)
+- [Logs Spy](documentation/logs-spy.md)
 
 <!-- jhipster-needle-documentation -->

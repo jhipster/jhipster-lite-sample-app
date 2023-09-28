@@ -71,6 +71,7 @@ applyModules \
 
 applyModules \
   "spring-boot" \
+  "logs-spy" \
   "spring-boot-mvc-empty" \
   "spring-boot-tomcat" \
   "spring-boot-actuator" \

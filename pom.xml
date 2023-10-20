@@ -18,22 +18,22 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-    <maven.version>3.6.0</maven.version>
+    <maven.version>3.9.5</maven.version>
     <junit-jupiter.version>5.10.0</junit-jupiter.version>
     <assertj.version>3.24.2</assertj.version>
     <mockito.version>5.6.0</mockito.version>
-    <jacoco.version>0.8.10</jacoco.version>
+    <jacoco.version>0.8.11</jacoco.version>
     <maven-enforcer-plugin.version>3.4.1</maven-enforcer-plugin.version>
     <compiler-plugin.version>3.11.0</compiler-plugin.version>
     <surefire-plugin.version>3.1.2</surefire-plugin.version>
     <failsafe-plugin.version>3.0.0-M5</failsafe-plugin.version>
     <commons-lang3.version>3.13.0</commons-lang3.version>
-    <spring-boot.version>3.1.4</spring-boot.version>
+    <spring-boot.version>3.1.5</spring-boot.version>
     <reflections.version>0.10.2</reflections.version>
     <archunit-junit5.version>1.1.0</archunit-junit5.version>
     <git-commit-id-plugin.version>6.0.0</git-commit-id-plugin.version>
-    <node.version>v18.18.0</node.version>
-    <npm.version>10.2.0</npm.version>
+    <node.version>v18.18.2</node.version>
+    <npm.version>10.2.1</npm.version>
     <checksum-maven-plugin.version>1.11</checksum-maven-plugin.version>
     <maven-antrun-plugin.version>3.1.0</maven-antrun-plugin.version>
     <frontend-maven-plugin.version>1.14.0</frontend-maven-plugin.version>
@@ -43,7 +43,7 @@
     <liquibase.version>4.24.0</liquibase.version>
     <springdoc-openapi-starter-webmvc.version>2.2.0</springdoc-openapi-starter-webmvc.version>
     <cucumber.version>7.14.0</cucumber.version>
-    <json-web-token.version>0.12.2</json-web-token.version>
+    <json-web-token.version>0.12.3</json-web-token.version>
   </properties>
 
   <dependencyManagement>

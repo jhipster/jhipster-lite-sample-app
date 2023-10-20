@@ -41,8 +41,8 @@ import tech.jhipster.lite.sample.shared.generation.domain.ExcludeFromGeneratedCo
 
 @Configuration
 @EnableWebSecurity
-@EnableMethodSecurity(prePostEnabled = true, securedEnabled = true)
-public class SecurityConfiguration {
+@EnableMethodSecurity(securedEnabled = true)
+class SecurityConfiguration {
 
   private static final int TIMEOUT = 2000;
 

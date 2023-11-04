@@ -21,7 +21,7 @@
     <maven.version>3.9.5</maven.version>
     <junit-jupiter.version>5.10.0</junit-jupiter.version>
     <assertj.version>3.24.2</assertj.version>
-    <mockito.version>5.6.0</mockito.version>
+    <mockito.version>5.7.0</mockito.version>
     <jacoco.version>0.8.11</jacoco.version>
     <maven-enforcer-plugin.version>3.4.1</maven-enforcer-plugin.version>
     <compiler-plugin.version>3.11.0</compiler-plugin.version>
@@ -33,7 +33,7 @@
     <archunit-junit5.version>1.1.0</archunit-junit5.version>
     <git-commit-id-plugin.version>7.0.0</git-commit-id-plugin.version>
     <node.version>v20.9.0</node.version>
-    <npm.version>10.2.1</npm.version>
+    <npm.version>10.2.3</npm.version>
     <checksum-maven-plugin.version>1.11</checksum-maven-plugin.version>
     <maven-antrun-plugin.version>3.1.0</maven-antrun-plugin.version>
     <frontend-maven-plugin.version>1.14.2</frontend-maven-plugin.version>

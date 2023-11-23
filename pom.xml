@@ -27,7 +27,7 @@
     <compiler-plugin.version>3.11.0</compiler-plugin.version>
     <surefire-plugin.version>3.2.2</surefire-plugin.version>
     <failsafe-plugin.version>3.0.0-M5</failsafe-plugin.version>
-    <commons-lang3.version>3.13.0</commons-lang3.version>
+    <commons-lang3.version>3.14.0</commons-lang3.version>
     <spring-boot.version>3.1.5</spring-boot.version>
     <reflections.version>0.10.2</reflections.version>
     <archunit-junit5.version>1.2.0</archunit-junit5.version>

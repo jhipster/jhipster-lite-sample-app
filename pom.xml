@@ -14,7 +14,7 @@
   <packaging>jar</packaging>
 
   <properties>
-    <java.version>17</java.version>
+    <java.version>21</java.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
@@ -28,21 +28,21 @@
     <surefire-plugin.version>3.2.2</surefire-plugin.version>
     <failsafe-plugin.version>3.0.0-M5</failsafe-plugin.version>
     <commons-lang3.version>3.14.0</commons-lang3.version>
-    <spring-boot.version>3.1.5</spring-boot.version>
+    <spring-boot.version>3.2.0</spring-boot.version>
     <reflections.version>0.10.2</reflections.version>
     <archunit-junit5.version>1.2.0</archunit-junit5.version>
     <git-commit-id-plugin.version>7.0.0</git-commit-id-plugin.version>
-    <node.version>v20.9.0</node.version>
+    <node.version>v20.10.0</node.version>
     <npm.version>10.2.4</npm.version>
     <checksum-maven-plugin.version>1.11</checksum-maven-plugin.version>
     <maven-antrun-plugin.version>3.1.0</maven-antrun-plugin.version>
-    <frontend-maven-plugin.version>1.14.2</frontend-maven-plugin.version>
+    <frontend-maven-plugin.version>1.15.0</frontend-maven-plugin.version>
     <sonar-maven-plugin.version>3.10.0.2594</sonar-maven-plugin.version>
     <properties-maven-plugin.version>1.2.1</properties-maven-plugin.version>
     <testcontainers.version>1.17.6</testcontainers.version>
     <liquibase.version>4.25.0</liquibase.version>
     <springdoc-openapi-starter-webmvc.version>2.2.0</springdoc-openapi-starter-webmvc.version>
-    <cucumber.version>7.14.0</cucumber.version>
+    <cucumber.version>7.14.1</cucumber.version>
     <json-web-token.version>0.12.3</json-web-token.version>
   </properties>
 
@@ -219,12 +219,6 @@
     </dependency>
 
     <dependency>
-      <groupId>org.awaitility</groupId>
-      <artifactId>awaitility</artifactId>
-      <scope>test</scope>
-    </dependency>
-
-    <dependency>
       <groupId>io.jsonwebtoken</groupId>
       <artifactId>jjwt-api</artifactId>
       <version>${json-web-token.version}</version>
@@ -385,8 +379,8 @@
                 <version>[${maven.version},)</version>
               </requireMavenVersion>
               <requireJavaVersion>
-                <message>You are running an incompatible version of Java. JHipster supports JDK 17.</message>
-                <version>[17,18)</version>
+                <message>You are running an incompatible version of Java. JHipster engine supports JDK 21+.</message>
+                <version>[21,22)</version>
               </requireJavaVersion>
             </rules>
           </configuration>
@@ -444,9 +438,7 @@
         <configuration>
           <source>${java.version}</source>
           <target>${java.version}</target>
-          <compilerArgs>
-            <arg>-parameters</arg>
-          </compilerArgs>
+          <parameters>true</parameters>
         </configuration>
       </plugin>
       <plugin>

@@ -1,0 +1,12 @@
+logging:
+  level:
+    tech:
+      jhipster:
+        lite:
+          sample: DEBUG
+spring:
+  devtools:
+    restart:
+      enabled: true
+    livereload:
+      enabled: true

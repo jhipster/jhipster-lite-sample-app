@@ -1,0 +1,33 @@
+logging:
+  level:
+    tech:
+      jhipster:
+        lite:
+          sample: 'OFF'
+  config: classpath:logback.xml
+spring:
+  main:
+    banner-mode: 'off'
+    allow-bean-definition-overriding: true
+  datasource:
+    driver-class-name: org.testcontainers.jdbc.ContainerDatabaseDriver
+    username: litesample
+    hikari:
+      maximum-pool-size: 2
+    url: jdbc:tc:postgresql:16.1:///litesample?TC_TMPFS=/testtmpfs:rw
+    password: ''
+  security:
+    oauth2:
+      client:
+        provider:
+          oidc:
+            issuer-uri: http://DO_NOT_CALL:9080/realms/jhipster
+server:
+  port: 0
+springdoc:
+  swagger-ui:
+    oauth:
+      client-id: web_app
+      realm: jhipster
+  oauth2:
+    authorization-url: http://localhost:9080/realms/jhipster/protocol/openid-connect/auth

@@ -1,4 +1,4 @@
-package tech.jhipster.lite.sample.cucumber;
+package tech.jhipster.lite.sample.cucumber.rest;
 
 import static org.assertj.core.api.Assertions.*;
 

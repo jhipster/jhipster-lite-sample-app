@@ -8,7 +8,9 @@ endOfLine: "lf"
 
 plugins:
   - '@prettier/plugin-xml'
+  - prettier-plugin-gherkin
   - prettier-plugin-java
+  - prettier-plugin-packagejson
 
 # js and ts rules:
 arrowParens: avoid
@@ -18,3 +20,10 @@ bracketSameLine: false
 
 # xml rules:
 xmlWhitespaceSensitivity: ignore
+
+overrides:
+  - files:
+      - '{src/**/,}tsconfig*.json'
+    options:
+      parser: 'jsonc'
+      trailingComma: none

@@ -11,7 +11,6 @@ import java.util.concurrent.Executor;
 import javax.sql.DataSource;
 import liquibase.Liquibase;
 import liquibase.exception.LiquibaseException;
-import org.jetbrains.annotations.NotNull;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -123,7 +122,7 @@ class AsyncSpringLiquibaseTest {
   private static class DirectExecutor implements Executor {
 
     @Override
-    public void execute(@NotNull Runnable command) {
+    public void execute(Runnable command) {
       command.run();
     }
   }

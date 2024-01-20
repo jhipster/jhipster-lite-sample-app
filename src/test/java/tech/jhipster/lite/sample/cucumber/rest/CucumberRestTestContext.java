@@ -1,4 +1,4 @@
-package tech.jhipster.lite.sample.cucumber;
+package tech.jhipster.lite.sample.cucumber.rest;
 
 import com.jayway.jsonpath.Configuration;
 import com.jayway.jsonpath.JsonPath;
@@ -24,12 +24,12 @@ import org.springframework.http.client.ClientHttpRequestExecution;
 import org.springframework.http.client.ClientHttpResponse;
 import org.springframework.util.StreamUtils;
 
-public final class CucumberTestContext {
+public final class CucumberRestTestContext {
 
   private static final Deque<RestQuery> queries = new ConcurrentLinkedDeque<>();
   private static final JsonProvider jsonReader = Configuration.defaultConfiguration().addOptions(Option.SUPPRESS_EXCEPTIONS).jsonProvider();
 
-  private CucumberTestContext() {}
+  private CucumberRestTestContext() {}
 
   public static void addResponse(HttpRequest request, ClientHttpResponse response, ClientHttpRequestExecution execution, byte[] body) {
     queries.addFirst(new RestQuery(request, response, execution, body));
@@ -194,7 +194,7 @@ public final class CucumberTestContext {
       try {
         ClientHttpResponse response = execution.execute(request, body);
 
-        CucumberTestContext.addResponse(request, response, execution, body);
+        CucumberRestTestContext.addResponse(request, response, execution, body);
       } catch (IOException e) {
         throw new AssertionError("Error while retrying last call: " + e.getMessage(), e);
       }

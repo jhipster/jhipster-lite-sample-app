@@ -78,4 +78,4 @@ class MyObjectAccessChecker implements AccessChecker<MyObject> {
 }
 ```
 
-This way, you'll have fine grained, easy to test authorizations check allowing custom configuration for each action in your application.
+This way, you'll have fine-grained, easy to test authorizations check allowing custom configuration for each action in your application.

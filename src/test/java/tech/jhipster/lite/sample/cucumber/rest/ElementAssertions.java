@@ -1,4 +1,4 @@
-package tech.jhipster.lite.sample.cucumber;
+package tech.jhipster.lite.sample.cucumber.rest;
 
 import static org.assertj.core.api.Assertions.*;
 
@@ -14,7 +14,7 @@ class ElementAssertions {
   public ElementAssertions(String jsonPath) {
     this.jsonPath = buildJsonPath(jsonPath);
 
-    assertThat(CucumberTestContext.getElement(this.jsonPath)).as("Can't find " + this.jsonPath + " in response").isNotNull();
+    assertThat(CucumberRestTestContext.getElement(this.jsonPath)).as("Can't find " + this.jsonPath + " in response").isNotNull();
   }
 
   private String buildJsonPath(String jsonPath) {
@@ -41,18 +41,18 @@ class ElementAssertions {
   }
 
   void withElementsCount(int count) {
-    int elementsCount = CucumberTestContext.countEntries(jsonPath);
+    int elementsCount = CucumberRestTestContext.countEntries(jsonPath);
 
     assertThat(elementsCount)
-      .as("Expecting " + count + " element(s) in " + jsonPath + " but got " + elementsCount + CucumberAssertions.callContext())
+      .as("Expecting " + count + " element(s) in " + jsonPath + " but got " + elementsCount + CucumberRestAssertions.callContext())
       .isEqualTo(count);
   }
 
   void withMoreThanElementsCount(int count) {
-    int elementsCount = CucumberTestContext.countEntries(jsonPath);
+    int elementsCount = CucumberRestTestContext.countEntries(jsonPath);
 
     assertThat(elementsCount)
-      .as("Expecting at least " + count + " element(s) in " + jsonPath + " but got " + elementsCount + CucumberAssertions.callContext())
+      .as("Expecting at least " + count + " element(s) in " + jsonPath + " but got " + elementsCount + CucumberRestAssertions.callContext())
       .isGreaterThanOrEqualTo(count);
   }
 
@@ -71,7 +71,7 @@ class ElementAssertions {
   void withValues(Collection<String> values) {
     assertThat(values).as("Can't check object against null values").isNotNull();
 
-    Object responseValue = CucumberTestContext.getElement(jsonPath);
+    Object responseValue = CucumberRestTestContext.getElement(jsonPath);
 
     if (!(responseValue instanceof JSONArray)) {
       fail(jsonPath + " is not an array");
@@ -79,19 +79,19 @@ class ElementAssertions {
 
     JSONArray array = (JSONArray) responseValue;
     assertThat(array)
-      .as("Expecting " + jsonPath + " to contain " + values + " but got " + responseValue + CucumberAssertions.callContext())
+      .as("Expecting " + jsonPath + " to contain " + values + " but got " + responseValue + CucumberRestAssertions.callContext())
       .containsExactlyElementsOf(values);
   }
 
   private void assertPathValue(String jsonPath, Object value) {
-    Object responseValue = CucumberTestContext.getElement(jsonPath);
+    Object responseValue = CucumberRestTestContext.getElement(jsonPath);
 
     if (responseValue != null && value instanceof String && !(responseValue instanceof String)) {
       responseValue = responseValue.toString();
     }
 
     assertThat(responseValue)
-      .as("Expecting " + jsonPath + " to contain " + value + " but got " + responseValue + CucumberAssertions.callContext())
+      .as("Expecting " + jsonPath + " to contain " + value + " but got " + responseValue + CucumberRestAssertions.callContext())
       .isEqualTo(value);
   }
 }

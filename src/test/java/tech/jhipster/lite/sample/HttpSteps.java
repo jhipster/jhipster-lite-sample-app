@@ -1,6 +1,6 @@
 package tech.jhipster.lite.sample;
 
-import static tech.jhipster.lite.sample.cucumber.CucumberAssertions.*;
+import static tech.jhipster.lite.sample.cucumber.rest.CucumberRestAssertions.*;
 
 import io.cucumber.java.en.Then;
 import org.springframework.http.HttpStatus;

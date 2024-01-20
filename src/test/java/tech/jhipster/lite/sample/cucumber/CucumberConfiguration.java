@@ -20,6 +20,8 @@ import org.springframework.test.context.ActiveProfiles;
 import org.springframework.web.client.RestTemplate;
 import tech.jhipster.lite.sample.LitesampleApp;
 import tech.jhipster.lite.sample.cucumber.CucumberConfiguration.CucumberRestTemplateConfiguration;
+import tech.jhipster.lite.sample.cucumber.rest.CucumberRestTemplate;
+import tech.jhipster.lite.sample.cucumber.rest.CucumberRestTestContext;
 import tech.jhipster.lite.sample.shared.authentication.infrastructure.primary.TestSecurityConfiguration;
 
 @ActiveProfiles("test")
@@ -40,7 +42,7 @@ public class CucumberConfiguration {
 
   @Before
   public void resetTestContext() {
-    CucumberTestContext.reset();
+    CucumberRestTestContext.reset();
   }
 
   @Before
@@ -50,14 +52,14 @@ public class CucumberConfiguration {
     RestTemplate template = rest.getRestTemplate();
     template.setRequestFactory(requestFactory);
     template.setInterceptors(List.of(saveLastResultInterceptor()));
-    template.getMessageConverters().add(0, new StringHttpMessageConverter(StandardCharsets.UTF_8));
+    template.getMessageConverters().addFirst(new StringHttpMessageConverter(StandardCharsets.UTF_8));
   }
 
   private ClientHttpRequestInterceptor saveLastResultInterceptor() {
     return (request, body, execution) -> {
       ClientHttpResponse response = execution.execute(request, body);
 
-      CucumberTestContext.addResponse(request, response, execution, body);
+      CucumberRestTestContext.addResponse(request, response, execution, body);
 
       return response;
     };

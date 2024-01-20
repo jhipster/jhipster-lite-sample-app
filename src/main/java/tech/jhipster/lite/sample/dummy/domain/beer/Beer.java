@@ -53,7 +53,7 @@ public class Beer {
     return sellingState;
   }
 
-  public static class BeerBuilder
+  private static class BeerBuilder
     implements BeerIdBuilder, BeerNameBuilder, BeerUnitPriceBuilder, BeerSellStateBuilder, BeerOptionalBuilder {
 
     private BeerId id;

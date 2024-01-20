@@ -1,4 +1,4 @@
-package tech.jhipster.lite.sample.cucumber;
+package tech.jhipster.lite.sample.cucumber.rest;
 
 import static org.assertj.core.api.Assertions.*;
 
@@ -8,14 +8,14 @@ class SyncResponseAsserter implements ResponseAsserter {
 
   @Override
   public SyncResponseAsserter hasHttpStatus(HttpStatus status) {
-    CucumberAssertions.assertHttpStatus(status);
+    CucumberRestAssertions.assertHttpStatus(status);
 
     return this;
   }
 
   @Override
   public ResponseAsserter hasHttpStatusIn(HttpStatus... statuses) {
-    CucumberAssertions.assertHttpStatusIn(statuses);
+    CucumberRestAssertions.assertHttpStatusIn(statuses);
 
     return this;
   }
@@ -31,16 +31,16 @@ class SyncResponseAsserter implements ResponseAsserter {
   }
 
   public SyncResponseAsserter doNotHaveElement(String jsonPath) {
-    int elementsCount = CucumberTestContext.countEntries(jsonPath);
+    int elementsCount = CucumberRestTestContext.countEntries(jsonPath);
 
-    assertThat(elementsCount).as("Expecting " + jsonPath + " to not exists " + CucumberAssertions.callContext()).isZero();
+    assertThat(elementsCount).as("Expecting " + jsonPath + " to not exists " + CucumberRestAssertions.callContext()).isZero();
 
     return this;
   }
 
   @Override
   public SyncResponseAsserter hasRawBody(String info) {
-    assertThat(CucumberAssertions.responseBody()).isEqualTo(info);
+    assertThat(CucumberRestAssertions.responseBody()).isEqualTo(info);
 
     return this;
   }

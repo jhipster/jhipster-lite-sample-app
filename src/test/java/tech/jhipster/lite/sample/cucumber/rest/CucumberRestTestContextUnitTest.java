@@ -1,4 +1,4 @@
-package tech.jhipster.lite.sample.cucumber;
+package tech.jhipster.lite.sample.cucumber.rest;
 
 import static org.assertj.core.api.Assertions.*;
 import static org.mockito.Mockito.*;
@@ -16,45 +16,45 @@ import org.springframework.http.client.ClientHttpResponse;
 import tech.jhipster.lite.sample.UnitTest;
 
 @UnitTest
-class CucumberTestContextUnitTest {
+class CucumberRestTestContextUnitTest {
 
   @Test
   void shouldGetQueryInformation() {
     addQuery("{}");
 
-    assertThat(CucumberTestContext.getStatus()).isEqualTo(HttpStatus.OK);
-    assertThat(CucumberTestContext.getUri()).isEqualTo("http://localhost/");
-    assertThat(CucumberTestContext.getResponse()).contains("{}");
+    assertThat(CucumberRestTestContext.getStatus()).isEqualTo(HttpStatus.OK);
+    assertThat(CucumberRestTestContext.getUri()).isEqualTo("http://localhost/");
+    assertThat(CucumberRestTestContext.getResponse()).contains("{}");
   }
 
   @Test
   void shouldResetTestContext() {
     addQuery("{}");
 
-    CucumberTestContext.reset();
+    CucumberRestTestContext.reset();
 
-    assertThatThrownBy(() -> CucumberTestContext.getResponse()).isExactlyInstanceOf(AssertionError.class).hasMessageContaining("empty");
+    assertThatThrownBy(CucumberRestTestContext::getResponse).isExactlyInstanceOf(AssertionError.class).hasMessageContaining("empty");
   }
 
   @Test
   void shouldGetZeroEntriesForUnknownPath() {
     addQuery("{}");
 
-    assertThat(CucumberTestContext.countEntries("$.dummy")).isZero();
+    assertThat(CucumberRestTestContext.countEntries("$.dummy")).isZero();
   }
 
   @Test
   void shouldGetNulForUnknownElement() {
     addQuery("{\"element\":\"value\"}");
 
-    assertThat(CucumberTestContext.getElement("dummy")).isNull();
+    assertThat(CucumberRestTestContext.getElement("dummy")).isNull();
   }
 
   @Test
   void shouldGetElement() {
     addQuery("{\"element\":\"value\"}");
 
-    assertThat(CucumberTestContext.getElement("element")).isEqualTo("value");
+    assertThat(CucumberRestTestContext.getElement("element")).isEqualTo("value");
   }
 
   @Test
@@ -64,28 +64,28 @@ class CucumberTestContextUnitTest {
     addQuery("/dumm", "{\"element\":\"dd\"}");
     addQuery("/employees", "{\"element\":\"test\"}");
 
-    assertThat(CucumberTestContext.getElement("dummies", "element")).isEqualTo("value");
+    assertThat(CucumberRestTestContext.getElement("dummies", "element")).isEqualTo("value");
   }
 
   @Test
   void shouldGetOneEntryForSingleElement() {
     addQuery("{\"element\":\"value\"}");
 
-    assertThat(CucumberTestContext.countEntries("$.element")).isEqualTo(1);
+    assertThat(CucumberRestTestContext.countEntries("$.element")).isEqualTo(1);
   }
 
   @Test
   void shouldGetZeroEntryForEmptyArray() {
     addQuery("{\"element\":[]}");
 
-    assertThat(CucumberTestContext.countEntries("$.element")).isZero();
+    assertThat(CucumberRestTestContext.countEntries("$.element")).isZero();
   }
 
   @Test
   void shouldGetArraySize() {
     addQuery("{\"element\":[{\"key\":\"value\"},{\"key\":\"value\"}]}");
 
-    assertThat(CucumberTestContext.countEntries("$.element")).isEqualTo(2);
+    assertThat(CucumberRestTestContext.countEntries("$.element")).isEqualTo(2);
   }
 
   @Test
@@ -98,7 +98,7 @@ class CucumberTestContextUnitTest {
     }
 
     assertThatThrownBy(() ->
-        CucumberTestContext.addResponse(mockedRequest("/"), httpResponse, mock(ClientHttpRequestExecution.class), "body".getBytes())
+        CucumberRestTestContext.addResponse(mockedRequest("/"), httpResponse, mock(ClientHttpRequestExecution.class), "body".getBytes())
       )
       .isExactlyInstanceOf(AssertionError.class);
   }
@@ -113,9 +113,9 @@ class CucumberTestContextUnitTest {
       fail(e.getMessage());
     }
 
-    CucumberTestContext.addResponse(mockedRequest("/"), httpResponse, mock(ClientHttpRequestExecution.class), "body".getBytes());
+    CucumberRestTestContext.addResponse(mockedRequest("/"), httpResponse, mock(ClientHttpRequestExecution.class), "body".getBytes());
 
-    assertThat(CucumberTestContext.getResponse()).isEmpty();
+    assertThat(CucumberRestTestContext.getResponse()).isEmpty();
   }
 
   @Test
@@ -126,9 +126,9 @@ class CucumberTestContextUnitTest {
     HttpRequest request = mockedRequest("/");
     when(execution.execute(request, body)).thenThrow(IOException.class);
 
-    CucumberTestContext.addResponse(request, mockedResponse("response"), execution, body);
+    CucumberRestTestContext.addResponse(request, mockedResponse("response"), execution, body);
 
-    assertThatThrownBy(() -> CucumberTestContext.retry()).isExactlyInstanceOf(AssertionError.class).hasMessageContaining("retrying");
+    assertThatThrownBy(CucumberRestTestContext::retry).isExactlyInstanceOf(AssertionError.class).hasMessageContaining("retrying");
   }
 
   private void addQuery(String response) {
@@ -138,7 +138,7 @@ class CucumberTestContextUnitTest {
   private void addQuery(String path, String response) {
     ClientHttpResponse httpResponse = mockedResponse(response);
 
-    CucumberTestContext.addResponse(mockedRequest(path), httpResponse, mock(ClientHttpRequestExecution.class), "body".getBytes());
+    CucumberRestTestContext.addResponse(mockedRequest(path), httpResponse, mock(ClientHttpRequestExecution.class), "body".getBytes());
   }
 
   private ClientHttpResponse mockedResponse(String response) {

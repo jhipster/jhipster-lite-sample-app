@@ -1,4 +1,4 @@
-package tech.jhipster.lite.sample.cucumber;
+package tech.jhipster.lite.sample.cucumber.rest;
 
 import java.time.Duration;
 import org.assertj.core.api.SoftAssertionsProvider.ThrowingRunnable;
@@ -15,7 +15,7 @@ class Awaiter {
         try {
           assertion.run();
         } catch (AssertionError e) {
-          CucumberTestContext.retry();
+          CucumberRestTestContext.retry();
 
           assertion.run();
         }

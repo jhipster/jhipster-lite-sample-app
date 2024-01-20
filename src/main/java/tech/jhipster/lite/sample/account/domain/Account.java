@@ -50,7 +50,7 @@ public class Account {
     return roles;
   }
 
-  public static class UserBuilder
+  private static class UserBuilder
     implements
       AccountUsernameBuilder,
       AccountFirstnameBuilder,

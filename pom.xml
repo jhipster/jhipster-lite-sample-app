@@ -1,237 +1,202 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <project
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd"
   xmlns="http://maven.apache.org/POM/4.0.0"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd"
 >
   <modelVersion>4.0.0</modelVersion>
-
   <groupId>tech.jhipster.lite.sample</groupId>
   <artifactId>litesample</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <name>litesample</name>
   <description>JHipster Lite Sample Application</description>
-  <packaging>jar</packaging>
-
   <properties>
-    <java.version>21</java.version>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-
-    <maven.version>3.9.5</maven.version>
-    <junit-jupiter.version>5.10.1</junit-jupiter.version>
-    <assertj.version>3.24.2</assertj.version>
-    <mockito.version>5.8.0</mockito.version>
-    <jacoco.version>0.8.11</jacoco.version>
-    <maven-enforcer-plugin.version>3.4.1</maven-enforcer-plugin.version>
-    <compiler-plugin.version>3.11.0</compiler-plugin.version>
-    <surefire-plugin.version>3.2.2</surefire-plugin.version>
-    <failsafe-plugin.version>3.0.0-M5</failsafe-plugin.version>
-    <commons-lang3.version>3.14.0</commons-lang3.version>
-    <spring-boot.version>3.2.0</spring-boot.version>
-    <reflections.version>0.10.2</reflections.version>
-    <archunit-junit5.version>1.2.1</archunit-junit5.version>
-    <git-commit-id-plugin.version>7.0.0</git-commit-id-plugin.version>
-    <node.version>v20.10.0</node.version>
-    <npm.version>10.2.5</npm.version>
     <checksum-maven-plugin.version>1.11</checksum-maven-plugin.version>
-    <maven-antrun-plugin.version>3.1.0</maven-antrun-plugin.version>
-    <frontend-maven-plugin.version>1.15.0</frontend-maven-plugin.version>
+    <reflections.version>0.10.2</reflections.version>
+    <compiler-plugin.version>3.12.1</compiler-plugin.version>
+    <spring-boot.version>3.2.1</spring-boot.version>
     <sonar-maven-plugin.version>3.10.0.2594</sonar-maven-plugin.version>
-    <properties-maven-plugin.version>1.2.1</properties-maven-plugin.version>
-    <testcontainers.version>1.17.6</testcontainers.version>
-    <liquibase.version>4.25.0</liquibase.version>
-    <springdoc-openapi-starter-webmvc.version>2.3.0</springdoc-openapi-starter-webmvc.version>
-    <cucumber.version>7.14.1</cucumber.version>
+    <surefire-plugin.version>3.2.5</surefire-plugin.version>
+    <maven-antrun-plugin.version>3.1.0</maven-antrun-plugin.version>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <assertj.version>3.25.1</assertj.version>
+    <commons-lang3.version>3.14.0</commons-lang3.version>
+    <archunit-junit5.version>1.2.1</archunit-junit5.version>
+    <npm.version>10.3.0</npm.version>
+    <java.version>21</java.version>
+    <maven.version>3.9.5</maven.version>
+    <liquibase.version>4.25.1</liquibase.version>
     <json-web-token.version>0.12.3</json-web-token.version>
+    <mockito.version>5.9.0</mockito.version>
+    <frontend-maven-plugin.version>1.15.0</frontend-maven-plugin.version>
+    <properties-maven-plugin.version>1.2.1</properties-maven-plugin.version>
+    <jacoco.version>0.8.11</jacoco.version>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    <git-commit-id-plugin.version>7.0.0</git-commit-id-plugin.version>
+    <maven-enforcer-plugin.version>3.4.1</maven-enforcer-plugin.version>
+    <junit-jupiter.version>5.10.1</junit-jupiter.version>
+    <node.version>v20.11.0</node.version>
+    <cucumber.version>7.15.0</cucumber.version>
+    <testcontainers.version>1.17.6</testcontainers.version>
+    <springdoc-openapi-starter-webmvc.version>2.3.0</springdoc-openapi-starter-webmvc.version>
+    <failsafe-plugin.version>3.0.0-M5</failsafe-plugin.version>
   </properties>
-
   <dependencyManagement>
     <dependencies>
       <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-dependencies</artifactId>
         <version>${spring-boot.version}</version>
-        <scope>import</scope>
         <type>pom</type>
+        <scope>import</scope>
       </dependency>
     </dependencies>
   </dependencyManagement>
-
   <dependencies>
     <dependency>
       <groupId>org.apache.commons</groupId>
       <artifactId>commons-lang3</artifactId>
       <version>${commons-lang3.version}</version>
     </dependency>
-
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter</artifactId>
     </dependency>
-
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-configuration-processor</artifactId>
       <optional>true</optional>
     </dependency>
-
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-validation</artifactId>
     </dependency>
-
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-web</artifactId>
     </dependency>
-
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-actuator</artifactId>
     </dependency>
-
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-devtools</artifactId>
       <scope>runtime</scope>
       <optional>true</optional>
     </dependency>
-
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-data-jpa</artifactId>
     </dependency>
-
     <dependency>
       <groupId>com.zaxxer</groupId>
       <artifactId>HikariCP</artifactId>
     </dependency>
-
     <dependency>
       <groupId>org.hibernate.orm</groupId>
       <artifactId>hibernate-core</artifactId>
     </dependency>
-
     <dependency>
       <groupId>org.postgresql</groupId>
       <artifactId>postgresql</artifactId>
       <scope>runtime</scope>
     </dependency>
-
     <dependency>
       <groupId>org.liquibase</groupId>
       <artifactId>liquibase-core</artifactId>
       <version>${liquibase.version}</version>
     </dependency>
-
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-security</artifactId>
     </dependency>
-
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-oauth2-client</artifactId>
     </dependency>
-
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-oauth2-resource-server</artifactId>
     </dependency>
-
     <dependency>
       <groupId>org.springdoc</groupId>
       <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
       <version>${springdoc-openapi-starter-webmvc.version}</version>
     </dependency>
-
     <dependency>
       <groupId>org.springdoc</groupId>
       <artifactId>springdoc-openapi-starter-webmvc-api</artifactId>
       <version>${springdoc-openapi-starter-webmvc.version}</version>
     </dependency>
-
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-test</artifactId>
       <scope>test</scope>
     </dependency>
-
     <dependency>
       <groupId>org.reflections</groupId>
       <artifactId>reflections</artifactId>
       <version>${reflections.version}</version>
       <scope>test</scope>
     </dependency>
-
     <dependency>
       <groupId>com.tngtech.archunit</groupId>
       <artifactId>archunit-junit5-api</artifactId>
       <version>${archunit-junit5.version}</version>
       <scope>test</scope>
     </dependency>
-
     <dependency>
       <groupId>org.testcontainers</groupId>
       <artifactId>postgresql</artifactId>
       <version>${testcontainers.version}</version>
       <scope>test</scope>
     </dependency>
-
     <dependency>
       <groupId>com.h2database</groupId>
       <artifactId>h2</artifactId>
       <scope>test</scope>
     </dependency>
-
     <dependency>
       <groupId>org.springframework.security</groupId>
       <artifactId>spring-security-test</artifactId>
       <scope>test</scope>
     </dependency>
-
     <dependency>
       <groupId>io.cucumber</groupId>
       <artifactId>cucumber-junit-platform-engine</artifactId>
       <version>${cucumber.version}</version>
       <scope>test</scope>
     </dependency>
-
     <dependency>
       <groupId>io.cucumber</groupId>
       <artifactId>cucumber-java</artifactId>
       <version>${cucumber.version}</version>
       <scope>test</scope>
     </dependency>
-
     <dependency>
       <groupId>io.cucumber</groupId>
       <artifactId>cucumber-spring</artifactId>
       <version>${cucumber.version}</version>
       <scope>test</scope>
     </dependency>
-
     <dependency>
       <groupId>org.junit.platform</groupId>
       <artifactId>junit-platform-suite</artifactId>
       <scope>test</scope>
     </dependency>
-
     <dependency>
       <groupId>io.jsonwebtoken</groupId>
       <artifactId>jjwt-api</artifactId>
       <version>${json-web-token.version}</version>
       <scope>test</scope>
     </dependency>
-
     <dependency>
       <groupId>io.jsonwebtoken</groupId>
       <artifactId>jjwt-impl</artifactId>
       <version>${json-web-token.version}</version>
       <scope>test</scope>
     </dependency>
-
     <dependency>
       <groupId>io.jsonwebtoken</groupId>
       <artifactId>jjwt-jackson</artifactId>
@@ -239,12 +204,12 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
-
   <build>
+    <defaultGoal>spring-boot:run</defaultGoal>
     <resources>
       <resource>
-        <directory>${basedir}/src/main/resources</directory>
         <filtering>true</filtering>
+        <directory>${basedir}/src/main/resources</directory>
         <includes>
           <include>config/*.properties</include>
         </includes>
@@ -269,7 +234,6 @@
                 <goal>prepare-agent</goal>
               </goals>
             </execution>
-            <!-- Ensures that the code coverage report for unit tests is created after unit tests have been run -->
             <execution>
               <id>post-unit-test</id>
               <phase>test</phase>
@@ -283,7 +247,6 @@
                 <goal>prepare-agent-integration</goal>
               </goals>
             </execution>
-            <!-- Ensures that the code coverage report for integration tests is created after integration tests have been run -->
             <execution>
               <id>post-integration-tests</id>
               <phase>post-integration-test</phase>
@@ -349,7 +312,6 @@
           </executions>
         </plugin>
         <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-enforcer-plugin</artifactId>
           <version>${maven-enforcer-plugin.version}</version>
           <executions>
@@ -361,26 +323,26 @@
             </execution>
             <execution>
               <id>enforce-dependencyConvergence</id>
+              <goals>
+                <goal>enforce</goal>
+              </goals>
               <configuration>
                 <rules>
                   <DependencyConvergence />
                 </rules>
                 <fail>false</fail>
               </configuration>
-              <goals>
-                <goal>enforce</goal>
-              </goals>
             </execution>
           </executions>
           <configuration>
             <rules>
               <requireMavenVersion>
-                <message>You are running an older version of Maven. JHipster requires at least Maven ${maven.version}</message>
-                <version>[${maven.version},)</version>
+                <message>You are running an older version of Maven: minimum required version is ${maven.version}</message>
+                <version>${maven.version}</version>
               </requireMavenVersion>
               <requireJavaVersion>
-                <message>You are running an incompatible version of Java. JHipster engine supports JDK 21+.</message>
-                <version>[21,22)</version>
+                <message>You are running an incompatible version of Java: minimum required version is ${java.version}</message>
+                <version>${java.version}</version>
               </requireJavaVersion>
             </rules>
           </configuration>
@@ -419,6 +381,7 @@
               <includeOnlyProperty>^git.commit.id.abbrev$</includeOnlyProperty>
               <includeOnlyProperty>^git.commit.id.describe$</includeOnlyProperty>
               <includeOnlyProperty>^git.branch$</includeOnlyProperty>
+              <includeOnlyProperty>^git.build.(time|version)$</includeOnlyProperty>
             </includeOnlyProperties>
             <verbose>false</verbose>
           </configuration>
@@ -432,7 +395,6 @@
     </pluginManagement>
     <plugins>
       <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
         <version>${compiler-plugin.version}</version>
         <configuration>
@@ -442,11 +404,9 @@
         </configuration>
       </plugin>
       <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-surefire-plugin</artifactId>
         <version>${surefire-plugin.version}</version>
         <configuration>
-          <!-- Force alphabetical order to have a reproducible build -->
           <runOrder>alphabetical</runOrder>
           <excludes>
             <exclude>**/*IT*</exclude>
@@ -455,20 +415,8 @@
         </configuration>
       </plugin>
       <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-failsafe-plugin</artifactId>
         <version>${failsafe-plugin.version}</version>
-        <configuration>
-          <!-- Due to spring-boot repackage, without adding this property test classes are not found
-               See https://github.com/spring-projects/spring-boot/issues/6254 -->
-          <classesDirectory>${project.build.outputDirectory}</classesDirectory>
-          <!-- Force alphabetical order to have a reproducible build -->
-          <runOrder>alphabetical</runOrder>
-          <includes>
-            <include>**/*IT*</include>
-            <include>**/*CucumberTest*</include>
-          </includes>
-        </configuration>
         <executions>
           <execution>
             <id>integration-test</id>
@@ -483,10 +431,21 @@
             </goals>
           </execution>
         </executions>
+        <configuration>
+          <classesDirectory>${project.build.outputDirectory}</classesDirectory>
+          <runOrder>alphabetical</runOrder>
+          <includes>
+            <include>**/*IT*</include>
+            <include>**/*CucumberTest*</include>
+          </includes>
+        </configuration>
       </plugin>
       <plugin>
         <groupId>org.jacoco</groupId>
         <artifactId>jacoco-maven-plugin</artifactId>
+      </plugin>
+      <plugin>
+        <artifactId>maven-enforcer-plugin</artifactId>
       </plugin>
       <plugin>
         <groupId>org.springframework.boot</groupId>
@@ -510,10 +469,10 @@
           </execution>
           <execution>
             <id>create-compiled-webapp-checksum</id>
+            <phase>compile</phase>
             <goals>
               <goal>files</goal>
             </goals>
-            <phase>compile</phase>
             <configuration>
               <csvSummaryFile>checksums.csv.old</csvSummaryFile>
             </configuration>
@@ -543,7 +502,6 @@
         </configuration>
       </plugin>
       <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-antrun-plugin</artifactId>
         <version>${maven-antrun-plugin.version}</version>
         <executions>
@@ -559,7 +517,7 @@
                   <and>
                     <available file="checksums.csv" filepath="${project.build.directory}" />
                     <available file="checksums.csv.old" filepath="${project.build.directory}" />
-                    <filesmatch file1="${project.build.directory}/checksums.csv" file2="${project.build.directory}/checksums.csv.old" />
+                    <filesmatch file2="${project.build.directory}/checksums.csv.old" file1="${project.build.directory}/checksums.csv" />
                   </and>
                 </condition>
               </target>
@@ -591,10 +549,10 @@
           </execution>
           <execution>
             <id>build front</id>
+            <phase>generate-resources</phase>
             <goals>
               <goal>npm</goal>
             </goals>
-            <phase>generate-resources</phase>
             <configuration>
               <arguments>run build</arguments>
               <environmentVariables>
@@ -605,10 +563,10 @@
           </execution>
           <execution>
             <id>front test</id>
+            <phase>test</phase>
             <goals>
               <goal>npm</goal>
             </goals>
-            <phase>test</phase>
             <configuration>
               <arguments>run test</arguments>
               <npmInheritsProxyConfigFromMaven>false</npmInheritsProxyConfigFromMaven>
@@ -635,6 +593,5 @@
         </executions>
       </plugin>
     </plugins>
-    <defaultGoal>spring-boot:run</defaultGoal>
   </build>
 </project>

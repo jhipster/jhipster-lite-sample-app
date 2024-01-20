@@ -1,14 +1,14 @@
 package tech.jhipster.lite.sample.dummy.infrastructure.primary.beer;
 
-import static tech.jhipster.lite.sample.cucumber.CucumberAssertions.*;
+import static tech.jhipster.lite.sample.cucumber.rest.CucumberRestAssertions.*;
 
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import java.util.List;
 import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
-import tech.jhipster.lite.sample.cucumber.CucumberRestTemplate;
-import tech.jhipster.lite.sample.cucumber.CucumberTestContext;
+import tech.jhipster.lite.sample.cucumber.rest.CucumberRestTemplate;
+import tech.jhipster.lite.sample.cucumber.rest.CucumberRestTestContext;
 
 public class BeersSteps {
 
@@ -32,7 +32,7 @@ public class BeersSteps {
 
   @When("I remove the created beer from the catalog")
   public void removeCreatedBeerFromCatalog() {
-    rest.delete("/api/beers/" + CucumberTestContext.getElement("$.id"));
+    rest.delete("/api/beers/" + CucumberRestTestContext.getElement("$.id"));
   }
 
   @Then("I should have beers catalog")

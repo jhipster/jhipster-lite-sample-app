@@ -32,10 +32,6 @@ npm install
 ## Start up
 
 ```bash
-./mvnw
-```
-
-```bash
 docker compose -f src/main/docker/sonar.yml up -d
 ./mvnw clean verify sonar:sonar
 ```

@@ -16,7 +16,6 @@ import org.springframework.security.authentication.AbstractAuthenticationToken;
 import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
-import org.springframework.security.config.annotation.web.configuration.WebSecurityCustomizer;
 import org.springframework.security.config.annotation.web.configurers.HeadersConfigurer.FrameOptionsConfig;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.mapping.GrantedAuthoritiesMapper;
@@ -64,21 +63,6 @@ class SecurityConfiguration {
   }
 
   @Bean
-  public WebSecurityCustomizer webSecurityCustomizer() {
-    return web ->
-      web
-        .ignoring()
-        .requestMatchers(antMatcher(HttpMethod.OPTIONS, "/**"))
-        .requestMatchers(antMatcher("/app/**"))
-        .requestMatchers(antMatcher("/i18n/**"))
-        .requestMatchers(antMatcher("/content/**"))
-        .requestMatchers(antMatcher("/swagger-ui/**"))
-        .requestMatchers(antMatcher("/swagger-ui.html"))
-        .requestMatchers(antMatcher("/v3/api-docs/**"))
-        .requestMatchers(antMatcher("/test/**"));
-  }
-
-  @Bean
   public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
     // @formatter:off
     return http
@@ -92,6 +76,14 @@ class SecurityConfiguration {
           permissions.policy("camera=(), fullscreen=(self), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), midi=(), payment=(), sync-xhr=()"))
       )
       .authorizeHttpRequests(authz -> authz
+        .requestMatchers(antMatcher(HttpMethod.OPTIONS, "/**")).permitAll()
+        .requestMatchers(antMatcher("/app/**")).permitAll()
+        .requestMatchers(antMatcher("/i18n/**")).permitAll()
+        .requestMatchers(antMatcher("/content/**")).permitAll()
+        .requestMatchers(antMatcher("/swagger-ui/**")).permitAll()
+        .requestMatchers(antMatcher("/swagger-ui.html")).permitAll()
+        .requestMatchers(antMatcher("/v3/api-docs/**")).permitAll()
+        .requestMatchers(antMatcher("/test/**")).permitAll()
         .requestMatchers(new MvcRequestMatcher(introspector, "/api/authenticate")).permitAll()
         .requestMatchers(new MvcRequestMatcher(introspector, "/api/auth-info")).permitAll()
         .requestMatchers(new MvcRequestMatcher(introspector, "/api/admin/**")).hasAuthority(Role.ADMIN.key())

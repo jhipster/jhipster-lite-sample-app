@@ -60,6 +60,7 @@ echo "*** Applying modules..."
 applyModules \
   "init" \
   "maven-java" \
+  "maven-wrapper" \
   "java-base" \
   "jacoco-check-min-coverage" \
   "java-memoizers" \

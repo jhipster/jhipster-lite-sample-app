@@ -1,6 +1,6 @@
 package tech.jhipster.lite.sample.shared.error.domain;
 
-import static org.assertj.core.api.Assertions.*;
+import static org.assertj.core.api.Assertions.assertThat;
 
 import java.time.Instant;
 import org.junit.jupiter.api.Test;
@@ -10,27 +10,27 @@ import tech.jhipster.lite.sample.UnitTest;
 class NotBeforeTimeExceptionTest {
 
   private static final String FIELD = "myField";
+  private static final Instant VALUE = Instant.parse("2024-02-21T21:00:00Z");
 
   @Test
   void shouldGetNotBeforeExceptionInformation() {
-    NotBeforeTimeException exception = NotBeforeTimeException
-      .field(FIELD, Instant.ofEpochSecond(1337))
-      .notBefore(Instant.ofEpochSecond(1338));
+    NotBeforeTimeException exception = NotBeforeTimeException.notBefore().value(VALUE).field(FIELD).other(Instant.ofEpochSecond(1337));
 
     assertDefaultInformation(exception);
-    assertThat(exception.getMessage())
-      .isEqualTo("Time in \"myField\" having value : 1970-01-01T00:22:17Z must be before 1970-01-01T00:22:18Z but wasn't");
+    assertThat(exception.getMessage()).isEqualTo("Time 2024-02-21T21:00:00Z in \"myField\" must be before 1970-01-01T00:22:17Z but wasn't");
   }
 
   @Test
-  void shouldGetStrictlyNotBeforeExceptionInformation() {
-    NotBeforeTimeException exception = NotBeforeTimeException
-      .field(FIELD, Instant.ofEpochSecond(1337))
-      .strictlyNotBefore(Instant.ofEpochSecond(1337));
+  void shouldGetNotStrictlyAfterExceptionInformation() {
+    NotBeforeTimeException exception = NotBeforeTimeException.strictlyNotBefore()
+      .value(VALUE)
+      .field(FIELD)
+      .other(Instant.ofEpochSecond(1337));
 
     assertDefaultInformation(exception);
-    assertThat(exception.getMessage())
-      .isEqualTo("Time in \"myField\" having value : 1970-01-01T00:22:17Z must be strictly before 1970-01-01T00:22:17Z but wasn't");
+    assertThat(exception.getMessage()).isEqualTo(
+      "Time 2024-02-21T21:00:00Z in \"myField\" must be strictly before 1970-01-01T00:22:17Z but wasn't"
+    );
   }
 
   private void assertDefaultInformation(NotBeforeTimeException exception) {

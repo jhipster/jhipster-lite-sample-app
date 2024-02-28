@@ -10,7 +10,7 @@ import java.util.function.Function;
 import tech.jhipster.lite.sample.dummy.domain.Amount;
 import tech.jhipster.lite.sample.shared.error.domain.Assert;
 
-public class BeerOrder {
+public final class BeerOrder {
 
   private final Collection<BeerOrderLine> lines;
   private final Amount total;

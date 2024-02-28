@@ -45,8 +45,7 @@ class CustomClaimConverterTest {
   }
 
   private ClientRegistration buildRegistration() {
-    return ClientRegistration
-      .withRegistrationId("test")
+    return ClientRegistration.withRegistrationId("test")
       .userInfoUri("http://jhipster.test")
       .authorizationGrantType(AuthorizationGrantType.JWT_BEARER)
       .build();
@@ -88,8 +87,12 @@ class CustomClaimConverterTest {
   }
 
   private ResponseEntity<ObjectNode> assertNoRestClaimCall() {
-    return verify(rest, never())
-      .exchange(anyString(), eq(HttpMethod.GET), any(HttpEntity.class), ArgumentMatchers.<Class<ObjectNode>>any());
+    return verify(rest, never()).exchange(
+      anyString(),
+      eq(HttpMethod.GET),
+      any(HttpEntity.class),
+      ArgumentMatchers.<Class<ObjectNode>>any()
+    );
   }
 
   @Test
@@ -237,7 +240,7 @@ class CustomClaimConverterTest {
     return new UserBuilder();
   }
 
-  private class UserBuilder {
+  private final class UserBuilder {
 
     private static final ObjectMapper json = new ObjectMapper();
     private ObjectNode user;
@@ -306,12 +309,14 @@ class CustomClaimConverterTest {
   }
 
   private void mockUser(ObjectNode user) {
-    when(rest.exchange(eq("http://jhipster.test"), eq(HttpMethod.GET), any(HttpEntity.class), ArgumentMatchers.<Class<ObjectNode>>any()))
-      .thenReturn(ResponseEntity.ok(user));
+    when(
+      rest.exchange(eq("http://jhipster.test"), eq(HttpMethod.GET), any(HttpEntity.class), ArgumentMatchers.<Class<ObjectNode>>any())
+    ).thenReturn(ResponseEntity.ok(user));
   }
 
   private void mockRestTimeout() {
-    when(rest.exchange(eq("http://jhipster.test"), eq(HttpMethod.GET), any(HttpEntity.class), ArgumentMatchers.<Class<ObjectNode>>any()))
-      .thenThrow(new ResourceAccessException(null, new SocketTimeoutException()));
+    when(
+      rest.exchange(eq("http://jhipster.test"), eq(HttpMethod.GET), any(HttpEntity.class), ArgumentMatchers.<Class<ObjectNode>>any())
+    ).thenThrow(new ResourceAccessException(null, new SocketTimeoutException()));
   }
 }

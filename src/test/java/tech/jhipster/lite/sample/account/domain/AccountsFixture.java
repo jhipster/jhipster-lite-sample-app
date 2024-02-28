@@ -10,8 +10,7 @@ public final class AccountsFixture {
   private AccountsFixture() {}
 
   public static Account account() {
-    return Account
-      .builder()
+    return Account.builder()
       .username(username())
       .firstname(firstname())
       .lastname(lastname())

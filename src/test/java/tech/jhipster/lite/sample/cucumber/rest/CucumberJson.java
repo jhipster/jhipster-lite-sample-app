@@ -19,8 +19,7 @@ final class CucumberJson {
   private CucumberJson() {}
 
   public static ObjectMapper jsonMapper() {
-    return JsonMapper
-      .builder()
+    return JsonMapper.builder()
       .serializationInclusion(JsonInclude.Include.NON_NULL)
       .addModule(new JavaTimeModule())
       .addModules(new Jdk8Module())

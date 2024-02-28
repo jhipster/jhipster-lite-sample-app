@@ -36,9 +36,9 @@ public final class Enums {
     private <To extends Enum<To>> Function<CacheKey<?, ?>, Map<Enum<?>, Enum<?>>> buildCache(Enum<?> from) {
       return key -> {
         try {
-          return Arrays
-            .stream(key.from().getEnumConstants())
-            .collect(Collectors.toMap(Function.identity(), source -> Enum.valueOf(key.to(), source.name())));
+          return Arrays.stream(key.from().getEnumConstants()).collect(
+            Collectors.toMap(Function.identity(), source -> Enum.valueOf(key.to(), source.name()))
+          );
         } catch (IllegalArgumentException e) {
           throw new UnmappableEnumException(from.getClass(), key.to());
         }

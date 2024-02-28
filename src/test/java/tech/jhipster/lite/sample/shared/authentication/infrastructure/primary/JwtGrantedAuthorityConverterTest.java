@@ -20,12 +20,11 @@ import tech.jhipster.lite.sample.shared.authentication.domain.Role;
 class JwtGrantedAuthorityConverterTest {
 
   @InjectMocks
-  JwtGrantedAuthorityConverter jwtGrantedAuthorityConverter;
+  private JwtGrantedAuthorityConverter jwtGrantedAuthorityConverter;
 
   @Test
   void shouldConvert() {
-    Jwt jwt = Jwt
-      .withTokenValue("token")
+    Jwt jwt = Jwt.withTokenValue("token")
       .header("alg", JwsAlgorithms.RS256)
       .subject("jhipster")
       .claim("roles", List.of("ROLE_ADMIN"))

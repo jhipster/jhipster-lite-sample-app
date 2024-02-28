@@ -13,8 +13,7 @@ class BeersTest {
 
   @Test
   void shouldSortBeersByNames() {
-    Beer anteMeridiem = Beer
-      .builder()
+    Beer anteMeridiem = Beer.builder()
       .id(anteMeridiemId())
       .name(new BeerName("Ante Meridiem"))
       .unitPrice(anteMeridiemUnitPrice())

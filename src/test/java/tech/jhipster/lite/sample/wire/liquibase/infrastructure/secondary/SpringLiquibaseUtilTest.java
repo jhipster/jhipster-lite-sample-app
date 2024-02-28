@@ -169,7 +169,8 @@ class SpringLiquibaseUtilTest {
     DataSourceProperties dataSourceProperties = new DataSourceProperties();
     dataSourceProperties.setPassword("password");
 
-    assertThatThrownBy(() ->
+    assertThatThrownBy(
+      () ->
         SpringLiquibaseUtil.createAsyncSpringLiquibase(
           null,
           null,
@@ -178,8 +179,7 @@ class SpringLiquibaseUtilTest {
           normalDataSource,
           dataSourceProperties
         )
-      )
-      .isExactlyInstanceOf(NullPointerException.class);
+    ).isExactlyInstanceOf(NullPointerException.class);
   }
 
   @Test
@@ -192,7 +192,8 @@ class SpringLiquibaseUtilTest {
     DataSourceProperties dataSourceProperties = new DataSourceProperties();
     dataSourceProperties.setPassword("password");
 
-    assertThatThrownBy(() ->
+    assertThatThrownBy(
+      () ->
         SpringLiquibaseUtil.createAsyncSpringLiquibase(
           null,
           null,
@@ -201,7 +202,6 @@ class SpringLiquibaseUtilTest {
           normalDataSource,
           dataSourceProperties
         )
-      )
-      .isExactlyInstanceOf(NullPointerException.class);
+    ).isExactlyInstanceOf(NullPointerException.class);
   }
 }

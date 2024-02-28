@@ -37,8 +37,7 @@ class NameTest {
 
   @Test
   void shouldSortNames() {
-    List<Name> names = Stream
-      .of(null, new Name("paul", "Dupond"), new Name("jean", "Dupont"), new Name("jean", "Dupond"))
+    List<Name> names = Stream.of(null, new Name("paul", "Dupond"), new Name("jean", "Dupont"), new Name("jean", "Dupond"))
       .sorted()
       .toList();
 

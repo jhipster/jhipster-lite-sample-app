@@ -10,8 +10,7 @@ class BeersAccessesConfiguration {
 
   @Bean
   RolesAccesses beersAccesses() {
-    return RolesAccesses
-      .builder()
+    return RolesAccesses.builder()
       .role(Role.ADMIN)
       .allAuthorized("create", BeerResource.BEERS)
       .allAuthorized("remove", BeerResource.BEERS)

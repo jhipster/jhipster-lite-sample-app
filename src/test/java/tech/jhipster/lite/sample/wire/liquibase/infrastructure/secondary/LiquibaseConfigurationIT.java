@@ -17,7 +17,7 @@ class LiquibaseConfigurationIT {
   class Async {
 
     @Autowired
-    ApplicationContext applicationContext;
+    private ApplicationContext applicationContext;
 
     @Test
     void shouldGetLiquibaseAsync() {
@@ -32,7 +32,7 @@ class LiquibaseConfigurationIT {
   class Sync {
 
     @Autowired
-    ApplicationContext applicationContext;
+    private ApplicationContext applicationContext;
 
     @Test
     void shouldGetLiquibaseSync() {

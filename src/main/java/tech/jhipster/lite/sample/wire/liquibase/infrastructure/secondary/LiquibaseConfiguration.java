@@ -45,24 +45,22 @@ class LiquibaseConfiguration {
     SpringLiquibase liquibase;
     if (async) {
       log.debug("Configuring Liquibase with async");
-      liquibase =
-        SpringLiquibaseUtil.createAsyncSpringLiquibase(
-          this.env,
-          executor,
-          liquibaseDataSource.getIfAvailable(),
-          liquibaseProperties,
-          dataSource.getIfUnique(),
-          dataSourceProperties
-        );
+      liquibase = SpringLiquibaseUtil.createAsyncSpringLiquibase(
+        this.env,
+        executor,
+        liquibaseDataSource.getIfAvailable(),
+        liquibaseProperties,
+        dataSource.getIfUnique(),
+        dataSourceProperties
+      );
     } else {
       log.debug("Configuring Liquibase with sync");
-      liquibase =
-        SpringLiquibaseUtil.createSpringLiquibase(
-          liquibaseDataSource.getIfAvailable(),
-          liquibaseProperties,
-          dataSource.getIfUnique(),
-          dataSourceProperties
-        );
+      liquibase = SpringLiquibaseUtil.createSpringLiquibase(
+        liquibaseDataSource.getIfAvailable(),
+        liquibaseProperties,
+        dataSource.getIfUnique(),
+        dataSourceProperties
+      );
     }
     liquibase.setChangeLog(changeLogClassPath);
     liquibase.setContexts(liquibaseProperties.getContexts());

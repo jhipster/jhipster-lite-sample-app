@@ -1,6 +1,6 @@
 # Usage
 
-Before you can analyse your project, you must launch sonar with the following command
+Before you can analyze your project, you must launch sonar with the following command
 
 ```bash
 docker compose -f src/main/docker/sonar.yml up -d

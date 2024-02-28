@@ -16,7 +16,7 @@ class AnnotationArchTest {
   private static final String ROOT_PACKAGE_PROJECT = ROOT_PACKAGE + "..";
 
   //@formatter:off
-  JavaClasses classes = new ClassFileImporter()
+  private JavaClasses classes = new ClassFileImporter()
     .importPackages(ROOT_PACKAGE)
     .that(
       are(

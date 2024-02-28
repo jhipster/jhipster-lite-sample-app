@@ -71,14 +71,14 @@ public final class RolesAccesses {
   public RolesAccesses merge(RolesAccesses other) {
     Assert.notNull("other", other);
 
-    Map<Role, Accesses> mergedRoles = Stream
-      .concat(roles.entrySet().stream(), other.roles.entrySet().stream())
-      .collect(Collectors.toUnmodifiableMap(Map.Entry::getKey, Map.Entry::getValue, Accesses::merge));
+    Map<Role, Accesses> mergedRoles = Stream.concat(roles.entrySet().stream(), other.roles.entrySet().stream()).collect(
+      Collectors.toUnmodifiableMap(Map.Entry::getKey, Map.Entry::getValue, Accesses::merge)
+    );
 
     return new RolesAccesses(mergedRoles);
   }
 
-  public static class RolesAccessesBuilder {
+  public static final class RolesAccessesBuilder {
 
     private final Map<Role, RoleAccessesBuilder> roles = new ConcurrentHashMap<>();
 

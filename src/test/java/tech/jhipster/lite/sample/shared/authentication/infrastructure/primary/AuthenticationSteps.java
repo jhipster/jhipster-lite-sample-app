@@ -68,7 +68,7 @@ public class AuthenticationSteps {
     return "Trying to authenticate an unknown user: " + user;
   }
 
-  private static class UsersBuilder {
+  private static final class UsersBuilder {
 
     private Map<String, User> users = new ConcurrentHashMap<>();
 
@@ -92,8 +92,7 @@ public class AuthenticationSteps {
     }
 
     private String token() {
-      return Jwts
-        .builder()
+      return Jwts.builder()
         .setSubject("authentication")
         .signWith(CucumberAuthenticationConfiguration.JWT_KEY)
         .setClaims(claims)

@@ -63,8 +63,7 @@ class RolesAccessesTest {
 
   @Test
   void shouldMergeAccesses() {
-    RolesAccesses initial = RolesAccesses
-      .builder()
+    RolesAccesses initial = RolesAccesses.builder()
       .role(Role.USER)
       .allAuthorized("read", TestResource.USERS)
       .specificAuthorized("update", TestResource.USERS)

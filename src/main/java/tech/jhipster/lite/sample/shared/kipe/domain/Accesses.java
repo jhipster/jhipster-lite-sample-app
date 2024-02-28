@@ -13,7 +13,7 @@ import java.util.stream.Stream;
 import tech.jhipster.lite.sample.shared.error.domain.Assert;
 import tech.jhipster.lite.sample.shared.kipe.domain.RolesAccesses.RolesAccessesBuilder;
 
-public class Accesses {
+public final class Accesses {
 
   private final Map<Action, Map<String, Boolean>> actionsAccesses;
 
@@ -62,18 +62,19 @@ public class Accesses {
   }
 
   Accesses merge(Accesses other) {
-    Map<Action, Map<String, Boolean>> mergedAccesses = Stream
-      .concat(actionsAccesses.entrySet().stream(), other.actionsAccesses.entrySet().stream())
-      .collect(Collectors.toUnmodifiableMap(Map.Entry::getKey, Map.Entry::getValue, mergeResourceAccesses()));
+    Map<Action, Map<String, Boolean>> mergedAccesses = Stream.concat(
+      actionsAccesses.entrySet().stream(),
+      other.actionsAccesses.entrySet().stream()
+    ).collect(Collectors.toUnmodifiableMap(Map.Entry::getKey, Map.Entry::getValue, mergeResourceAccesses()));
 
     return new Accesses(mergedAccesses);
   }
 
   private BinaryOperator<Map<String, Boolean>> mergeResourceAccesses() {
     return (first, second) ->
-      Stream
-        .concat(first.entrySet().stream(), second.entrySet().stream())
-        .collect(Collectors.toUnmodifiableMap(Map.Entry::getKey, Map.Entry::getValue, mergeAccessesScopes()));
+      Stream.concat(first.entrySet().stream(), second.entrySet().stream()).collect(
+        Collectors.toUnmodifiableMap(Map.Entry::getKey, Map.Entry::getValue, mergeAccessesScopes())
+      );
   }
 
   private BinaryOperator<Boolean> mergeAccessesScopes() {
@@ -86,7 +87,7 @@ public class Accesses {
     };
   }
 
-  public static class RoleAccessesBuilder {
+  public static final class RoleAccessesBuilder {
 
     private final RolesAccessesBuilder source;
     private final Collection<Access> accesses = Collections.newSetFromMap(new ConcurrentHashMap<>());

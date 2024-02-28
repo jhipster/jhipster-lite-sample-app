@@ -20,7 +20,7 @@ class CorsFilterConfigurationIT {
   class CorsFilterDefault {
 
     @Autowired
-    CorsFilter corsFilter;
+    private CorsFilter corsFilter;
 
     @Test
     void shouldCorsFilter() {
@@ -33,7 +33,7 @@ class CorsFilterConfigurationIT {
   class CorsFilterEmpty {
 
     @Autowired
-    CorsFilter corsFilter;
+    private CorsFilter corsFilter;
 
     @Test
     void shouldCorsFilter() {
@@ -50,7 +50,7 @@ class CorsFilterConfigurationIT {
   class CorsFilterWithAllowedOriginPatterns {
 
     @Autowired
-    CorsFilter corsFilter;
+    private CorsFilter corsFilter;
 
     @Test
     void shouldCorsFilter() {

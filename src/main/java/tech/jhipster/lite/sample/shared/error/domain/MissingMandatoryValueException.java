@@ -1,6 +1,6 @@
 package tech.jhipster.lite.sample.shared.error.domain;
 
-public class MissingMandatoryValueException extends AssertionException {
+public final class MissingMandatoryValueException extends AssertionException {
 
   private MissingMandatoryValueException(String field, String message) {
     super(field, message);

@@ -32,7 +32,7 @@ export default defineConfig({
         branches: 100,
         statements: 100,
       },
-      exclude: ['src/main/webapp/**/*.component.ts', 'src/main/webapp/app/main.ts', '.eslintrc.js', '.lintstagedrc.js', 'src/test/**/*', 'target/**'],
+      exclude: ['src/main/webapp/**/*.component.ts', 'src/main/webapp/app/main.ts', '.eslintrc.js', '.lintstagedrc.cjs', 'src/test/**/*', 'target/**'],
       provider: 'istanbul',
       reportsDirectory: 'target/test-results/',
       reporter: ['html', 'json-summary', 'text', 'text-summary', 'lcov', 'clover'],

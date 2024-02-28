@@ -97,10 +97,9 @@ class CucumberRestTestContextUnitTest {
       fail(e.getMessage());
     }
 
-    assertThatThrownBy(() ->
-        CucumberRestTestContext.addResponse(mockedRequest("/"), httpResponse, mock(ClientHttpRequestExecution.class), "body".getBytes())
-      )
-      .isExactlyInstanceOf(AssertionError.class);
+    assertThatThrownBy(
+      () -> CucumberRestTestContext.addResponse(mockedRequest("/"), httpResponse, mock(ClientHttpRequestExecution.class), "body".getBytes())
+    ).isExactlyInstanceOf(AssertionError.class);
   }
 
   @Test

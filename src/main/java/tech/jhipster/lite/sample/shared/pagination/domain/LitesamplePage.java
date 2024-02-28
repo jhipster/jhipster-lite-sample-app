@@ -5,7 +5,7 @@ import java.util.function.Function;
 import tech.jhipster.lite.sample.shared.collection.domain.LitesampleCollections;
 import tech.jhipster.lite.sample.shared.error.domain.Assert;
 
-public class LitesamplePage<T> {
+public final class LitesamplePage<T> {
 
   private static final int MINIMAL_PAGE_COUNT = 1;
 
@@ -103,7 +103,7 @@ public class LitesamplePage<T> {
       .build();
   }
 
-  public static class LitesamplePageBuilder<T> {
+  public static final class LitesamplePageBuilder<T> {
 
     private final List<T> content;
     private int currentPage;

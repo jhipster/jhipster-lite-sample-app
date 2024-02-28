@@ -21,8 +21,10 @@ class BeerOrderTest {
   void shouldGetConsolidatedOrderLines() {
     BeerOrder order = beerOrder();
 
-    assertThat(order.lines())
-      .containsExactlyInAnyOrder(new BeerOrderLine(orderedCloakOfFeather(), 2), new BeerOrderLine(orderedAnteMeridiem(), 3));
+    assertThat(order.lines()).containsExactlyInAnyOrder(
+      new BeerOrderLine(orderedCloakOfFeather(), 2),
+      new BeerOrderLine(orderedAnteMeridiem(), 3)
+    );
   }
 
   @Test

@@ -9,10 +9,6 @@ public class FakeRequestAttributes extends AbstractRequestAttributes {
     super.requestCompleted();
   }
 
-  public FakeRequestAttributes() {
-    super();
-  }
-
   @Override
   protected void updateAccessedSessionAttributes() {
     // do nothing

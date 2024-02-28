@@ -17,7 +17,7 @@ public final class BeanValidationAssertions {
     return new BeanAsserter<>(bean);
   }
 
-  public static class BeanAsserter<T> {
+  public static final class BeanAsserter<T> {
 
     private static final Validator validator = Validation.buildDefaultValidatorFactory().getValidator();
     private final Set<ConstraintViolation<T>> violations;
@@ -47,7 +47,7 @@ public final class BeanValidationAssertions {
     }
   }
 
-  public static class InvalidPropertyAsserter<T> {
+  public static final class InvalidPropertyAsserter<T> {
 
     private final BeanAsserter<T> beanAsserter;
     private final ConstraintViolation<T> violation;

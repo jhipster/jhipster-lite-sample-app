@@ -27,8 +27,7 @@ class OAuth2AuthenticationReader {
   private Account toAccount(Authentication authentication) {
     Map<String, Object> attributes = readAttributes(authentication);
 
-    return Account
-      .builder()
+    return Account.builder()
       .username((String) attributes.get("preferred_username"))
       .firstname(readFirstname(attributes))
       .lastname((String) attributes.get("family_name"))

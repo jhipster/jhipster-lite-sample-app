@@ -7,7 +7,7 @@ import tech.jhipster.lite.sample.account.domain.Account;
 import tech.jhipster.lite.sample.shared.authentication.domain.Role;
 
 @Schema(name = "user", description = "Information for an user")
-class RestAccount {
+final class RestAccount {
 
   private final String username;
   private final String name;

@@ -2,47 +2,76 @@ package tech.jhipster.lite.sample.shared.error.domain;
 
 import java.time.Instant;
 
-public class NotAfterTimeException extends AssertionException {
+public final class NotAfterTimeException extends AssertionException {
 
   private NotAfterTimeException(String field, String message) {
     super(field, message);
   }
 
-  public static NotAfterTimeExceptionBuilder field(String fieldName, Instant value) {
-    return new NotAfterTimeExceptionBuilder(fieldName, value);
-  }
-
-  record NotAfterTimeExceptionBuilder(String fieldName, Instant value) {
-    public NotAfterTimeException strictlyNotAfter(Instant other) {
-      return build("must be strictly after", other);
-    }
-
-    public NotAfterTimeException notAfter(Instant other) {
-      return build("must be after", other);
-    }
-
-    private NotAfterTimeException build(String hint, Instant other) {
-      return new NotAfterTimeException(fieldName, message(fieldName, value, hint, other));
-    }
-
-    private static String message(String fieldName, Instant actual, String hint, Instant other) {
-      return new StringBuilder()
-        .append("Time in \"")
-        .append(fieldName)
-        .append("\" ")
-        .append("having value : ")
-        .append(actual)
-        .append(' ')
-        .append(hint)
-        .append(" ")
-        .append(other)
-        .append(" but wasn't")
-        .toString();
-    }
-  }
-
   @Override
   public AssertionErrorType type() {
     return AssertionErrorType.NOT_AFTER_TIME;
+  }
+
+  public static NotAfterTimeExceptionValueBuilder strictlyNotAfter() {
+    return new NotAfterTimeExceptionBuilder("must be strictly after");
+  }
+
+  public static NotAfterTimeExceptionValueBuilder notAfter() {
+    return new NotAfterTimeExceptionBuilder("must be after");
+  }
+
+  public static final class NotAfterTimeExceptionBuilder
+    implements NotAfterTimeExceptionValueBuilder, NotAfterTimeExceptionFieldBuilder, NotAfterTimeExceptionOtherBuilder {
+
+    private final String hint;
+    private Instant value;
+    private String field;
+    private Instant other;
+
+    private NotAfterTimeExceptionBuilder(String hint) {
+      this.hint = hint;
+    }
+
+    @Override
+    public NotAfterTimeExceptionFieldBuilder value(Instant value) {
+      this.value = value;
+
+      return this;
+    }
+
+    @Override
+    public NotAfterTimeExceptionOtherBuilder field(String field) {
+      this.field = field;
+
+      return this;
+    }
+
+    @Override
+    public NotAfterTimeException other(Instant other) {
+      this.other = other;
+
+      return build();
+    }
+
+    private NotAfterTimeException build() {
+      return new NotAfterTimeException(field, message());
+    }
+
+    private String message() {
+      return "Time %s in \"%s\" %s %s but wasn't".formatted(value, field, hint, other);
+    }
+  }
+
+  public interface NotAfterTimeExceptionValueBuilder {
+    NotAfterTimeExceptionFieldBuilder value(Instant value);
+  }
+
+  public interface NotAfterTimeExceptionFieldBuilder {
+    NotAfterTimeExceptionOtherBuilder field(String field);
+  }
+
+  public interface NotAfterTimeExceptionOtherBuilder {
+    NotAfterTimeException other(Instant other);
   }
 }

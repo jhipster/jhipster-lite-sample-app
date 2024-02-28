@@ -2,47 +2,76 @@ package tech.jhipster.lite.sample.shared.error.domain;
 
 import java.time.Instant;
 
-public class NotBeforeTimeException extends AssertionException {
+public final class NotBeforeTimeException extends AssertionException {
 
   private NotBeforeTimeException(String field, String message) {
     super(field, message);
   }
 
-  public static NotBeforeTimeException.NotBeforeTimeExceptionBuilder field(String fieldName, Instant value) {
-    return new NotBeforeTimeException.NotBeforeTimeExceptionBuilder(fieldName, value);
-  }
-
-  public record NotBeforeTimeExceptionBuilder(String fieldName, Instant value) {
-    public NotBeforeTimeException strictlyNotBefore(Instant other) {
-      return build("must be strictly before", other);
-    }
-
-    public NotBeforeTimeException notBefore(Instant other) {
-      return build("must be before", other);
-    }
-
-    private NotBeforeTimeException build(String hint, Instant other) {
-      return new NotBeforeTimeException(fieldName, message(fieldName, value, hint, other));
-    }
-
-    private static String message(String fieldName, Instant actual, String hint, Instant other) {
-      return new StringBuilder()
-        .append("Time in \"")
-        .append(fieldName)
-        .append("\" ")
-        .append("having value : ")
-        .append(actual)
-        .append(' ')
-        .append(hint)
-        .append(" ")
-        .append(other)
-        .append(" but wasn't")
-        .toString();
-    }
-  }
-
   @Override
   public AssertionErrorType type() {
     return AssertionErrorType.NOT_BEFORE_TIME;
+  }
+
+  public static NotBeforeTimeExceptionValueBuilder strictlyNotBefore() {
+    return new NotBeforeTimeExceptionBuilder("must be strictly before");
+  }
+
+  public static NotBeforeTimeExceptionValueBuilder notBefore() {
+    return new NotBeforeTimeExceptionBuilder("must be before");
+  }
+
+  public static final class NotBeforeTimeExceptionBuilder
+    implements NotBeforeTimeExceptionValueBuilder, NotBeforeTimeExceptionFieldBuilder, NotBeforeTimeExceptionOtherBuilder {
+
+    private final String hint;
+    private Instant value;
+    private String field;
+    private Instant other;
+
+    private NotBeforeTimeExceptionBuilder(String hint) {
+      this.hint = hint;
+    }
+
+    @Override
+    public NotBeforeTimeExceptionFieldBuilder value(Instant value) {
+      this.value = value;
+
+      return this;
+    }
+
+    @Override
+    public NotBeforeTimeExceptionOtherBuilder field(String field) {
+      this.field = field;
+
+      return this;
+    }
+
+    @Override
+    public NotBeforeTimeException other(Instant other) {
+      this.other = other;
+
+      return build();
+    }
+
+    private NotBeforeTimeException build() {
+      return new NotBeforeTimeException(field, message());
+    }
+
+    private String message() {
+      return "Time %s in \"%s\" %s %s but wasn't".formatted(value, field, hint, other);
+    }
+  }
+
+  public interface NotBeforeTimeExceptionValueBuilder {
+    NotBeforeTimeExceptionFieldBuilder value(Instant value);
+  }
+
+  public interface NotBeforeTimeExceptionFieldBuilder {
+    NotBeforeTimeExceptionOtherBuilder field(String field);
+  }
+
+  public interface NotBeforeTimeExceptionOtherBuilder {
+    NotBeforeTimeException other(Instant other);
   }
 }

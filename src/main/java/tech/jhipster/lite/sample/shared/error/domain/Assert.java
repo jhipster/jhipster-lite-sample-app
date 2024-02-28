@@ -20,7 +20,7 @@ import java.util.stream.Stream;
  * related validation you should create your own exception and code dedicated to that check
  * </p>
  */
-public class Assert {
+public final class Assert {
 
   private Assert() {}
 
@@ -314,7 +314,7 @@ public class Assert {
   /**
    * Asserter dedicated to {@link String} assertions
    */
-  public static class StringAsserter {
+  public static final class StringAsserter {
 
     private final String field;
     private final String value;
@@ -405,7 +405,7 @@ public class Assert {
   /**
    * Asserter dedicated to Integer values (int and {@link Integer})
    */
-  public static class IntegerAsserter {
+  public static final class IntegerAsserter {
 
     private final String field;
     private final Integer value;
@@ -474,7 +474,7 @@ public class Assert {
   /**
    * Asserter dedicated to long values (long and {@link Long})
    */
-  public static class LongAsserter {
+  public static final class LongAsserter {
 
     private final String field;
     private final Long value;
@@ -543,7 +543,7 @@ public class Assert {
   /**
    * Asserter dedicated to float values (float and {@link Float})
    */
-  public static class FloatAsserter {
+  public static final class FloatAsserter {
 
     private final String field;
     private final Float value;
@@ -675,7 +675,7 @@ public class Assert {
   /**
    * Asserter dedicated to double values (double and {@link Double})
    */
-  public static class DoubleAsserter {
+  public static final class DoubleAsserter {
 
     private final String field;
     private final Double value;
@@ -807,7 +807,7 @@ public class Assert {
   /**
    * Asserter dedicated to {@link BigDecimal} assertions
    */
-  public static class BigDecimalAsserter {
+  public static final class BigDecimalAsserter {
 
     private final String field;
     private final BigDecimal value;
@@ -1016,7 +1016,7 @@ public class Assert {
   /**
    * Asserter dedicated to {@link Collection} assertions
    */
-  public static class CollectionAsserter<T> {
+  public static final class CollectionAsserter<T> {
 
     private final String field;
     private final Collection<T> value;
@@ -1104,7 +1104,7 @@ public class Assert {
   /**
    * Asserter dedicated to arrays assertions
    */
-  public static class ArrayAsserter<T> {
+  public static final class ArrayAsserter<T> {
 
     private final String field;
     private final T[] value;
@@ -1192,7 +1192,7 @@ public class Assert {
   /**
    * Asserter dedicated to instant value
    */
-  public static class InstantAsserter {
+  public static final class InstantAsserter {
 
     private static final String OTHER_FIELD_NAME = "other";
 
@@ -1233,7 +1233,7 @@ public class Assert {
       Assert.notNull(OTHER_FIELD_NAME, other);
 
       if (value.compareTo(other) <= 0) {
-        throw NotAfterTimeException.field(field, value).strictlyNotAfter(other);
+        throw NotAfterTimeException.strictlyNotAfter().value(value).field(field).other(other);
       }
 
       return this;
@@ -1255,7 +1255,7 @@ public class Assert {
       Assert.notNull(OTHER_FIELD_NAME, other);
 
       if (value.compareTo(other) < 0) {
-        throw NotAfterTimeException.field(field, value).notAfter(other);
+        throw NotAfterTimeException.notAfter().value(value).field(field).other(other);
       }
 
       return this;
@@ -1290,7 +1290,7 @@ public class Assert {
       Assert.notNull(OTHER_FIELD_NAME, other);
 
       if (value.compareTo(other) >= 0) {
-        throw NotBeforeTimeException.field(field, value).strictlyNotBefore(other);
+        throw NotBeforeTimeException.strictlyNotBefore().value(value).field(field).other(other);
       }
 
       return this;
@@ -1312,7 +1312,7 @@ public class Assert {
       Assert.notNull(OTHER_FIELD_NAME, other);
 
       if (value.compareTo(other) > 0) {
-        throw NotBeforeTimeException.field(field, value).notBefore(other);
+        throw NotBeforeTimeException.notBefore().value(value).field(field).other(other);
       }
 
       return this;

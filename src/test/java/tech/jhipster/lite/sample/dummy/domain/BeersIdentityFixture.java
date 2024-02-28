@@ -3,7 +3,7 @@ package tech.jhipster.lite.sample.dummy.domain;
 import java.math.BigDecimal;
 import java.util.UUID;
 
-public class BeersIdentityFixture {
+public final class BeersIdentityFixture {
 
   private BeersIdentityFixture() {}
 

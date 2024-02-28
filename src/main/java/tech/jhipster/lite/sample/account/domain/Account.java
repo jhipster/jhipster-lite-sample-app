@@ -11,7 +11,7 @@ import tech.jhipster.lite.sample.shared.useridentity.domain.Firstname;
 import tech.jhipster.lite.sample.shared.useridentity.domain.Lastname;
 import tech.jhipster.lite.sample.shared.useridentity.domain.Name;
 
-public class Account {
+public final class Account {
 
   private final Username username;
   private final Name name;
@@ -50,7 +50,7 @@ public class Account {
     return roles;
   }
 
-  private static class UserBuilder
+  private static final class UserBuilder
     implements
       AccountUsernameBuilder,
       AccountFirstnameBuilder,

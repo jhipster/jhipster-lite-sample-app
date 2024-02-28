@@ -6,7 +6,7 @@ import tech.jhipster.lite.sample.dummy.domain.beer.Beers;
 import tech.jhipster.lite.sample.shared.error.domain.Assert;
 
 @Schema(name = "beers", description = "Some beers")
-class RestBeers {
+final class RestBeers {
 
   private final Collection<RestBeer> beers;
 

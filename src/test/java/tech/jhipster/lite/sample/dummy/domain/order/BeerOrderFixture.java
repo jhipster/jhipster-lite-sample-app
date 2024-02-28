@@ -2,7 +2,7 @@ package tech.jhipster.lite.sample.dummy.domain.order;
 
 import static tech.jhipster.lite.sample.dummy.domain.BeersIdentityFixture.*;
 
-public class BeerOrderFixture {
+public final class BeerOrderFixture {
 
   private BeerOrderFixture() {}
 

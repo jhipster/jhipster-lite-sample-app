@@ -149,9 +149,9 @@ class AsyncSpringLiquibaseTest {
       DataSource source = mock(DataSource.class);
       try {
         doReturn(mock(Connection.class)).when(source).getConnection();
-      } catch (SQLException x) {
+      } catch (SQLException exception) {
         // This should never happen
-        throw new AssertionError(x);
+        throw new AssertionError(exception);
       }
       return source;
     }
@@ -166,9 +166,9 @@ class AsyncSpringLiquibaseTest {
     protected void performUpdate(Liquibase liquibase) {
       try {
         Thread.sleep(fakeDuration.toMillis());
-      } catch (InterruptedException x) {
+      } catch (InterruptedException exception) {
         // This should never happen
-        throw new Error(x);
+        throw new Error(exception);
       }
     }
   }

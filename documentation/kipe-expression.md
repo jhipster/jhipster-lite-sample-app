@@ -1,8 +1,8 @@
 # Kipe Expression
 
-Kipe can be pronounced, in french, as "qui peut" which means: who can.  
+Kipe can be pronounced, in French, as "qui peut" which means: who can.
 
-It is an authorization evaluation mechanism build on top of spring security. Kipe is there to ease business facing authorization checks.  
+It is an authorization evaluation mechanism built on top of spring security. Kipe is there to ease business facing authorization checks.
 
 It will allow you to use a new `can('action', #element)` expression in `@PreAuthorize` and `@PostAuthorize`:
 

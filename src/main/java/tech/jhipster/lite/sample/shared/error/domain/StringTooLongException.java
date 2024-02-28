@@ -2,7 +2,7 @@ package tech.jhipster.lite.sample.shared.error.domain;
 
 import java.util.Map;
 
-public class StringTooLongException extends AssertionException {
+public final class StringTooLongException extends AssertionException {
 
   private final String maxLength;
   private final String currentLength;
@@ -17,7 +17,7 @@ public class StringTooLongException extends AssertionException {
     return new StringTooLongExceptionBuilder();
   }
 
-  static class StringTooLongExceptionBuilder {
+  static final class StringTooLongExceptionBuilder {
 
     private String value;
     private int maxLength;
@@ -44,14 +44,7 @@ public class StringTooLongException extends AssertionException {
     }
 
     private String message() {
-      return new StringBuilder()
-        .append("The value in field \"")
-        .append(field)
-        .append("\" must be at most ")
-        .append(maxLength)
-        .append(" long but was ")
-        .append(value.length())
-        .toString();
+      return "The value \"%s\" in field \"%s\" must be at most %d long but was %d".formatted(value, field, maxLength, value.length());
     }
 
     public StringTooLongException build() {

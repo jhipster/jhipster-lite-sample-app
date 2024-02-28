@@ -78,8 +78,9 @@ class LitesampleAuthorizationsTest {
 
     @Test
     void shouldNotGetAuthenticatedUserUsernameForUnknownAuthentication() {
-      assertThatThrownBy(() -> authorizations.getUsername(TestAuthentications.user(null)))
-        .isExactlyInstanceOf(UnknownAuthenticationException.class);
+      assertThatThrownBy(() -> authorizations.getUsername(TestAuthentications.user(null))).isExactlyInstanceOf(
+        UnknownAuthenticationException.class
+      );
     }
 
     private static Stream<Arguments> allValidAuthentications() {

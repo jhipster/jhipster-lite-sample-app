@@ -2,7 +2,7 @@ package tech.jhipster.lite.sample.shared.error.domain;
 
 import java.util.Map;
 
-public class NumberValueTooHighException extends AssertionException {
+public final class NumberValueTooHighException extends AssertionException {
 
   private final String max;
   private final String value;

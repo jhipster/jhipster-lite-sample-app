@@ -2,7 +2,7 @@ package tech.jhipster.lite.sample.shared.error.domain;
 
 import java.util.Map;
 
-public class StringTooShortException extends AssertionException {
+public final class StringTooShortException extends AssertionException {
 
   private final String minLength;
   private final String currentLength;
@@ -17,7 +17,7 @@ public class StringTooShortException extends AssertionException {
     return new StringTooShortExceptionBuilder();
   }
 
-  static class StringTooShortExceptionBuilder {
+  static final class StringTooShortExceptionBuilder {
 
     private String value;
     private int minLength;
@@ -44,14 +44,7 @@ public class StringTooShortException extends AssertionException {
     }
 
     private String message() {
-      return new StringBuilder()
-        .append("The value in field \"")
-        .append(field)
-        .append("\" must be at least ")
-        .append(minLength)
-        .append(" long but was only ")
-        .append(value.length())
-        .toString();
+      return "The value \"%s\" in field \"%s\" must be at least %d long but was only %d".formatted(value, field, minLength, value.length());
     }
 
     public StringTooShortException build() {

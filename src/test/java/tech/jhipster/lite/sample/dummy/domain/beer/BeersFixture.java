@@ -2,13 +2,12 @@ package tech.jhipster.lite.sample.dummy.domain.beer;
 
 import static tech.jhipster.lite.sample.dummy.domain.BeersIdentityFixture.*;
 
-public class BeersFixture {
+public final class BeersFixture {
 
   private BeersFixture() {}
 
   public static Beer beer() {
-    return Beer
-      .builder()
+    return Beer.builder()
       .id(cloackOfFeathersId())
       .name(cloakOfFeathersName().get())
       .unitPrice(cloakOfFeatherUnitPrice().get())

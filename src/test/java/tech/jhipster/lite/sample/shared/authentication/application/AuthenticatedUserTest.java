@@ -174,8 +174,7 @@ class AuthenticatedUserTest {
   }
 
   private static JwtAuthenticationToken jwtAuthenticationToken() {
-    Jwt jwt = Jwt
-      .withTokenValue("token")
+    Jwt jwt = Jwt.withTokenValue("token")
       .header("alg", JwsAlgorithms.RS256)
       .subject("jhipster")
       .claim("preferred_username", "admin")

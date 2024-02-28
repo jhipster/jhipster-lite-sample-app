@@ -5,7 +5,7 @@ import tech.jhipster.lite.sample.dummy.domain.Amount;
 import tech.jhipster.lite.sample.dummy.domain.BeerId;
 import tech.jhipster.lite.sample.shared.error.domain.Assert;
 
-public class Beer {
+public final class Beer {
 
   private final BeerId id;
   private final BeerName name;

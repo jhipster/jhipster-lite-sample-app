@@ -8,7 +8,7 @@ import tech.jhipster.lite.sample.dummy.domain.beer.Beer;
 import tech.jhipster.lite.sample.shared.error.domain.Assert;
 
 @Schema(name = "beer", description = "A beer")
-class RestBeer {
+final class RestBeer {
 
   private final UUID id;
   private final String name;

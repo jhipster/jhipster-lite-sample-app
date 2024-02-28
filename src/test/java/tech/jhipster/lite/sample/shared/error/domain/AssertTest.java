@@ -19,8 +19,7 @@ import tech.jhipster.lite.sample.UnitTest;
 class AssertTest {
 
   private static final String FIELD_NAME = "fieldName";
-
-  public static final String NOT_NULL_OR_EMPTY = "NotNullOrEmpty";
+  private static final String NOT_NULL_OR_EMPTY = "NotNullOrEmpty";
 
   @Nested
   class NotNullTest {
@@ -1116,8 +1115,9 @@ class AssertTest {
     @ParameterizedTest
     @ValueSource(ints = { 3, 4 })
     void shouldValidateCollectionWithSizeUnderMaxSize(int maxSize) {
-      assertThatCode(() -> Assert.field(FIELD_NAME, new String[] { "value1", "value2", "value3" }).maxSize(maxSize))
-        .doesNotThrowAnyException();
+      assertThatCode(
+        () -> Assert.field(FIELD_NAME, new String[] { "value1", "value2", "value3" }).maxSize(maxSize)
+      ).doesNotThrowAnyException();
     }
 
     @Test

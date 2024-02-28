@@ -5,21 +5,20 @@ import org.assertj.core.api.SoftAssertionsProvider.ThrowingRunnable;
 import org.awaitility.Awaitility;
 import org.awaitility.core.ConditionFactory;
 
-class Awaiter {
+final class Awaiter {
 
   private Awaiter() {}
 
   static void await(Duration maxTime, ThrowingRunnable assertion) {
-    awaiter(maxTime)
-      .untilAsserted(() -> {
-        try {
-          assertion.run();
-        } catch (AssertionError e) {
-          CucumberRestTestContext.retry();
+    awaiter(maxTime).untilAsserted(() -> {
+      try {
+        assertion.run();
+      } catch (AssertionError e) {
+        CucumberRestTestContext.retry();
 
-          assertion.run();
-        }
-      });
+        assertion.run();
+      }
+    });
   }
 
   private static ConditionFactory awaiter(Duration maxTime) {

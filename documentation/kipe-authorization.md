@@ -1,6 +1,6 @@
 # Kipe Authorization
 
-Kipe can be pronounced, in french, as "qui peut" which means: who can.
+Kipe can be pronounced, in French, as "qui peut" which means: who can.
 
 Kipe authorization helps define users authorizations which can be used to define who can do what on which resource.
 
@@ -45,10 +45,10 @@ class RolesConfiguration {
 }
 ```
 
-For each role you'll be able to define multiple accesses. There are 3 things defining an access:
+For each role, you'll be able to define multiple accesses. There are 3 things defining an access:
 
-* The scope: can be `all` or `specific` ; 
-* The action, it's a verb (`read` in the example) ;
+* The scope: can be `all` or `specific`;
+* The action, it's a verb (`read` in the example);
 * The `Resource`.
 
 Once you have defined one (or more) `RolesAccesses` you can inject `LitesampleAuthorizations` and check for authorizations. If you use `kipe-authorization` along with `kipe-expression` you'll be able to define `AccessChecker` looking like this:

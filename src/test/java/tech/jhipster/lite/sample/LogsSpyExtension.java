@@ -55,14 +55,13 @@ public final class LogsSpyExtension
 
   private void injectFields(Class<?> testClass, Object testInstance, Predicate<Field> predicate) {
     predicate = predicate.and(field -> LogsSpy.class.isAssignableFrom(field.getType()));
-    findAnnotatedFields(testClass, Logs.class, predicate)
-      .forEach(field -> {
-        try {
-          field.setAccessible(true);
-          field.set(testInstance, logsSpy);
-        } catch (Exception ex) {
-          throw new RuntimeException(ex);
-        }
-      });
+    findAnnotatedFields(testClass, Logs.class, predicate).forEach(field -> {
+      try {
+        field.setAccessible(true);
+        field.set(testInstance, logsSpy);
+      } catch (Exception ex) {
+        throw new RuntimeException(ex);
+      }
+    });
   }
 }

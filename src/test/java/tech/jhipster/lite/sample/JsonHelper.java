@@ -17,8 +17,7 @@ public final class JsonHelper {
   private JsonHelper() {}
 
   public static ObjectMapper jsonMapper() {
-    return JsonMapper
-      .builder()
+    return JsonMapper.builder()
       .serializationInclusion(JsonInclude.Include.NON_NULL)
       .addModule(new JavaTimeModule())
       .addModules(new Jdk8Module())

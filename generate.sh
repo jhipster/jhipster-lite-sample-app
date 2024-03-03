@@ -104,7 +104,7 @@ applyModules \
   "spring-boot-cucumber-oauth2-authentication" \
   "kipe-expression" \
   "kipe-authorization" \
-  "dummy-feature"
+  "sample-feature"
 
 npm i
 

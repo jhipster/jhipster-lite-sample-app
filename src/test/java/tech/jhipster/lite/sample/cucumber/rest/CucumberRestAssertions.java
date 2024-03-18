@@ -57,7 +57,7 @@ public final class CucumberRestAssertions {
     return CucumberRestTestContext.getResponse().get();
   }
 
-  private static class CallDescription extends Description {
+  private static final class CallDescription extends Description {
 
     @Override
     public String value() {

@@ -1,15 +1,6 @@
 # Usage
 
-Before you can analyze your project, you must launch sonar with the following command
-
-```bash
-docker compose -f src/main/docker/sonar.yml up -d
-```
-
-After that you can launch the analysis of your project with
-```bash
-./mvnw clean verify sonar:sonar
-```
+Follow the [startup instructions in the README](../README.md#start-up)
 
 You can see the result at [http://localhost:9001/](http://localhost:9001/)
 

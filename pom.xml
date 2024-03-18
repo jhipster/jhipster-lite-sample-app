@@ -181,27 +181,27 @@
     <maven.version>3.9.5</maven.version>
     <junit-jupiter.version>5.10.2</junit-jupiter.version>
     <assertj.version>3.25.3</assertj.version>
-    <mockito.version>5.10.0</mockito.version>
-    <jacoco.version>0.8.11</jacoco.version>
+    <mockito.version>5.11.0</mockito.version>
     <maven-enforcer-plugin.version>3.4.1</maven-enforcer-plugin.version>
     <compiler-plugin.version>3.12.1</compiler-plugin.version>
     <surefire-plugin.version>3.2.5</surefire-plugin.version>
     <failsafe-plugin.version>3.2.5</failsafe-plugin.version>
+    <jacoco.version>0.8.11</jacoco.version>
     <commons-lang3.version>3.14.0</commons-lang3.version>
     <spring-boot.version>3.2.3</spring-boot.version>
     <reflections.version>0.10.2</reflections.version>
     <archunit-junit5.version>1.2.1</archunit-junit5.version>
-    <git-commit-id-plugin.version>7.0.0</git-commit-id-plugin.version>
+    <git-commit-id-plugin.version>8.0.1</git-commit-id-plugin.version>
     <node.version>v20.11.1</node.version>
-    <npm.version>10.4.0</npm.version>
+    <npm.version>10.5.0</npm.version>
     <checksum-maven-plugin.version>1.11</checksum-maven-plugin.version>
     <maven-antrun-plugin.version>3.1.0</maven-antrun-plugin.version>
     <frontend-maven-plugin.version>1.15.0</frontend-maven-plugin.version>
-    <sonar-maven-plugin.version>3.10.0.2594</sonar-maven-plugin.version>
+    <sonar-maven-plugin.version>3.11.0.3922</sonar-maven-plugin.version>
     <properties-maven-plugin.version>1.2.1</properties-maven-plugin.version>
-    <testcontainers.version>1.19.6</testcontainers.version>
+    <testcontainers.version>1.19.7</testcontainers.version>
     <liquibase.version>4.26.0</liquibase.version>
-    <springdoc-openapi-starter-webmvc.version>2.3.0</springdoc-openapi-starter-webmvc.version>
+    <springdoc-openapi-starter-webmvc.version>2.4.0</springdoc-openapi-starter-webmvc.version>
     <cucumber.version>7.15.0</cucumber.version>
     <json-web-token.version>0.12.5</json-web-token.version>
   </properties>
@@ -225,6 +225,42 @@
     </resources>
     <pluginManagement>
       <plugins>
+        <plugin>
+          <artifactId>maven-enforcer-plugin</artifactId>
+          <version>${maven-enforcer-plugin.version}</version>
+          <executions>
+            <execution>
+              <id>enforce-versions</id>
+              <goals>
+                <goal>enforce</goal>
+              </goals>
+            </execution>
+            <execution>
+              <id>enforce-dependencyConvergence</id>
+              <goals>
+                <goal>enforce</goal>
+              </goals>
+              <configuration>
+                <rules>
+                  <DependencyConvergence />
+                </rules>
+                <fail>false</fail>
+              </configuration>
+            </execution>
+          </executions>
+          <configuration>
+            <rules>
+              <requireMavenVersion>
+                <message>You are running an older version of Maven: minimum required version is ${maven.version}</message>
+                <version>${maven.version}</version>
+              </requireMavenVersion>
+              <requireJavaVersion>
+                <message>You are running an incompatible version of Java: minimum required version is ${java.version}</message>
+                <version>${java.version}</version>
+              </requireJavaVersion>
+            </rules>
+          </configuration>
+        </plugin>
         <plugin>
           <groupId>org.jacoco</groupId>
           <artifactId>jacoco-maven-plugin</artifactId>
@@ -312,42 +348,6 @@
               </configuration>
             </execution>
           </executions>
-        </plugin>
-        <plugin>
-          <artifactId>maven-enforcer-plugin</artifactId>
-          <version>${maven-enforcer-plugin.version}</version>
-          <executions>
-            <execution>
-              <id>enforce-versions</id>
-              <goals>
-                <goal>enforce</goal>
-              </goals>
-            </execution>
-            <execution>
-              <id>enforce-dependencyConvergence</id>
-              <goals>
-                <goal>enforce</goal>
-              </goals>
-              <configuration>
-                <rules>
-                  <DependencyConvergence />
-                </rules>
-                <fail>false</fail>
-              </configuration>
-            </execution>
-          </executions>
-          <configuration>
-            <rules>
-              <requireMavenVersion>
-                <message>You are running an older version of Maven: minimum required version is ${maven.version}</message>
-                <version>${maven.version}</version>
-              </requireMavenVersion>
-              <requireJavaVersion>
-                <message>You are running an incompatible version of Java: minimum required version is ${java.version}</message>
-                <version>${java.version}</version>
-              </requireJavaVersion>
-            </rules>
-          </configuration>
         </plugin>
         <plugin>
           <groupId>org.springframework.boot</groupId>
@@ -443,11 +443,11 @@
         </configuration>
       </plugin>
       <plugin>
-        <groupId>org.jacoco</groupId>
-        <artifactId>jacoco-maven-plugin</artifactId>
+        <artifactId>maven-enforcer-plugin</artifactId>
       </plugin>
       <plugin>
-        <artifactId>maven-enforcer-plugin</artifactId>
+        <groupId>org.jacoco</groupId>
+        <artifactId>jacoco-maven-plugin</artifactId>
       </plugin>
       <plugin>
         <groupId>org.springframework.boot</groupId>
@@ -575,6 +575,9 @@
             </configuration>
           </execution>
         </executions>
+        <configuration>
+          <installDirectory>${project.build.directory}</installDirectory>
+        </configuration>
       </plugin>
       <plugin>
         <groupId>org.codehaus.mojo</groupId>

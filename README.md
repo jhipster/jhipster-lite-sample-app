@@ -12,8 +12,8 @@ You need to have Java 21:
 
 Before you can build this project, you must install and configure the following dependencies on your machine:
 
-1. [Node.js](https://nodejs.org/): We use Node to run a development web server and build the project.
-   Depending on your system, you can install Node either from source or as a pre-packaged bundle.
+[Node.js](https://nodejs.org/): We use Node to run a development web server and build the project.
+Depending on your system, you can install Node either from source or as a pre-packaged bundle.
 
 After installing Node, you should be able to run the following command to install development tools.
 You will only need to run this command when dependencies change in [package.json](package.json).
@@ -44,7 +44,7 @@ docker compose -f src/main/docker/sonar.yml up -d
 ```
 
 ```bash
-docker compose -f docker compose -f src/main/docker/postgresql.yml up -d up -d
+docker compose -f src/main/docker/postgresql.yml up -d
 ```
 
 ```bash
@@ -68,6 +68,6 @@ docker compose -f src/main/docker/keycloak.yml up -d
 - [Cucumber authentication](documentation/cucumber-authentication.md)
 - [Kipe expression](documentation/kipe-expression.md)
 - [Kipe authorization](documentation/kipe-authorization.md)
-- [Dummy](documentation/dummy.md)
+- [Sample](documentation/sample.md)
 
 <!-- jhipster-needle-documentation -->

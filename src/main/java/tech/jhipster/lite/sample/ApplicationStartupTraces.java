@@ -132,7 +132,7 @@ final class ApplicationStartupTraces {
     return new StringBuilder().append("Config Server: ").append(configServer).append(BREAK).append(SEPARATOR).append(BREAK).toString();
   }
 
-  private static class ApplicationStartupTracesBuilder {
+  private static final class ApplicationStartupTracesBuilder {
 
     private static final String SPACER = "  ";
 

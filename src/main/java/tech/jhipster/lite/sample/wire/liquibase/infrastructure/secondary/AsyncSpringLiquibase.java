@@ -35,23 +35,10 @@ public class AsyncSpringLiquibase extends DataSourceClosingSpringLiquibase {
 
   private final LiquibaseProperties liquibaseProperties;
 
-  /**
-   * <p>Constructor for AsyncSpringLiquibase.</p>
-   *  @param executor a {@link Executor} object.
-   * @param env a {@link Environment} object.
-   * @param liquibaseProperties
-   */
   public AsyncSpringLiquibase(Executor executor, Environment env, LiquibaseProperties liquibaseProperties) {
     this(executor, env, liquibaseProperties, Duration.ofSeconds(5));
   }
 
-  /**
-   * <p>Constructor for AsyncSpringLiquibase.</p>
-   *  @param executor a {@link Executor} object.
-   * @param env a {@link Environment} object.
-   * @param liquibaseProperties
-   * @param slownessThreshold
-   */
   protected AsyncSpringLiquibase(Executor executor, Environment env, LiquibaseProperties liquibaseProperties, Duration slownessThreshold) {
     this.executor = executor;
     this.env = env;

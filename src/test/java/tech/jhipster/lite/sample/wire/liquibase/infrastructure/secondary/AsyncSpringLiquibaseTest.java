@@ -1,6 +1,5 @@
 package tech.jhipster.lite.sample.wire.liquibase.infrastructure.secondary;
 
-import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
 
 import ch.qos.logback.classic.Level;
@@ -104,7 +103,7 @@ class AsyncSpringLiquibaseTest {
   class InitDbTest {
 
     @Test
-    void shouldWarnWhenLiquibaseExecutionIsSlow() throws LiquibaseException, SQLException {
+    void shouldWarnWhenLiquibaseExecutionIsSlow() throws LiquibaseException {
       liquibaseProperties.setEnabled(true);
       Duration slownessThreshold = Duration.ofMillis(50);
       TestAsyncSpringLiquibase asyncSpringLiquibase = spy(
@@ -119,7 +118,7 @@ class AsyncSpringLiquibaseTest {
     }
   }
 
-  private static class DirectExecutor implements Executor {
+  private static final class DirectExecutor implements Executor {
 
     @Override
     public void execute(Runnable command) {

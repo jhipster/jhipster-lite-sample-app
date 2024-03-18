@@ -62,7 +62,7 @@ applyModules \
   "maven-java" \
   "maven-wrapper" \
   "java-base" \
-  "jacoco-check-min-coverage" \
+  "jacoco-with-min-coverage-check" \
   "java-memoizers" \
   "java-enums" \
   "pagination-domain"

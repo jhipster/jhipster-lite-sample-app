@@ -5,21 +5,34 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.assertj.core.api.InstanceOfAssertFactories.type;
 
 import com.zaxxer.hikari.HikariDataSource;
+import java.io.IOException;
+import java.net.URISyntaxException;
+import java.util.Properties;
 import javax.sql.DataSource;
 import liquibase.integration.spring.SpringLiquibase;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.config.YamlPropertiesFactoryBean;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceProperties;
 import org.springframework.boot.autoconfigure.liquibase.DataSourceClosingSpringLiquibase;
 import org.springframework.boot.autoconfigure.liquibase.LiquibaseProperties;
 import org.springframework.boot.jdbc.DataSourceBuilder;
+import org.springframework.core.io.PathResource;
 import tech.jhipster.lite.sample.UnitTest;
 
 @UnitTest
 class SpringLiquibaseUtilTest {
 
+  private static String datasourceUrl;
+
+  @BeforeAll
+  public static void setup() {
+    datasourceUrl = getTestProperties("yaml").getProperty("spring.datasource.url");
+  }
+
   @Test
   void createSpringLiquibaseFromLiquibaseDataSource() {
-    DataSource liquibaseDatasource = DataSourceBuilder.create().url("jdbc:h2:mem:liquibase").username("sa").build();
+    DataSource liquibaseDatasource = DataSourceBuilder.create().url(datasourceUrl).username("sa").build();
     LiquibaseProperties liquibaseProperties = null;
     DataSource normalDataSource = null;
     DataSourceProperties dataSourceProperties = null;
@@ -35,7 +48,7 @@ class SpringLiquibaseUtilTest {
       .extracting(SpringLiquibase::getDataSource)
       .isEqualTo(liquibaseDatasource)
       .asInstanceOf(type(HikariDataSource.class))
-      .hasFieldOrPropertyWithValue("jdbcUrl", "jdbc:h2:mem:liquibase")
+      .hasFieldOrPropertyWithValue("jdbcUrl", datasourceUrl)
       .hasFieldOrPropertyWithValue("username", "sa")
       .hasFieldOrPropertyWithValue("password", null);
   }
@@ -44,7 +57,7 @@ class SpringLiquibaseUtilTest {
   void createSpringLiquibaseFromNormalDataSource() {
     DataSource liquibaseDatasource = null;
     LiquibaseProperties liquibaseProperties = new LiquibaseProperties();
-    DataSource normalDataSource = DataSourceBuilder.create().url("jdbc:h2:mem:normal").username("sa").build();
+    DataSource normalDataSource = DataSourceBuilder.create().url(datasourceUrl).username("sa").build();
     DataSourceProperties dataSourceProperties = null;
 
     SpringLiquibase liquibase = SpringLiquibaseUtil.createSpringLiquibase(
@@ -58,7 +71,7 @@ class SpringLiquibaseUtilTest {
       .extracting(SpringLiquibase::getDataSource)
       .isEqualTo(normalDataSource)
       .asInstanceOf(type(HikariDataSource.class))
-      .hasFieldOrPropertyWithValue("jdbcUrl", "jdbc:h2:mem:normal")
+      .hasFieldOrPropertyWithValue("jdbcUrl", datasourceUrl)
       .hasFieldOrPropertyWithValue("username", "sa")
       .hasFieldOrPropertyWithValue("password", null);
   }
@@ -67,7 +80,7 @@ class SpringLiquibaseUtilTest {
   void createSpringLiquibaseFromLiquibaseProperties() {
     DataSource liquibaseDatasource = null;
     LiquibaseProperties liquibaseProperties = new LiquibaseProperties();
-    liquibaseProperties.setUrl("jdbc:h2:mem:liquibase");
+    liquibaseProperties.setUrl(datasourceUrl);
     liquibaseProperties.setUser("sa");
     DataSource normalDataSource = null;
     DataSourceProperties dataSourceProperties = new DataSourceProperties();
@@ -83,14 +96,14 @@ class SpringLiquibaseUtilTest {
       .asInstanceOf(type(DataSourceClosingSpringLiquibase.class))
       .extracting(SpringLiquibase::getDataSource)
       .asInstanceOf(type(HikariDataSource.class))
-      .hasFieldOrPropertyWithValue("jdbcUrl", "jdbc:h2:mem:liquibase")
+      .hasFieldOrPropertyWithValue("jdbcUrl", datasourceUrl)
       .hasFieldOrPropertyWithValue("username", "sa")
       .hasFieldOrPropertyWithValue("password", "password");
   }
 
   @Test
   void createAsyncSpringLiquibaseFromLiquibaseDataSource() {
-    DataSource liquibaseDatasource = DataSourceBuilder.create().url("jdbc:h2:mem:liquibase").username("sa").build();
+    DataSource liquibaseDatasource = DataSourceBuilder.create().url(datasourceUrl).username("sa").build();
     LiquibaseProperties liquibaseProperties = null;
     DataSource normalDataSource = null;
     DataSourceProperties dataSourceProperties = null;
@@ -106,7 +119,7 @@ class SpringLiquibaseUtilTest {
     assertThat(liquibase.getDataSource())
       .isEqualTo(liquibaseDatasource)
       .asInstanceOf(type(HikariDataSource.class))
-      .hasFieldOrPropertyWithValue("jdbcUrl", "jdbc:h2:mem:liquibase")
+      .hasFieldOrPropertyWithValue("jdbcUrl", datasourceUrl)
       .hasFieldOrPropertyWithValue("username", "sa")
       .hasFieldOrPropertyWithValue("password", null);
   }
@@ -115,7 +128,7 @@ class SpringLiquibaseUtilTest {
   void createAsyncSpringLiquibaseFromNormalDataSource() {
     DataSource liquibaseDatasource = null;
     LiquibaseProperties liquibaseProperties = new LiquibaseProperties();
-    DataSource normalDataSource = DataSourceBuilder.create().url("jdbc:h2:mem:normal").username("sa").build();
+    DataSource normalDataSource = DataSourceBuilder.create().url(datasourceUrl).username("sa").build();
     DataSourceProperties dataSourceProperties = null;
 
     AsyncSpringLiquibase liquibase = SpringLiquibaseUtil.createAsyncSpringLiquibase(
@@ -129,7 +142,7 @@ class SpringLiquibaseUtilTest {
     assertThat(liquibase.getDataSource())
       .isEqualTo(normalDataSource)
       .asInstanceOf(type(HikariDataSource.class))
-      .hasFieldOrPropertyWithValue("jdbcUrl", "jdbc:h2:mem:normal")
+      .hasFieldOrPropertyWithValue("jdbcUrl", datasourceUrl)
       .hasFieldOrPropertyWithValue("username", "sa")
       .hasFieldOrPropertyWithValue("password", null);
   }
@@ -138,7 +151,7 @@ class SpringLiquibaseUtilTest {
   void createAsyncSpringLiquibaseFromLiquibaseProperties() {
     DataSource liquibaseDatasource = null;
     LiquibaseProperties liquibaseProperties = new LiquibaseProperties();
-    liquibaseProperties.setUrl("jdbc:h2:mem:liquibase");
+    liquibaseProperties.setUrl(datasourceUrl);
     liquibaseProperties.setUser("sa");
     DataSource normalDataSource = null;
     DataSourceProperties dataSourceProperties = new DataSourceProperties();
@@ -154,7 +167,7 @@ class SpringLiquibaseUtilTest {
     );
     assertThat(liquibase.getDataSource())
       .asInstanceOf(type(HikariDataSource.class))
-      .hasFieldOrPropertyWithValue("jdbcUrl", "jdbc:h2:mem:liquibase")
+      .hasFieldOrPropertyWithValue("jdbcUrl", datasourceUrl)
       .hasFieldOrPropertyWithValue("username", "sa")
       .hasFieldOrPropertyWithValue("password", "password");
   }
@@ -163,7 +176,7 @@ class SpringLiquibaseUtilTest {
   void shouldNotCreateAsyncSpringLiquibaseFromLiquibasePropertiesWithNullUser() {
     DataSource liquibaseDatasource = null;
     LiquibaseProperties liquibaseProperties = new LiquibaseProperties();
-    liquibaseProperties.setUrl("jdbc:h2:mem:liquibase");
+    liquibaseProperties.setUrl(datasourceUrl);
     liquibaseProperties.setUser(null);
     DataSource normalDataSource = null;
     DataSourceProperties dataSourceProperties = new DataSourceProperties();
@@ -203,5 +216,24 @@ class SpringLiquibaseUtilTest {
           dataSourceProperties
         )
     ).isExactlyInstanceOf(NullPointerException.class);
+  }
+
+  private static Properties getTestProperties(String springConfigurationFormat) {
+    Properties properties;
+    try {
+      if (springConfigurationFormat.equals("yaml")) {
+        YamlPropertiesFactoryBean yaml = new YamlPropertiesFactoryBean();
+        yaml.setResources(
+          new PathResource(SpringLiquibaseUtilTest.class.getClassLoader().getResource("config/application-test.yml").toURI())
+        );
+        properties = yaml.getObject();
+      } else {
+        properties = new Properties();
+        properties.load(SpringLiquibaseUtilTest.class.getClassLoader().getResourceAsStream("config/application-test.properties"));
+      }
+    } catch (IOException | URISyntaxException exception) {
+      throw new Error(exception);
+    }
+    return properties;
   }
 }

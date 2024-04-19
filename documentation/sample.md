@@ -1,6 +1,6 @@
 # Sample feature
 
-Looks like you added a sample feature to your project...
+It looks like you added a sample feature to your project...
 
 This feature is a simple business example and exercise for this kind of projects. Here's the business context:
 

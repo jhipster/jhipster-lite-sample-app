@@ -22,7 +22,7 @@ import org.springframework.util.StopWatch;
  * time: <ul> <li>On a recent MacBook Pro, start-up time is down from 14 seconds to 8 seconds</li> <li>In production,
  * this can help your application run on platforms like Heroku, where it must start/restart very quickly</li> </ul>
  */
-public class AsyncSpringLiquibase extends DataSourceClosingSpringLiquibase {
+class AsyncSpringLiquibase extends DataSourceClosingSpringLiquibase {
 
   // named "logger" because there is already a field called "log" in "SpringLiquibase"
   private final Logger logger = LoggerFactory.getLogger(AsyncSpringLiquibase.class);

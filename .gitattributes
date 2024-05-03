@@ -14,6 +14,7 @@
 *.cql           text
 *.df            text
 *.ejs           text
+*.feature       text
 *.html          text
 *.java          text
 *.js            text

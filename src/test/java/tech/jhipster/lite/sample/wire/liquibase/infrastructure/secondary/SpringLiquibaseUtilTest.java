@@ -5,7 +5,6 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.assertj.core.api.InstanceOfAssertFactories.type;
 
 import com.zaxxer.hikari.HikariDataSource;
-import java.io.IOException;
 import java.net.URISyntaxException;
 import java.util.Properties;
 import javax.sql.DataSource;
@@ -27,7 +26,7 @@ class SpringLiquibaseUtilTest {
 
   @BeforeAll
   public static void setup() {
-    datasourceUrl = getTestProperties("yaml").getProperty("spring.datasource.url");
+    datasourceUrl = testProperties().getProperty("spring.datasource.url");
   }
 
   @Test
@@ -218,22 +217,15 @@ class SpringLiquibaseUtilTest {
     ).isExactlyInstanceOf(NullPointerException.class);
   }
 
-  private static Properties getTestProperties(String springConfigurationFormat) {
-    Properties properties;
+  private static Properties testProperties() {
     try {
-      if (springConfigurationFormat.equals("yaml")) {
-        YamlPropertiesFactoryBean yaml = new YamlPropertiesFactoryBean();
-        yaml.setResources(
-          new PathResource(SpringLiquibaseUtilTest.class.getClassLoader().getResource("config/application-test.yml").toURI())
-        );
-        properties = yaml.getObject();
-      } else {
-        properties = new Properties();
-        properties.load(SpringLiquibaseUtilTest.class.getClassLoader().getResourceAsStream("config/application-test.properties"));
-      }
-    } catch (IOException | URISyntaxException exception) {
+      YamlPropertiesFactoryBean yaml = new YamlPropertiesFactoryBean();
+      yaml.setResources(
+        new PathResource(SpringLiquibaseUtilTest.class.getClassLoader().getResource("config/application-test.yml").toURI())
+      );
+      return yaml.getObject();
+    } catch (URISyntaxException exception) {
       throw new Error(exception);
     }
-    return properties;
   }
 }

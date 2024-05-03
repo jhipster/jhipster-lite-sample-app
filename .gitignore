@@ -138,6 +138,7 @@ infinitest.filters
 *~
 .merge_file*
 .attach_pid*
+.jqwik-database
 
 ######################
 # Gradle Wrapper

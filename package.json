@@ -18,15 +18,15 @@
   },
   "dependencies": {
     "axios": "1.6.8",
-    "vue": "3.4.23",
+    "vue": "3.4.26",
     "vue-router": "4.3.2"
   },
   "devDependencies": {
     "@prettier/plugin-xml": "3.4.1",
     "@types/sinon": "17.0.3",
-    "@typescript-eslint/parser": "7.7.0",
+    "@typescript-eslint/parser": "7.8.0",
     "@vitejs/plugin-vue": "5.0.4",
-    "@vitest/coverage-istanbul": "1.5.0",
+    "@vitest/coverage-istanbul": "1.5.3",
     "@vue/eslint-config-prettier": "9.0.0",
     "@vue/eslint-config-typescript": "13.0.0",
     "@vue/test-utils": "2.4.5",
@@ -41,12 +41,12 @@
     "prettier-plugin-packagejson": "2.5.0",
     "sinon": "17.0.1",
     "typescript": "5.4.5",
-    "vite": "5.2.9",
-    "vitest": "1.5.0",
+    "vite": "5.2.11",
+    "vitest": "1.5.3",
     "vitest-sonar-reporter": "2.0.0",
-    "vue-tsc": "2.0.13"
+    "vue-tsc": "2.0.16"
   },
   "engines": {
-    "node": ">=20.12.2"
+    "node": ">=20"
   }
 }

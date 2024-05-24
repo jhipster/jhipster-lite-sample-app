@@ -1,11 +1,4 @@
 ######################
-# Project Specific
-######################
-/src/main/webapp/content/css/main.css
-/target/classes/static/**
-/src/test/javascript/coverage/
-
-######################
 # Node
 ######################
 /node/
@@ -77,18 +70,6 @@ out/
 *.code-workspace
 
 ######################
-# Maven
-######################
-/log/
-/target/
-
-######################
-# Gradle
-######################
-.gradle/
-/build/
-
-######################
 # Package Files
 ######################
 *.jar
@@ -132,42 +113,18 @@ Desktop.ini
 ######################
 # Others
 ######################
-infinitest.filters
 *.class
 *.*~
 *~
 .merge_file*
 .attach_pid*
-.jqwik-database
-
-######################
-# Gradle Wrapper
-######################
-!gradle/wrapper/gradle-wrapper.jar
-
-######################
-# Maven Wrapper
-######################
-!.mvn/wrapper/maven-wrapper.jar
 
 ######################
 # ESLint
 ######################
 .eslintcache
 
-######################
-# Angular
-######################
-.angular/
-dist/
-
-######################
-# Svelte
-######################
-.svelte-kit/
-
-######################
-# OAuth 2.0
-######################
-okta.sh
-auth0.sh
+# Maven
+/target/
+# Maven Wrapper
+!.mvn/wrapper/maven-wrapper.jar

@@ -41,7 +41,7 @@ final class RestBeer {
     return unitPrice;
   }
 
-  private static class RestBeerBuilder {
+  private static final class RestBeerBuilder {
 
     private UUID id;
     private String name;

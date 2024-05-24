@@ -4,7 +4,7 @@ import static org.assertj.core.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.access.AccessDeniedException;
+import org.springframework.security.authorization.AuthorizationDeniedException;
 import org.springframework.security.test.context.support.WithMockUser;
 import tech.jhipster.lite.sample.IntegrationTest;
 import tech.jhipster.lite.sample.shared.kipe.domain.KipeDummy;
@@ -17,13 +17,13 @@ class KipeIT {
 
   @Test
   void shouldNotBeAbleToMakeUpdateWithoutAuthentication() {
-    assertThatThrownBy(() -> service.update(new KipeDummy("value"))).isExactlyInstanceOf(AccessDeniedException.class);
+    assertThatThrownBy(() -> service.update(new KipeDummy("value"))).isExactlyInstanceOf(AuthorizationDeniedException.class);
   }
 
   @Test
   @WithMockUser
   void shouldNotBeAbleToMakeUnauthorizedUpdate() {
-    assertThatThrownBy(() -> service.update(new KipeDummy("unauthorized"))).isExactlyInstanceOf(AccessDeniedException.class);
+    assertThatThrownBy(() -> service.update(new KipeDummy("unauthorized"))).isExactlyInstanceOf(AuthorizationDeniedException.class);
   }
 
   @Test

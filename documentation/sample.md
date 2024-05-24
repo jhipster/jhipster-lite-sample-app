@@ -17,4 +17,4 @@ Even this very simple product already helped the retailer (a lot)! So he came ba
 We got answer from the retailer later on but our team is currently recovering from a very serious headache. Can you end what they started on order considering that:
 
 - There are running orders, with a customer in the shop adding beers to the order;
-- Validated orders (when they are payed), they can't move but we need to keep them (without any price change).
+- Validated orders (when they are paid), they can't move but we need to keep them (without any price change).

@@ -95,7 +95,7 @@ public class AuthenticationSteps {
       return Jwts.builder()
         .subject("authentication")
         .signWith(CucumberAuthenticationConfiguration.JWT_KEY)
-        .setClaims(claims)
+        .claims(claims)
         .expiration(Date.from(Instant.now().plusSeconds(300)))
         .compact();
     }

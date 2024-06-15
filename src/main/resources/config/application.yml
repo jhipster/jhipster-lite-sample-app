@@ -1,3 +1,9 @@
+logging:
+  level:
+    tech:
+      jhipster:
+        lite:
+          sample: INFO
 spring:
   application:
     name: Litesample
@@ -5,76 +11,75 @@ spring:
     virtual:
       enabled: true
   task:
-    scheduling:
-      thread-name-prefix: litesample-scheduling-
-      pool:
-        size: 2
     execution:
       pool:
         keep-alive: 10s
-        queue-capacity: 100
         max-size: 16
+        queue-capacity: 100
       thread-name-prefix: litesample-task-
+    scheduling:
+      pool:
+        size: 2
+      thread-name-prefix: litesample-scheduling-
   devtools:
-    restart:
-      enabled: false
     livereload:
       enabled: false
-  datasource:
-    hikari:
-      poolName: Hikari
-      auto-commit: false
-    password: ''
-    driver-class-name: org.postgresql.Driver
-    username: litesample
-    url: jdbc:postgresql://localhost:5432/litesample
-    type: com.zaxxer.hikari.HikariDataSource
+    restart:
+      enabled: false
   data:
     jpa:
       repositories:
         bootstrap-mode: deferred
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      auto-commit: false
+      poolName: Hikari
+    password: ''
+    type: com.zaxxer.hikari.HikariDataSource
+    url: jdbc:postgresql://localhost:5432/litesample
+    username: litesample
   jpa:
-    properties:
-      hibernate:
-        jdbc:
-          time_zone: UTC
-          batch_size: 25
-        query:
-          fail_on_pagination_over_collection_fetch: true
-          in_clause_parameter_padding: true
-        generate_statistics: false
-        order_updates: true
-        connection:
-          provider_disables_autocommit: true
-        order_inserts: true
     hibernate:
       ddl-auto: none
       naming:
         implicit-strategy: org.springframework.boot.orm.jpa.hibernate.SpringImplicitNamingStrategy
         physical-strategy: org.hibernate.boot.model.naming.CamelCaseToUnderscoresNamingStrategy
     open-in-view: false
+    properties:
+      hibernate:
+        connection:
+          provider_disables_autocommit: true
+        generate_statistics: false
+        jdbc:
+          batch_size: 25
+          time_zone: UTC
+        order_inserts: true
+        order_updates: true
+        query:
+          fail_on_pagination_over_collection_fetch: true
+          in_clause_parameter_padding: true
   liquibase:
     change-log: classpath:config/liquibase/master.xml
   security:
     oauth2:
       client:
-        registration:
-          oidc:
-            client-secret: web_app
-            client-id: web_app
-            scope: openid,profile,email
         provider:
           oidc:
             issuer-uri: http://localhost:9080/realms/jhipster
-logging:
-  level:
-    tech:
-      jhipster:
-        lite:
-          sample: INFO
+        registration:
+          oidc:
+            client-id: web_app
+            client-secret: web_app
+            scope: openid,profile,email
 server:
   port: 8080
 management:
+  endpoint:
+    health:
+      probes:
+        enabled: true
+      show-details: always
   endpoints:
     web:
       base-path: /management
@@ -87,23 +92,19 @@ management:
           - logfile
           - loggers
           - threaddump
-  endpoint:
-    health:
-      probes:
-        enabled: true
-      show-details: always
   info:
-    # Git Information
-    git:
-      mode: full
-      enabled: true
     env:
       enabled: true
+    # Git Information
+    git:
+      enabled: true
+      mode: full
 application:
   security:
     oauth2:
       audience: account,api://default
 springdoc:
+  enable-native-support: true
   swagger-ui:
     operationsSorter: alpha
     tagsSorter: alpha
@@ -111,6 +112,5 @@ springdoc:
     oauth:
       client-id: web_app
       realm: jhipster
-  enable-native-support: true
   oauth2:
     authorization-url: http://localhost:9080/realms/jhipster/protocol/openid-connect/auth

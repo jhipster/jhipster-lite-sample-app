@@ -17,7 +17,7 @@ import org.junit.platform.commons.support.ModifierSupport;
 public final class LogsSpyExtension
   implements BeforeAllCallback, BeforeEachCallback, AfterEachCallback, ParameterResolver, TestInstancePostProcessor {
 
-  private LogsSpy logsSpy = new LogsSpy();
+  private final LogsSpy logsSpy = new LogsSpy();
 
   @Override
   public void beforeEach(ExtensionContext context) {

@@ -442,7 +442,7 @@ public final class Assert {
     public IntegerAsserter min(int minValue) {
       notNull(field, value);
 
-      if (value.intValue() < minValue) {
+      if (value < minValue) {
         throw NumberValueTooLowException.builder().field(field).minValue(String.valueOf(minValue)).value(String.valueOf(value)).build();
       }
 
@@ -463,7 +463,7 @@ public final class Assert {
     public IntegerAsserter max(int maxValue) {
       notNull(field, value);
 
-      if (value.intValue() > maxValue) {
+      if (value > maxValue) {
         throw NumberValueTooHighException.builder().field(field).maxValue(String.valueOf(maxValue)).value(String.valueOf(value)).build();
       }
 
@@ -511,7 +511,7 @@ public final class Assert {
     public LongAsserter min(long minValue) {
       notNull(field, value);
 
-      if (value.longValue() < minValue) {
+      if (value < minValue) {
         throw NumberValueTooLowException.builder().field(field).minValue(String.valueOf(minValue)).value(String.valueOf(value)).build();
       }
 
@@ -532,7 +532,7 @@ public final class Assert {
     public LongAsserter max(long maxValue) {
       notNull(field, value);
 
-      if (value.longValue() > maxValue) {
+      if (value > maxValue) {
         throw NumberValueTooHighException.builder().field(field).maxValue(String.valueOf(maxValue)).value(String.valueOf(value)).build();
       }
 
@@ -593,7 +593,7 @@ public final class Assert {
     public FloatAsserter min(float minValue) {
       notNull(field, value);
 
-      if (value.floatValue() < minValue) {
+      if (value < minValue) {
         throw tooLow(minValue);
       }
 
@@ -614,7 +614,7 @@ public final class Assert {
     public FloatAsserter over(float floor) {
       notNull(field, value);
 
-      if (value.floatValue() <= floor) {
+      if (value <= floor) {
         throw tooLow(floor);
       }
 
@@ -639,7 +639,7 @@ public final class Assert {
     public FloatAsserter max(float maxValue) {
       notNull(field, value);
 
-      if (value.floatValue() > maxValue) {
+      if (value > maxValue) {
         throw tooHigh(maxValue);
       }
 
@@ -660,7 +660,7 @@ public final class Assert {
     public FloatAsserter under(float ceil) {
       notNull(field, value);
 
-      if (value.floatValue() >= ceil) {
+      if (value >= ceil) {
         throw tooHigh(ceil);
       }
 
@@ -725,7 +725,7 @@ public final class Assert {
     public DoubleAsserter min(double minValue) {
       notNull(field, value);
 
-      if (value.doubleValue() < minValue) {
+      if (value < minValue) {
         throw tooLow(minValue);
       }
 
@@ -746,7 +746,7 @@ public final class Assert {
     public DoubleAsserter over(double floor) {
       notNull(field, value);
 
-      if (value.doubleValue() <= floor) {
+      if (value <= floor) {
         throw tooLow(floor);
       }
 
@@ -771,7 +771,7 @@ public final class Assert {
     public DoubleAsserter max(double maxValue) {
       notNull(field, value);
 
-      if (value.doubleValue() > maxValue) {
+      if (value > maxValue) {
         throw tooHigh(maxValue);
       }
 
@@ -792,7 +792,7 @@ public final class Assert {
     public DoubleAsserter under(double ceil) {
       notNull(field, value);
 
-      if (value.doubleValue() >= ceil) {
+      if (value >= ceil) {
         throw tooHigh(ceil);
       }
 

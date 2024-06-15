@@ -40,11 +40,7 @@ class HexagonalArchTest {
 
   // the empty package is related to: https://github.com/TNG/ArchUnit/issues/191#issuecomment-507964792
   private static final Collection<String> vanillaPackages = List.of("java..", "");
-  private static final Collection<String> commonToolsAndUtilsPackages = List.of(
-    "org.slf4j..",
-    "org.apache.commons..",
-    "com.google.guava.."
-  );
+  private static final Collection<String> commonToolsAndUtilsPackages = List.of("org.apache.commons..", "org.jmolecules..", "org.slf4j..");
 
   private static Collection<String> buildPackagesPatterns(Collection<String> packages) {
     return packages.stream().map(path -> path + "..").toList();

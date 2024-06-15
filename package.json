@@ -4,13 +4,14 @@
   "private": true,
   "description": "JHipster Lite Sample Application",
   "license": "UNLICENSED",
+  "type": "module",
   "scripts": {
     "build": "vue-tsc -p tsconfig.build.json --noEmit && vite build --emptyOutDir",
     "dev": "vite",
-    "lint": "eslint --ext .js,.ts,.vue src",
+    "lint": "eslint --ext .js,.ts,.vue src/",
     "prepare": "husky",
-    "prettier:check": "prettier --check '{,src/**/}*.{md,json,yml,html,js,ts,tsx,css,scss,vue,java,xml,feature}'",
-    "prettier:format": "prettier --write '{,src/**/}*.{md,json,yml,html,js,ts,tsx,css,scss,vue,java,xml,feature}'",
+    "prettier:check": "prettier --check .",
+    "prettier:format": "prettier --write .",
     "preview": "vite preview",
     "start": "vite",
     "test": "npm run test:watch",
@@ -20,13 +21,13 @@
   "dependencies": {
     "axios": "1.7.2",
     "vue": "3.4.27",
-    "vue-router": "4.3.2"
+    "vue-router": "4.3.3"
   },
   "devDependencies": {
     "@prettier/plugin-xml": "3.4.1",
     "@types/sinon": "17.0.3",
-    "@typescript-eslint/parser": "7.10.0",
-    "@vitejs/plugin-vue": "5.0.4",
+    "@typescript-eslint/parser": "7.13.0",
+    "@vitejs/plugin-vue": "5.0.5",
     "@vitest/coverage-istanbul": "1.6.0",
     "@vue/eslint-config-prettier": "9.0.0",
     "@vue/eslint-config-typescript": "13.0.0",
@@ -34,18 +35,18 @@
     "eslint": "8.57.0",
     "eslint-plugin-vue": "9.26.0",
     "husky": "9.0.11",
-    "jsdom": "24.0.0",
-    "lint-staged": "15.2.4",
-    "prettier": "3.2.5",
+    "jsdom": "24.1.0",
+    "lint-staged": "15.2.7",
+    "prettier": "3.3.2",
     "prettier-plugin-gherkin": "2.2.1",
     "prettier-plugin-java": "2.6.0",
     "prettier-plugin-packagejson": "2.5.0",
     "sinon": "18.0.0",
     "typescript": "5.4.5",
-    "vite": "5.2.11",
+    "vite": "5.3.0",
     "vitest": "1.6.0",
     "vitest-sonar-reporter": "2.0.0",
-    "vue-tsc": "2.0.19"
+    "vue-tsc": "2.0.21"
   },
   "engines": {
     "node": ">=20"

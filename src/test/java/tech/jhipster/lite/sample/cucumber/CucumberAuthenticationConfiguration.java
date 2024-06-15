@@ -31,7 +31,7 @@ public class CucumberAuthenticationConfiguration {
         Instant.now(),
         Instant.now().plusSeconds(120),
         Map.of("issuer", "http://dev"),
-        decoder.parseClaimsJws(token).getBody()
+        decoder.parseSignedClaims(token).getPayload()
       );
   }
 }

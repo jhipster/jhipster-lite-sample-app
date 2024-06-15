@@ -12,7 +12,7 @@ public class ReplaceCamelCase extends DisplayNameGenerator.Standard {
 
   private String replaceCapitals(String name) {
     name = name.replaceAll("([A-Z])", " $1");
-    name = name.replaceAll("([0-9]+)", " $1");
+    name = name.replaceAll("(\\d+)", " $1");
     name = name.toLowerCase();
     return name;
   }

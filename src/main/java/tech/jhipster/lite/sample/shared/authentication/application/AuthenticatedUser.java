@@ -17,7 +17,7 @@ import tech.jhipster.lite.sample.shared.authentication.domain.Username;
 import tech.jhipster.lite.sample.shared.error.domain.Assert;
 
 /**
- * This is an utility class to get authenticated user information
+ * This is a utility class to get authenticated user information
  */
 public final class AuthenticatedUser {
 

@@ -57,7 +57,7 @@ public final class CucumberRestTestContext {
 
   private static Function<String, Integer> toEntriesCount(String jsonPath) {
     return response -> {
-      Object element = null;
+      Object element;
       try {
         element = JsonPath.read(jsonReader.parse(response), jsonPath);
       } catch (PathNotFoundException e) {
@@ -190,9 +190,9 @@ public final class CucumberRestTestContext {
 
     private void retry() {
       try {
-        ClientHttpResponse response = execution.execute(request, body);
+        ClientHttpResponse clientHttpResponse = execution.execute(request, body);
 
-        CucumberRestTestContext.addResponse(request, response, execution, body);
+        CucumberRestTestContext.addResponse(request, clientHttpResponse, execution, body);
       } catch (IOException e) {
         throw new AssertionError("Error while retrying last call: " + e.getMessage(), e);
       }

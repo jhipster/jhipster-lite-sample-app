@@ -26,11 +26,6 @@ const expectForQuerying = (uri: string, result: AxiosResponse<Result>) => {
   expect(uri).toBe('/uri');
 };
 
-const expectForSendingAndQuerying = (uri: string, payload: Payload, result: AxiosResponse<Result>) => {
-  expect(payload).toEqual<Payload>(fakePayload());
-  expectForQuerying(uri, result);
-};
-
 describe('axiosHttp', () => {
   describe('GET', () => {
     it('should get content', async () => {
@@ -41,7 +36,8 @@ describe('axiosHttp', () => {
       const result = await axiosHttp.get<Result>('/uri');
 
       const [uri] = axiosInstance.get.getCall(0).args;
-      expectForQuerying(uri, result);
+      expect(result.data).toEqual(fakeResult());
+      expect(uri).toBe('/uri');
     });
 
     it('should get content with params', async () => {
@@ -65,7 +61,8 @@ describe('axiosHttp', () => {
       const result = await axiosHttp.put<Result>('/uri');
 
       const [uri] = axiosInstance.put.getCall(0).args;
-      expectForQuerying(uri, result);
+      expect(result.data).toEqual(fakeResult());
+      expect(uri).toBe('/uri');
     });
 
     it('should send and get content', async () => {
@@ -76,7 +73,8 @@ describe('axiosHttp', () => {
       const result = await axiosHttp.put<Result, Payload>('/uri', fakePayload());
 
       const [uri, payload] = axiosInstance.put.getCall(0).args;
-      expectForSendingAndQuerying(uri, payload, result);
+      expect(payload).toEqual<Payload>(fakePayload());
+      expectForQuerying(uri, result);
     });
   });
 
@@ -89,7 +87,8 @@ describe('axiosHttp', () => {
       const result = await axiosHttp.post<Result>('/uri');
 
       const [uri] = axiosInstance.post.getCall(0).args;
-      expectForQuerying(uri, result);
+      expect(result.data).toEqual(fakeResult());
+      expect(uri).toBe('/uri');
     });
 
     it('should send and get content', async () => {
@@ -100,7 +99,8 @@ describe('axiosHttp', () => {
       const result = await axiosHttp.post<Result, Payload>('/uri', fakePayload());
 
       const [uri, payload] = axiosInstance.post.getCall(0).args;
-      expectForSendingAndQuerying(uri, payload, result);
+      expect(payload).toEqual<Payload>(fakePayload());
+      expectForQuerying(uri, result);
     });
   });
 
@@ -113,7 +113,8 @@ describe('axiosHttp', () => {
       const result = await axiosHttp.delete<Result>('/uri');
 
       const [uri] = axiosInstance.delete.getCall(0).args;
-      expectForQuerying(uri, result);
+      expect(result.data).toEqual(fakeResult());
+      expect(uri).toBe('/uri');
     });
   });
 });

@@ -9,15 +9,7 @@ export default defineConfig({
       '@': path.resolve(__dirname, './src/main/webapp/app'),
     },
   },
-  plugins: [
-    vue({
-      template: {
-        compilerOptions: {
-          isCustomElement: tag => /^x-/.test(tag),
-        },
-      },
-    }),
-  ],
+  plugins: [vue()],
   build: {
     outDir: '../../../target/classes/static',
   },

@@ -6,7 +6,6 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import java.util.List;
 import java.util.Map;
-import org.springframework.beans.factory.annotation.Autowired;
 import tech.jhipster.lite.sample.cucumber.rest.CucumberRestTemplate;
 import tech.jhipster.lite.sample.cucumber.rest.CucumberRestTestContext;
 
@@ -20,8 +19,11 @@ public class BeersSteps {
     }
     """;
 
-  @Autowired
-  private CucumberRestTemplate rest;
+  private final CucumberRestTemplate rest;
+
+  BeersSteps(CucumberRestTemplate rest) {
+    this.rest = rest;
+  }
 
   @When("I add beer to catalog")
   public void addBeerToCatalog(Map<String, String> beer) {

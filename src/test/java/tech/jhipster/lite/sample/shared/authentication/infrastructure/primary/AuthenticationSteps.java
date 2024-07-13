@@ -12,7 +12,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.stream.Stream;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.client.ClientHttpRequestInterceptor;
@@ -22,9 +21,11 @@ import tech.jhipster.lite.sample.shared.authentication.domain.Role;
 public class AuthenticationSteps {
 
   private static final Map<String, User> users = new UsersBuilder().add("admin", Role.ADMIN).add("user", Role.USER).build();
+  private final TestRestTemplate rest;
 
-  @Autowired
-  private TestRestTemplate rest;
+  AuthenticationSteps(TestRestTemplate rest) {
+    this.rest = rest;
+  }
 
   @Given("I am logged in as {string}")
   public void authenticateUser(String username) {
@@ -91,6 +92,7 @@ public class AuthenticationSteps {
       claims = Map.of("preferred_username", username, "roles", Stream.of(roles).map(Role::key).toList());
     }
 
+    @SuppressWarnings("java:S1144")
     private String token() {
       return Jwts.builder()
         .subject("authentication")

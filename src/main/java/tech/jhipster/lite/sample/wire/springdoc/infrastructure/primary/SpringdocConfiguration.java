@@ -27,11 +27,11 @@ class SpringdocConfiguration {
       .title("Project API")
       .description("Project description API")
       .version(version)
-      .license(new License().name("No license").url(""));
+      .license(new License().name("No license"));
   }
 
   private ExternalDocumentation swaggerExternalDoc() {
-    return new ExternalDocumentation().description("Project Documentation").url("");
+    return new ExternalDocumentation().description("Project Documentation");
   }
 
   @Bean

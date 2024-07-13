@@ -4,7 +4,6 @@ import io.cucumber.java.Before;
 import io.cucumber.spring.CucumberContextConfiguration;
 import java.nio.charset.StandardCharsets;
 import java.util.List;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
 import org.springframework.boot.test.context.TestConfiguration;
@@ -37,8 +36,11 @@ import tech.jhipster.lite.sample.shared.authentication.infrastructure.primary.Te
 )
 public class CucumberConfiguration {
 
-  @Autowired
-  private TestRestTemplate rest;
+  private final TestRestTemplate rest;
+
+  CucumberConfiguration(TestRestTemplate rest) {
+    this.rest = rest;
+  }
 
   @Before
   public void resetTestContext() {
@@ -68,11 +70,8 @@ public class CucumberConfiguration {
   @TestConfiguration
   static class CucumberRestTemplateConfiguration {
 
-    @Autowired
-    private TestRestTemplate rest;
-
     @Bean
-    CucumberRestTemplate cucumberRestTemplate() {
+    CucumberRestTemplate cucumberRestTemplate(TestRestTemplate rest) {
       return new CucumberRestTemplate(rest);
     }
   }

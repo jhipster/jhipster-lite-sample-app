@@ -66,12 +66,11 @@ class BeanValidationTest {
     return method ->
       Arrays.stream(method.getParameters())
         .filter(checkedTypes())
-        .forEach(
-          parameter ->
-            assertThat(parameter.getAnnotations())
-              .as(errorMessage(method, parameter))
-              .extracting(Annotation::annotationType)
-              .anyMatch(Validated.class::equals)
+        .forEach(parameter ->
+          assertThat(parameter.getAnnotations())
+            .as(errorMessage(method, parameter))
+            .extracting(Annotation::annotationType)
+            .anyMatch(Validated.class::equals)
         );
   }
 

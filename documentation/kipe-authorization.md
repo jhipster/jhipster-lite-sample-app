@@ -21,6 +21,7 @@ enum MyResource implements Resource {
     return key;
   }
 }
+
 ```
 
 You'll then have to define one (or more) `RolesAccesses` spring beans:
@@ -47,19 +48,19 @@ class RolesConfiguration {
 
 For each role, you'll be able to define multiple accesses. There are three things defining an access:
 
-* The scope: can be `all` or `specific`;
-* The action, it's a verb (`read` in the example);
-* The `Resource`.
+- The scope: can be `all` or `specific`;
+- The action, it's a verb (`read` in the example);
+- The `Resource`.
 
-Once you have defined one (or more) `RolesAccesses` you can inject `LitesampleAuthorizations` and check for authorizations. If you use `kipe-authorization` along with `kipe-expression` you'll be able to define `AccessChecker` looking like this:
+Once you have defined one (or more) `RolesAccesses` you can inject `FullappAuthorizations` and check for authorizations. If you use `kipe-authorization` along with `kipe-expression` you'll be able to define `AccessChecker` looking like this:
 
 ```java
 @Component
 class MyObjectAccessChecker implements AccessChecker<MyObject> {
 
-  private final LitesampleAuthorizations authorizations;
+  private final FullappAuthorizations authorizations;
 
-  public MyObjectAccessChecker(LitesampleAuthorizations authorizations) {
+  public MyObjectAccessChecker(FullappAuthorizations authorizations) {
     this.authorizations = authorizations;
   }
 
@@ -76,6 +77,7 @@ class MyObjectAccessChecker implements AccessChecker<MyObject> {
     return false;
   }
 }
+
 ```
 
 This way, you'll have fine-grained, easy to test authorizations check allowing custom configuration for each action in your application.

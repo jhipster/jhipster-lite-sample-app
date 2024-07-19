@@ -1115,8 +1115,7 @@ class AssertTest {
     @ParameterizedTest
     @ValueSource(ints = { 3, 4 })
     void shouldValidateCollectionWithSizeUnderMaxSize(int maxSize) {
-      assertThatCode(
-        () -> Assert.field(FIELD_NAME, new String[] { "value1", "value2", "value3" }).maxSize(maxSize)
+      assertThatCode(() -> Assert.field(FIELD_NAME, new String[] { "value1", "value2", "value3" }).maxSize(maxSize)
       ).doesNotThrowAnyException();
     }
 

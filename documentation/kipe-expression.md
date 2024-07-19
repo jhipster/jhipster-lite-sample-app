@@ -11,6 +11,7 @@ It will allow you to use a new `can('action', #element)` expression in `@PreAuth
 public void update(KipeDummy dummy) {
   // ...
 }
+
 ```
 
 Those expressions will then be evaluated in dedicated `AccessChecker`. To do so, you'll have to define spring beans (`@Component` or `@Service`) implementing `AccessChecker<T>`:
@@ -24,6 +25,7 @@ class KipeDummyAccessChecker implements AccessChecker<KipeDummy> {
     //TODO: your business authorization logic
   }
 }
+
 ```
 
 Kipe's only job is to call the `AccessChecker` for your object class.

@@ -30,9 +30,8 @@ public final class Accesses {
   }
 
   private Collector<Entry<Action, List<Access>>, ?, Map<Action, Map<String, Boolean>>> toAccesses() {
-    return Collectors.toUnmodifiableMap(
-      Map.Entry::getKey,
-      entry -> entry.getValue().stream().collect(Collectors.toUnmodifiableMap(Access::resource, Access::global))
+    return Collectors.toUnmodifiableMap(Map.Entry::getKey, entry ->
+      entry.getValue().stream().collect(Collectors.toUnmodifiableMap(Access::resource, Access::global))
     );
   }
 

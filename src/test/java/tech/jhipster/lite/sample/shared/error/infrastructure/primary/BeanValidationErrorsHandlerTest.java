@@ -37,7 +37,9 @@ class BeanValidationErrorsHandlerTest {
     logs.shouldHave(Level.INFO, "failingMethod");
   }
 
-  public void failingMethod() {}
+  public void failingMethod() {
+    // empty method
+  }
 
   @Test
   void shouldLogConstraintViolationInInfo() throws SecurityException {

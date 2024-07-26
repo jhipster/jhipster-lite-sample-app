@@ -19,7 +19,6 @@ import tech.jhipster.lite.sample.UnitTest;
 import tech.jhipster.lite.sample.shared.authentication.application.UnknownAuthenticationException;
 import tech.jhipster.lite.sample.shared.authentication.domain.Username;
 import tech.jhipster.lite.sample.shared.error.domain.MissingMandatoryValueException;
-import tech.jhipster.lite.sample.shared.kipe.domain.RolesAccessesFixture.TestResource;
 
 @UnitTest
 class LitesampleAuthorizationsTest {

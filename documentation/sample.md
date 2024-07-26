@@ -4,7 +4,7 @@ It looks like you added a sample feature to your project...
 
 This feature is a simple business example and exercise for this kind of projects. Here's the business context:
 
-A brave beer retailer is handling his three shops with papers and pencils and he is starting to have some trouble scaling up. He asked us to a build a simple system where he'll be able to:
+A brave beer retailer is handling his three shops with papers and pencils and he is starting to have some trouble scaling up. He asked us to build a simple system where he'll be able to:
 
 - Add new beers (with name and price);
 - Remove beers from selling;

@@ -2267,7 +2267,7 @@
     "clientOfflineSessionIdleTimeout": "0",
     "cibaInterval": "5"
   },
-  "keycloakVersion": "25.0.1",
+  "keycloakVersion": "25.0.2",
   "userManagedAccessAllowed": false,
   "clientProfiles": {
     "profiles": []

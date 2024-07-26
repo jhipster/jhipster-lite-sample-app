@@ -22,7 +22,7 @@ public final class RolesAccessesFixture {
     //@formatter:on
   }
 
-  public static enum TestResource implements Resource {
+  public enum TestResource implements Resource {
     USERS("test-users"),
     DATA("test-data");
 

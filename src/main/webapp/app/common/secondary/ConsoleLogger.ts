@@ -1,5 +1,5 @@
-import { Logger } from '@/common/domain/Logger';
-import { Message } from '@/common/domain/Message';
+import type { Logger } from '@/common/domain/Logger';
+import type { Message } from '@/common/domain/Message';
 
 export default class ConsoleLogger implements Logger {
   constructor(private readonly logger: Console) {}

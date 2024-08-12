@@ -14,7 +14,7 @@ spring:
     hikari:
       maximum-pool-size: 2
     password: ''
-    url: jdbc:tc:postgresql:16.3:///litesample?TC_TMPFS=/testtmpfs:rw
+    url: jdbc:tc:postgresql:16.4:///litesample?TC_TMPFS=/testtmpfs:rw
     username: litesample
   security:
     oauth2:

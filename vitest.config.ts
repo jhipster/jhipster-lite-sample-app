@@ -1,14 +1,11 @@
 /// <reference types="vitest" />
 
-import { defineConfig } from 'vite';
+import tsconfigPaths from 'vite-tsconfig-paths';
+import { defineConfig, configDefaults } from 'vitest/config';
 import vue from '@vitejs/plugin-vue';
-import path from 'path';
 
 export default defineConfig({
-  plugins: [vue()],
-  resolve: {
-    alias: [{ find: '@', replacement: path.resolve(__dirname, 'src/main/webapp/app') }],
-  },
+  plugins: [vue(), tsconfigPaths()],
   test: {
     reporters: ['verbose', 'vitest-sonar-reporter'],
     outputFile: {
@@ -24,22 +21,15 @@ export default defineConfig({
     },
     environment: 'jsdom',
     cache: false,
-    include: ['src/test/javascript/spec/**/*.(spec|test).(ts|tsx)'],
-    exclude: ['node_modules', 'src/test/javascript/integration/**/*.spec.ts'],
+    include: ['src/test/webapp/unit/**/*.{test,spec}.?(c|m)[jt]s?(x)'],
     coverage: {
       thresholds: {
         perFile: true,
         autoUpdate: true,
         100: true,
       },
-      exclude: [
-        'src/main/webapp/**/*.component.ts',
-        'src/main/webapp/app/main.ts',
-        '.eslintrc.cjs',
-        '.lintstagedrc.cjs',
-        'src/test/**/*',
-        'target/**',
-      ],
+      include: ['src/main/webapp/**/*.ts?(x)'],
+      exclude: [...(configDefaults.coverage.exclude as string[]), 'src/main/webapp/app/main.ts', 'src/main/webapp/**/*.component.ts'],
       provider: 'istanbul',
       reportsDirectory: 'target/test-results/',
       reporter: ['html', 'json-summary', 'text', 'text-summary', 'lcov', 'clover'],

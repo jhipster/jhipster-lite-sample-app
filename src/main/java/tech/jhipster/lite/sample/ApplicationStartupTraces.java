@@ -2,8 +2,6 @@ package tech.jhipster.lite.sample;
 
 import java.net.InetAddress;
 import java.net.UnknownHostException;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
@@ -98,7 +96,7 @@ final class ApplicationStartupTraces {
       return null;
     }
 
-    return new StringBuilder().append("Profile(s): \t").append(Stream.of(profiles).collect(Collectors.joining(", "))).toString();
+    return "Profile(s): \t%s".formatted(String.join(", ", profiles));
   }
 
   @ExcludeFromGeneratedCodeCoverage(reason = "Hard to test implement detail error management")

@@ -36,14 +36,6 @@ npm install
 ```
 
 ```bash
-docker compose -f src/main/docker/sonar.yml up -d
-```
-
-```bash
-./mvnw clean verify sonar:sonar
-```
-
-```bash
 docker compose -f src/main/docker/postgresql.yml up -d
 ```
 

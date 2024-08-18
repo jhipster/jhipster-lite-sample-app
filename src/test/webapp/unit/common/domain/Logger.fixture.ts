@@ -1,5 +1,5 @@
-import sinon, { SinonStub } from 'sinon';
-import { Logger } from '@/common/domain/Logger';
+import sinon, { type SinonStub } from 'sinon';
+import type { Logger } from '@/common/domain/Logger';
 
 export interface LoggerFixture extends Logger {
   error: SinonStub;

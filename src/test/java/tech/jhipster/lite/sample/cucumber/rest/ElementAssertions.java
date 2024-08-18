@@ -37,7 +37,7 @@ class ElementAssertions {
   <Data> void containing(Map<String, Data> response) {
     assertThat(response).as("Can't check object against a null response").isNotNull();
 
-    response.entrySet().forEach(entry -> assertPathValue(jsonPath + "." + CucumberJson.toCamelCase(entry.getKey()), entry.getValue()));
+    response.forEach((key, value) -> assertPathValue(jsonPath + "." + CucumberJson.toCamelCase(key), value));
   }
 
   void withElementsCount(int count) {

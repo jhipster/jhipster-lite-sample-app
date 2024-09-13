@@ -7,9 +7,6 @@ logging:
 spring:
   application:
     name: Litesample
-  threads:
-    virtual:
-      enabled: true
   task:
     execution:
       pool:

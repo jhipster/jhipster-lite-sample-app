@@ -24,10 +24,27 @@ export default defineConfig({
     include: ['src/test/webapp/unit/**/*.{test,spec}.?(c|m)[jt]s?(x)'],
     coverage: {
       include: ['src/main/webapp/**/*.ts?(x)'],
-      exclude: [...(configDefaults.coverage.exclude as string[]), 'src/main/webapp/app/main.ts', 'src/main/webapp/**/*.component.ts'],
+      exclude: [
+        ...(configDefaults.coverage.exclude as string[]),
+        'src/main/webapp/app/main.ts',
+        'src/main/webapp/app/injections.ts',
+        'src/main/webapp/app/router.ts',
+        'src/main/webapp/**/*.component.ts',
+      ],
       provider: 'istanbul',
       reportsDirectory: 'target/test-results/',
       reporter: ['html', 'json-summary', 'text', 'text-summary', 'lcov', 'clover'],
+      thresholds: {
+        perFile: true,
+        autoUpdate: true,
+        100: true,
+      },
+      watermarks: {
+        statements: [100, 100],
+        branches: [100, 100],
+        functions: [100, 100],
+        lines: [100, 100],
+      },
     },
   },
 });

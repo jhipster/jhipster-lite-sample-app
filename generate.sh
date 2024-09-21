@@ -17,14 +17,14 @@ applyModules() {
       -X POST \
       -H "accept: */*" \
       -H "Content-Type: application/json" \
-      -d @"$payload" \
+      -d "$payload" \
       "http://localhost:7471""$api""
 
     local status_code=$(curl -o /dev/null -s -w "%{http_code}\n" \
       -X POST \
       -H "accept: */*" \
       -H "Content-Type: application/json" \
-      -d @"$payload" \
+      -d "$payload" \
       "http://localhost:7471""$api")
 
     if [[ $status_code == '40'* || $status_code == '50'* ]]; then
@@ -39,7 +39,7 @@ if [ "$#" -ne 1 ]; then
 fi
 
 version=$1
-payload=litesample.json
+payload="$(sed -e "s?JHIPSTER_LITE_SAMPLE_APP_FOLDER?$(pwd)?g" litesample.json)"
 
 echo "*** Git: update project..."
 git switch $GIT_MAIN_BRANCH

@@ -1,5 +1,5 @@
 {
-  "projectFolder": "/home/pgrimaud/projects/jhipster/jhipster-lite-sample-app",
+  "projectFolder": "JHIPSTER_LITE_SAMPLE_APP_FOLDER",
   "commit": false,
   "parameters": {
     "projectName": "JHipster Lite Sample Application",

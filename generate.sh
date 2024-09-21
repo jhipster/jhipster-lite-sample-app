@@ -83,6 +83,7 @@ applyModules \
 
 applyModules \
   "prettier" \
+  "typescript" \
   "frontend-maven-plugin" \
   "vue-core"
 

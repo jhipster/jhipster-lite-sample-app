@@ -8,7 +8,7 @@ This application comes with two package level annotations:
 To mark a package, you have to add a `package-info.java` file at the package root with:
 
 ```java
-@tech.jhipster.lite.sample.SharedKernel
+@{{ basePackage }}.SharedKernel
 package tech.jhipster.lite.sample;
 
 ```
@@ -16,7 +16,7 @@ package tech.jhipster.lite.sample;
 or:
 
 ```java
-@tech.jhipster.lite.sample.BusinessContext
+@{{ basePackage }}.BusinessContext
 package tech.jhipster.lite.sample;
 
 ```

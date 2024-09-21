@@ -1,5 +1,5 @@
-import { AxiosInstance, AxiosResponse } from 'axios';
-import sinon, { SinonStub } from 'sinon';
+import type { AxiosInstance, AxiosResponse } from 'axios';
+import sinon, { type SinonStub } from 'sinon';
 
 export interface AxiosStubInstance extends AxiosInstance {
   get: SinonStub;

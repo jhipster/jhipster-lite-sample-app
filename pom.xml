@@ -184,12 +184,10 @@
     <failsafe-plugin.version>3.5.0</failsafe-plugin.version>
     <jacoco.version>0.8.11</jacoco.version>
     <commons-lang3.version>3.17.0</commons-lang3.version>
-    <spring-boot.version>3.3.3</spring-boot.version>
+    <spring-boot.version>3.3.4</spring-boot.version>
     <reflections.version>0.10.2</reflections.version>
     <archunit-junit5.version>1.3.0</archunit-junit5.version>
     <git-commit-id-plugin.version>9.0.1</git-commit-id-plugin.version>
-    <checksum-maven-plugin.version>1.11</checksum-maven-plugin.version>
-    <maven-antrun-plugin.version>3.1.0</maven-antrun-plugin.version>
     <frontend-maven-plugin.version>1.15.0</frontend-maven-plugin.version>
     <npm.version>10.8.3</npm.version>
     <node.version>v20.17.0</node.version>
@@ -198,7 +196,7 @@
     <testcontainers.version>1.20.1</testcontainers.version>
     <liquibase.version>4.29.2</liquibase.version>
     <springdoc-openapi-starter-webmvc.version>2.6.0</springdoc-openapi-starter-webmvc.version>
-    <cucumber.version>7.18.1</cucumber.version>
+    <cucumber.version>7.19.0</cucumber.version>
     <json-web-token.version>0.12.6</json-web-token.version>
   </properties>
 
@@ -471,77 +469,6 @@
       <plugin>
         <groupId>io.github.git-commit-id</groupId>
         <artifactId>git-commit-id-maven-plugin</artifactId>
-      </plugin>
-      <plugin>
-        <groupId>net.nicoulaj.maven.plugins</groupId>
-        <artifactId>checksum-maven-plugin</artifactId>
-        <version>${checksum-maven-plugin.version}</version>
-        <executions>
-          <execution>
-            <id>create-pre-compiled-webapp-checksum</id>
-            <phase>generate-resources</phase>
-            <goals>
-              <goal>files</goal>
-            </goals>
-          </execution>
-          <execution>
-            <id>create-compiled-webapp-checksum</id>
-            <phase>compile</phase>
-            <goals>
-              <goal>files</goal>
-            </goals>
-            <configuration>
-              <csvSummaryFile>checksums.csv.old</csvSummaryFile>
-            </configuration>
-          </execution>
-        </executions>
-        <configuration>
-          <fileSets>
-            <fileSet>
-              <directory>${project.basedir}</directory>
-              <includes>
-                <include>src/main/webapp/**/*.*</include>
-                <include>target/classes/static/**/*.*</include>
-                <include>package-lock.json</include>
-                <include>package.json</include>
-                <include>tsconfig.json</include>
-              </includes>
-            </fileSet>
-          </fileSets>
-          <failOnError>false</failOnError>
-          <failIfNoFiles>false</failIfNoFiles>
-          <individualFiles>false</individualFiles>
-          <algorithms>
-            <algorithm>SHA-1</algorithm>
-          </algorithms>
-          <includeRelativePath>true</includeRelativePath>
-          <quiet>true</quiet>
-        </configuration>
-      </plugin>
-      <plugin>
-        <artifactId>maven-antrun-plugin</artifactId>
-        <version>${maven-antrun-plugin.version}</version>
-        <executions>
-          <execution>
-            <id>eval-frontend-checksum</id>
-            <phase>generate-resources</phase>
-            <goals>
-              <goal>run</goal>
-            </goals>
-            <configuration>
-              <target>
-                <condition else="false" property="skip.npm" value="true">
-                  <and>
-                    <available file="checksums.csv" filepath="${project.build.directory}" />
-                    <available file="checksums.csv.old" filepath="${project.build.directory}" />
-                    <filesmatch file2="${project.build.directory}/checksums.csv.old" file1="${project.build.directory}/checksums.csv" />
-                  </and>
-                </condition>
-              </target>
-              <exportAntProperties>true</exportAntProperties>
-            </configuration>
-          </execution>
-        </executions>
       </plugin>
       <plugin>
         <groupId>com.github.eirslett</groupId>

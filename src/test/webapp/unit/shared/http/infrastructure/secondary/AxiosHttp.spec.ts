@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { AxiosResponse } from 'axios';
+import type { AxiosResponse } from 'axios';
 import { AxiosHttp } from '@/shared/http/infrastructure/secondary/AxiosHttp';
 import { dataAxiosResponse, stubAxiosInstance } from './AxiosStub';
 

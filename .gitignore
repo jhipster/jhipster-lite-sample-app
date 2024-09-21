@@ -70,6 +70,11 @@ out/
 *.code-workspace
 
 ######################
+# Maven
+######################
+/target/
+
+######################
 # Package Files
 ######################
 *.jar
@@ -123,7 +128,5 @@ Desktop.ini
 # ESLint
 ######################
 .eslintcache
-# Maven
-/target/
 # Maven Wrapper
 !.mvn/wrapper/maven-wrapper.jar

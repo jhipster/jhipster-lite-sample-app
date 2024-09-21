@@ -1,6 +1,6 @@
+import js from '@eslint/js';
 import globals from 'globals';
 import typescript from 'typescript-eslint';
-import js from '@eslint/js';
 import vue from 'eslint-plugin-vue';
 
 export default typescript.config(
@@ -31,9 +31,9 @@ export default typescript.config(
     },
     rules: {
       quotes: ['error', 'single', { avoidEscape: true }],
+      '@typescript-eslint/no-empty-object-type': 'off',
       '@typescript-eslint/no-explicit-any': 'off',
       'vue/html-self-closing': 'off',
-      '@typescript-eslint/no-empty-object-type': 'off',
     },
   },
 );

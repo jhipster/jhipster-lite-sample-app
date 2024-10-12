@@ -104,8 +104,8 @@ class CustomClaimConverter implements Converter<Map<String, Object>, Map<String,
     CLAIM_APPENDERS.stream().forEach(appender -> appender.append(claim, user));
   }
 
-  private static interface ClaimAppender {
-    public void append(Map<String, Object> claim, ObjectNode user);
+  private interface ClaimAppender {
+    void append(Map<String, Object> claim, ObjectNode user);
   }
 
   private static class StandardClaimAppender implements ClaimAppender {

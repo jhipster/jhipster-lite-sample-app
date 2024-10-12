@@ -1,7 +1,6 @@
 package tech.jhipster.lite.sample;
 
 import static com.tngtech.archunit.lang.syntax.ArchRuleDefinition.*;
-import static java.util.function.Predicate.*;
 
 import com.tngtech.archunit.core.domain.JavaClasses;
 import com.tngtech.archunit.core.importer.ClassFileImporter;
@@ -13,9 +12,9 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Collection;
-import java.util.List;
 import java.util.function.Function;
 import java.util.stream.Stream;
+import org.apache.commons.lang3.ArrayUtils;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 import org.springframework.stereotype.Component;
@@ -25,7 +24,7 @@ import org.springframework.stereotype.Controller;
 class HexagonalArchTest {
 
   private static final String ROOT_PACKAGE = "tech.jhipster.lite.sample";
-  private static final String GENERATION_SHARED_KERNEL_PACKAGES = ROOT_PACKAGE.concat(".shared.generation..");
+  private static final String SHARED_PACKAGES = ROOT_PACKAGE.concat(".shared..");
   private static final String WIRE_PACKAGES = ROOT_PACKAGE.concat(".wire..");
 
   private static final JavaClasses classes = new ClassFileImporter()
@@ -33,17 +32,17 @@ class HexagonalArchTest {
     .importPackages(ROOT_PACKAGE);
 
   private static final Collection<String> businessContexts = packagesWithAnnotation(BusinessContext.class);
-  private static final Collection<String> businessContextsPackages = buildPackagesPatterns(businessContexts);
+  private static final String[] businessContextsPackages = buildPackagesPatterns(businessContexts);
 
   private static final Collection<String> sharedKernels = packagesWithAnnotation(SharedKernel.class);
-  private static final Collection<String> sharedKernelsPackages = buildPackagesPatterns(sharedKernels);
+  private static final String[] sharedKernelsPackages = buildPackagesPatterns(sharedKernels);
 
   // the empty package is related to: https://github.com/TNG/ArchUnit/issues/191#issuecomment-507964792
-  private static final Collection<String> vanillaPackages = List.of("java..", "");
-  private static final Collection<String> commonToolsAndUtilsPackages = List.of("org.apache.commons..", "org.jmolecules..", "org.slf4j..");
+  private static final String[] vanillaPackages = new String[] { "java..", "" };
+  private static final String[] commonToolsAndUtilsPackages = new String[] { "org.apache.commons..", "org.jmolecules..", "org.slf4j.." };
 
-  private static Collection<String> buildPackagesPatterns(Collection<String> packages) {
-    return packages.stream().map(path -> path + "..").toList();
+  private static String[] buildPackagesPatterns(Collection<String> packages) {
+    return packages.stream().map(path -> path + "..").toArray(String[]::new);
   }
 
   private static Collection<String> packagesWithAnnotation(Class<? extends Annotation> annotationClass) throws AssertionError {
@@ -167,9 +166,10 @@ class HexagonalArchTest {
     }
 
     private String[] authorizedDomainPackages() {
-      return Stream.of(List.of("..domain.."), vanillaPackages, commonToolsAndUtilsPackages, sharedKernelsPackages)
-        .flatMap(Collection::stream)
-        .toArray(String[]::new);
+      return Stream.of(new String[] { "..domain.." }, vanillaPackages, commonToolsAndUtilsPackages, sharedKernelsPackages).reduce(
+        new String[] {},
+        ArrayUtils::addAll
+      );
     }
   }
 
@@ -244,12 +244,12 @@ class HexagonalArchTest {
   class SharedKernels {
 
     @Test
-    void sharedPackageShouldOnlyContainSharedKernels() {
+    void topLevelSharedPackageShouldOnlyContainSharedKernels() {
       classes()
         .that()
         .haveSimpleName("package-info")
         .and()
-        .resideInAPackage(ROOT_PACKAGE.concat(".shared.."))
+        .resideInAPackage(SHARED_PACKAGES)
         .should()
         .beMetaAnnotatedWith(SharedKernel.class)
         .because(ROOT_PACKAGE + ".shared package should only contain shared kernels")
@@ -261,13 +261,13 @@ class HexagonalArchTest {
   class Wire {
 
     @Test
-    void shouldNotDependOnBoundedContextsOrSharedKernels() {
+    void shouldNotDependOnBoundedContexts() {
       noClasses()
         .that()
         .resideInAPackage(WIRE_PACKAGES)
         .should()
         .dependOnClassesThat()
-        .resideInAnyPackage(businessContextsOrSharedKernelsPackages())
+        .resideInAnyPackage(businessContextsPackages)
         .because("Wire should not depend on business contexts or shared kernel should not depend")
         .check(classes);
     }
@@ -277,6 +277,8 @@ class HexagonalArchTest {
       noClasses()
         .that()
         .resideInAnyPackage(businessContextsOrSharedKernelsPackages())
+        .and()
+        .resideOutsideOfPackage(WIRE_PACKAGES)
         .should()
         .dependOnClassesThat()
         .resideInAPackage(WIRE_PACKAGES)
@@ -285,10 +287,7 @@ class HexagonalArchTest {
     }
 
     private static String[] businessContextsOrSharedKernelsPackages() {
-      return Stream.of(businessContextsPackages, sharedKernelsPackages)
-        .flatMap(Collection::stream)
-        .filter(not(GENERATION_SHARED_KERNEL_PACKAGES::equals))
-        .toArray(String[]::new);
+      return ArrayUtils.addAll(businessContextsPackages, sharedKernelsPackages);
     }
 
     @Test

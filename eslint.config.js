@@ -1,7 +1,7 @@
 import js from '@eslint/js';
+import vue from 'eslint-plugin-vue';
 import globals from 'globals';
 import typescript from 'typescript-eslint';
-import vue from 'eslint-plugin-vue';
 
 export default typescript.config(
   {

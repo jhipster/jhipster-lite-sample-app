@@ -1,8 +1,8 @@
 /// <reference types="vitest" />
 
-import tsconfigPaths from 'vite-tsconfig-paths';
-import { defineConfig, configDefaults } from 'vitest/config';
 import vue from '@vitejs/plugin-vue';
+import tsconfigPaths from 'vite-tsconfig-paths';
+import { configDefaults, defineConfig } from 'vitest/config';
 
 export default defineConfig({
   plugins: [vue(), tsconfigPaths()],

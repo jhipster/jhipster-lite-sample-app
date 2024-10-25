@@ -2,6 +2,7 @@ package tech.jhipster.lite.sample.shared.authentication.infrastructure.primary;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
+import tech.jhipster.lite.sample.shared.memoizer.domain.Memoizers;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
@@ -20,7 +21,6 @@ import org.springframework.security.oauth2.server.resource.web.DefaultBearerToke
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
-import tech.jhipster.lite.sample.shared.memoizer.domain.Memoizers;
 
 /**
  * Claim converter to add custom claims by retrieving the user from the userinfo endpoint.

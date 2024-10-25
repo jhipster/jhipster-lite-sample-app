@@ -1,9 +1,11 @@
 package tech.jhipster.lite.sample.account.infrastructure.primary;
 
+import static tech.jhipster.lite.sample.account.infrastructure.OAuth2TokenFixture.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
-import static tech.jhipster.lite.sample.account.infrastructure.OAuth2TokenFixture.*;
 
+import tech.jhipster.lite.sample.IntegrationTest;
+import tech.jhipster.lite.sample.shared.authentication.infrastructure.primary.WithUnauthenticatedMockUser;
 import java.time.Instant;
 import java.util.Map;
 import org.junit.jupiter.api.Test;
@@ -19,8 +21,6 @@ import org.springframework.security.oauth2.core.OAuth2AccessToken.TokenType;
 import org.springframework.security.test.context.TestSecurityContextHolder;
 import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.web.servlet.MockMvc;
-import tech.jhipster.lite.sample.IntegrationTest;
-import tech.jhipster.lite.sample.shared.authentication.infrastructure.primary.WithUnauthenticatedMockUser;
 
 @IntegrationTest
 @AutoConfigureMockMvc

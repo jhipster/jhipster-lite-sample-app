@@ -1,5 +1,6 @@
 package tech.jhipster.lite.sample.account.infrastructure;
 
+import tech.jhipster.lite.sample.shared.authentication.domain.Role;
 import java.time.Instant;
 import java.util.HashMap;
 import java.util.List;
@@ -12,7 +13,6 @@ import org.springframework.security.oauth2.core.oidc.user.DefaultOidcUser;
 import org.springframework.security.oauth2.jose.jws.JwsAlgorithms;
 import org.springframework.security.oauth2.jwt.Jwt;
 import org.springframework.security.oauth2.server.resource.authentication.JwtAuthenticationToken;
-import tech.jhipster.lite.sample.shared.authentication.domain.Role;
 
 public final class OAuth2TokenFixture {
 

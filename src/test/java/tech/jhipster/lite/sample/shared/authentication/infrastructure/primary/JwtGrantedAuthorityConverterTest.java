@@ -2,6 +2,8 @@ package tech.jhipster.lite.sample.shared.authentication.infrastructure.primary;
 
 import static org.assertj.core.api.Assertions.*;
 
+import tech.jhipster.lite.sample.UnitTest;
+import tech.jhipster.lite.sample.shared.authentication.domain.Role;
 import java.util.Collection;
 import java.util.List;
 import org.junit.jupiter.api.Test;
@@ -12,8 +14,6 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.oauth2.jose.jws.JwsAlgorithms;
 import org.springframework.security.oauth2.jwt.Jwt;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
-import tech.jhipster.lite.sample.UnitTest;
-import tech.jhipster.lite.sample.shared.authentication.domain.Role;
 
 @UnitTest
 @ExtendWith(SpringExtension.class)

@@ -1,9 +1,12 @@
 package tech.jhipster.lite.sample.shared.authentication.application;
 
+import static tech.jhipster.lite.sample.shared.authentication.application.AuthenticatedUser.*;
 import static org.assertj.core.api.Assertions.*;
 import static org.springframework.security.oauth2.core.oidc.endpoint.OidcParameterNames.*;
-import static tech.jhipster.lite.sample.shared.authentication.application.AuthenticatedUser.*;
 
+import tech.jhipster.lite.sample.UnitTest;
+import tech.jhipster.lite.sample.shared.authentication.domain.Role;
+import tech.jhipster.lite.sample.shared.authentication.domain.Username;
 import java.time.Instant;
 import java.util.Collection;
 import java.util.List;
@@ -32,9 +35,6 @@ import org.springframework.security.oauth2.core.oidc.user.OidcUser;
 import org.springframework.security.oauth2.jose.jws.JwsAlgorithms;
 import org.springframework.security.oauth2.jwt.Jwt;
 import org.springframework.security.oauth2.server.resource.authentication.JwtAuthenticationToken;
-import tech.jhipster.lite.sample.UnitTest;
-import tech.jhipster.lite.sample.shared.authentication.domain.Role;
-import tech.jhipster.lite.sample.shared.authentication.domain.Username;
 
 @UnitTest
 class AuthenticatedUserTest {

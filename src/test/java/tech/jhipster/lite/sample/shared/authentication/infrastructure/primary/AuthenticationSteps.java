@@ -2,6 +2,8 @@ package tech.jhipster.lite.sample.shared.authentication.infrastructure.primary;
 
 import static org.assertj.core.api.Assertions.*;
 
+import tech.jhipster.lite.sample.shared.authentication.domain.Role;
+import tech.jhipster.lite.sample.cucumber.CucumberAuthenticationConfiguration;
 import io.cucumber.java.en.Given;
 import io.jsonwebtoken.Jwts;
 import java.time.Instant;
@@ -15,8 +17,6 @@ import java.util.stream.Stream;
 import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.client.ClientHttpRequestInterceptor;
-import tech.jhipster.lite.sample.cucumber.CucumberAuthenticationConfiguration;
-import tech.jhipster.lite.sample.shared.authentication.domain.Role;
 
 public class AuthenticationSteps {
 

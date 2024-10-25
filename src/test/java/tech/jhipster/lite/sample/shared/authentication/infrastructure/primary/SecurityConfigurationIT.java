@@ -3,6 +3,8 @@ package tech.jhipster.lite.sample.shared.authentication.infrastructure.primary;
 import static org.assertj.core.api.Assertions.*;
 import static org.springframework.security.oauth2.core.oidc.endpoint.OidcParameterNames.*;
 
+import tech.jhipster.lite.sample.IntegrationTest;
+import tech.jhipster.lite.sample.shared.authentication.domain.Role;
 import java.time.Instant;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -17,8 +19,6 @@ import org.springframework.security.core.authority.mapping.GrantedAuthoritiesMap
 import org.springframework.security.oauth2.core.oidc.OidcIdToken;
 import org.springframework.security.oauth2.core.oidc.OidcUserInfo;
 import org.springframework.security.oauth2.core.oidc.user.OidcUserAuthority;
-import tech.jhipster.lite.sample.IntegrationTest;
-import tech.jhipster.lite.sample.shared.authentication.domain.Role;
 
 @IntegrationTest
 class SecurityConfigurationIT {

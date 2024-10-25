@@ -95,7 +95,11 @@ class LitesamplePageTest {
 
   @Test
   void shouldBeLastPageWithoutContent() {
-    LitesamplePage<Object> page = LitesamplePage.builder(List.of()).currentPage(0).pageSize(1).totalElementsCount(0).build();
+    LitesamplePage<Object> page = LitesamplePage.builder(List.of())
+      .currentPage(0)
+      .pageSize(1)
+      .totalElementsCount(0)
+      .build();
     assertThat(page.isNotLast()).isFalse();
   }
 
@@ -106,7 +110,10 @@ class LitesamplePageTest {
 
   @Test
   void shouldGetPageFromElements() {
-    LitesamplePage<String> page = LitesamplePage.of(List.of("hello", "java", "world"), new LitesamplePageable(1, 1));
+    LitesamplePage<String> page = LitesamplePage.of(
+      List.of("hello", "java", "world"),
+      new LitesamplePageable(1, 1)
+    );
 
     assertThat(page.currentPage()).isEqualTo(1);
     assertThat(page.hasNext()).isTrue();
@@ -118,7 +125,10 @@ class LitesamplePageTest {
 
   @Test
   void shouldGetEmptyPageFromOutOfBoundElements() {
-    LitesamplePage<String> page = LitesamplePage.of(List.of("hello", "java", "world"), new LitesamplePageable(4, 1));
+    LitesamplePage<String> page = LitesamplePage.of(
+      List.of("hello", "java", "world"),
+      new LitesamplePageable(4, 1)
+    );
 
     assertThat(page.currentPage()).isEqualTo(4);
     assertThat(page.hasNext()).isFalse();
@@ -130,7 +140,10 @@ class LitesamplePageTest {
 
   @Test
   void shouldGetPageWithLessThanExpectedElements() {
-    LitesamplePage<String> page = LitesamplePage.of(List.of("hello", "java", "world"), new LitesamplePageable(0, 4));
+    LitesamplePage<String> page = LitesamplePage.of(
+      List.of("hello", "java", "world"),
+      new LitesamplePageable(0, 4)
+    );
 
     assertThat(page.currentPage()).isZero();
     assertThat(page.hasNext()).isFalse();

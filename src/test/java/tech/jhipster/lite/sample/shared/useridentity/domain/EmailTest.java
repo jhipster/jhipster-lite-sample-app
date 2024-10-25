@@ -3,6 +3,7 @@ package tech.jhipster.lite.sample.shared.useridentity.domain;
 import static org.assertj.core.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
+
 import tech.jhipster.lite.sample.UnitTest;
 import tech.jhipster.lite.sample.shared.error.domain.MissingMandatoryValueException;
 import tech.jhipster.lite.sample.shared.error.domain.StringTooLongException;

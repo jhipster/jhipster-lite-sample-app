@@ -2,9 +2,9 @@ package tech.jhipster.lite.sample.shared.authentication.infrastructure.primary;
 
 import static org.assertj.core.api.Assertions.*;
 
+import tech.jhipster.lite.sample.UnitTest;
 import java.util.List;
 import org.junit.jupiter.api.Test;
-import tech.jhipster.lite.sample.UnitTest;
 
 @UnitTest
 class ApplicationSecurityPropertiesTest {

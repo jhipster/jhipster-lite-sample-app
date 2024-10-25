@@ -1,16 +1,16 @@
 package tech.jhipster.lite.sample.account.infrastructure.secondary;
 
-import static org.assertj.core.api.Assertions.*;
-import static org.mockito.Mockito.*;
 import static tech.jhipster.lite.sample.account.domain.AccountsFixture.*;
 import static tech.jhipster.lite.sample.account.infrastructure.OAuth2TokenFixture.*;
+import static org.assertj.core.api.Assertions.*;
+import static org.mockito.Mockito.*;
 
+import tech.jhipster.lite.sample.UnitTest;
 import java.util.Map;
 import org.junit.jupiter.api.Test;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContext;
 import org.springframework.security.core.context.SecurityContextHolder;
-import tech.jhipster.lite.sample.UnitTest;
 
 @UnitTest
 class OAuth2AuthenticationReaderTest {

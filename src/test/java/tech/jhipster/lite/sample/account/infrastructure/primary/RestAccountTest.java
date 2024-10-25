@@ -1,11 +1,12 @@
 package tech.jhipster.lite.sample.account.infrastructure.primary;
 
-import static org.assertj.core.api.Assertions.*;
 import static tech.jhipster.lite.sample.account.domain.AccountsFixture.*;
+import static org.assertj.core.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.junit.jupiter.api.Test;
 import tech.jhipster.lite.sample.UnitTest;
 
 @UnitTest
@@ -20,12 +21,12 @@ class RestAccountTest {
 
   private String json() {
     return """
-    {\
-    "username":"user",\
-    "name":"Paul DUPOND",\
-    "email":"email@company.fr",\
-    "roles":["ROLE_ADMIN"]\
-    }\
-    """;
+        {\
+        "username":"user",\
+        "name":"Paul DUPOND",\
+        "email":"email@company.fr",\
+        "roles":["ROLE_ADMIN"]\
+        }\
+        """;
   }
 }

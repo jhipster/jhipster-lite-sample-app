@@ -45,7 +45,8 @@ class CustomClaimConverterTest {
   }
 
   private ClientRegistration buildRegistration() {
-    return ClientRegistration.withRegistrationId("test")
+    return ClientRegistration
+      .withRegistrationId("test")
       .userInfoUri("http://jhipster.test")
       .authorizationGrantType(AuthorizationGrantType.JWT_BEARER)
       .build();

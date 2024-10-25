@@ -1,5 +1,6 @@
 package tech.jhipster.lite.sample.account.infrastructure.secondary;
 
+import tech.jhipster.lite.sample.account.domain.Account;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
@@ -9,7 +10,6 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.oauth2.client.authentication.OAuth2AuthenticationToken;
 import org.springframework.security.oauth2.server.resource.authentication.JwtAuthenticationToken;
 import org.springframework.stereotype.Service;
-import tech.jhipster.lite.sample.account.domain.Account;
 
 @Service
 class OAuth2AuthenticationReader {

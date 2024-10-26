@@ -1,275 +1,310 @@
 {
-  "actions" : [ {
-    "module" : "init",
-    "date" : "2024-10-25T20:09:34.551425067Z",
-    "properties" : {
-      "projectName" : "JHipster Lite Sample Application",
-      "baseName" : "litesample",
-      "packageName" : "tech.jhipster.lite.sample"
+  "actions": [
+    {
+      "module": "init",
+      "date": "2024-10-26T18:30:56.615565Z",
+      "properties": {
+        "projectName": "JHipster Lite Sample Application",
+        "baseName": "litesample",
+        "packageName": "tech.jhipster.lite.sample"
+      }
+    },
+    {
+      "module": "maven-java",
+      "date": "2024-10-26T18:30:57.474692Z",
+      "properties": {
+        "projectName": "JHipster Lite Sample Application",
+        "baseName": "litesample",
+        "packageName": "tech.jhipster.lite.sample"
+      }
+    },
+    {
+      "module": "maven-wrapper",
+      "date": "2024-10-26T18:30:57.755770Z",
+      "properties": {
+        "projectName": "JHipster Lite Sample Application",
+        "baseName": "litesample",
+        "packageName": "tech.jhipster.lite.sample"
+      }
+    },
+    {
+      "module": "java-base",
+      "date": "2024-10-26T18:30:57.950324Z",
+      "properties": {
+        "projectName": "JHipster Lite Sample Application",
+        "baseName": "litesample",
+        "packageName": "tech.jhipster.lite.sample"
+      }
+    },
+    {
+      "module": "jacoco-with-min-coverage-check",
+      "date": "2024-10-26T18:30:58.071130Z",
+      "properties": {
+        "projectName": "JHipster Lite Sample Application",
+        "baseName": "litesample",
+        "packageName": "tech.jhipster.lite.sample"
+      }
+    },
+    {
+      "module": "java-memoizers",
+      "date": "2024-10-26T18:30:58.116093Z",
+      "properties": {
+        "projectName": "JHipster Lite Sample Application",
+        "baseName": "litesample",
+        "packageName": "tech.jhipster.lite.sample"
+      }
+    },
+    {
+      "module": "java-enums",
+      "date": "2024-10-26T18:30:58.149026Z",
+      "properties": {
+        "projectName": "JHipster Lite Sample Application",
+        "baseName": "litesample",
+        "packageName": "tech.jhipster.lite.sample"
+      }
+    },
+    {
+      "module": "pagination-domain",
+      "date": "2024-10-26T18:30:58.224032Z",
+      "properties": {
+        "projectName": "JHipster Lite Sample Application",
+        "baseName": "litesample",
+        "packageName": "tech.jhipster.lite.sample"
+      }
+    },
+    {
+      "module": "application-service-hexagonal-architecture-documentation",
+      "date": "2024-10-26T18:30:58.268272Z",
+      "properties": {
+        "projectName": "JHipster Lite Sample Application",
+        "baseName": "litesample",
+        "packageName": "tech.jhipster.lite.sample"
+      }
+    },
+    {
+      "module": "spring-boot",
+      "date": "2024-10-26T18:30:58.533540Z",
+      "properties": {
+        "projectName": "JHipster Lite Sample Application",
+        "baseName": "litesample",
+        "packageName": "tech.jhipster.lite.sample"
+      }
+    },
+    {
+      "module": "logs-spy",
+      "date": "2024-10-26T18:30:58.598513Z",
+      "properties": {
+        "projectName": "JHipster Lite Sample Application",
+        "baseName": "litesample",
+        "packageName": "tech.jhipster.lite.sample"
+      }
+    },
+    {
+      "module": "spring-boot-mvc-empty",
+      "date": "2024-10-26T18:30:58.662639Z",
+      "properties": {
+        "projectName": "JHipster Lite Sample Application",
+        "baseName": "litesample",
+        "packageName": "tech.jhipster.lite.sample"
+      }
+    },
+    {
+      "module": "spring-boot-tomcat",
+      "date": "2024-10-26T18:30:58.829661Z",
+      "properties": {
+        "projectName": "JHipster Lite Sample Application",
+        "baseName": "litesample",
+        "packageName": "tech.jhipster.lite.sample"
+      }
+    },
+    {
+      "module": "spring-boot-actuator",
+      "date": "2024-10-26T18:30:58.928795Z",
+      "properties": {
+        "projectName": "JHipster Lite Sample Application",
+        "baseName": "litesample",
+        "packageName": "tech.jhipster.lite.sample"
+      }
+    },
+    {
+      "module": "spring-boot-async",
+      "date": "2024-10-26T18:30:59.024924Z",
+      "properties": {
+        "projectName": "JHipster Lite Sample Application",
+        "baseName": "litesample",
+        "packageName": "tech.jhipster.lite.sample"
+      }
+    },
+    {
+      "module": "spring-boot-devtools",
+      "date": "2024-10-26T18:30:59.106023Z",
+      "properties": {
+        "projectName": "JHipster Lite Sample Application",
+        "baseName": "litesample",
+        "packageName": "tech.jhipster.lite.sample"
+      }
+    },
+    {
+      "module": "java-archunit",
+      "date": "2024-10-26T18:30:59.193857Z",
+      "properties": {
+        "projectName": "JHipster Lite Sample Application",
+        "baseName": "litesample",
+        "packageName": "tech.jhipster.lite.sample"
+      }
+    },
+    {
+      "module": "git-information",
+      "date": "2024-10-26T18:30:59.309493Z",
+      "properties": {
+        "projectName": "JHipster Lite Sample Application",
+        "baseName": "litesample",
+        "packageName": "tech.jhipster.lite.sample"
+      }
+    },
+    {
+      "module": "prettier",
+      "date": "2024-10-26T18:30:59.398295Z",
+      "properties": {
+        "projectName": "JHipster Lite Sample Application",
+        "baseName": "litesample",
+        "packageName": "tech.jhipster.lite.sample"
+      }
+    },
+    {
+      "module": "typescript",
+      "date": "2024-10-26T18:30:59.479007Z",
+      "properties": {
+        "projectName": "JHipster Lite Sample Application",
+        "baseName": "litesample",
+        "packageName": "tech.jhipster.lite.sample"
+      }
+    },
+    {
+      "module": "frontend-maven-plugin",
+      "date": "2024-10-26T18:30:59.564418Z",
+      "properties": {
+        "projectName": "JHipster Lite Sample Application",
+        "baseName": "litesample",
+        "packageName": "tech.jhipster.lite.sample"
+      }
+    },
+    {
+      "module": "vue-core",
+      "date": "2024-10-26T18:30:59.659769Z",
+      "properties": {
+        "projectName": "JHipster Lite Sample Application",
+        "baseName": "litesample",
+        "packageName": "tech.jhipster.lite.sample"
+      }
+    },
+    {
+      "module": "sonar-qube-java-backend-and-frontend",
+      "date": "2024-10-26T18:30:59.730685Z",
+      "properties": {
+        "projectName": "JHipster Lite Sample Application",
+        "baseName": "litesample",
+        "packageName": "tech.jhipster.lite.sample"
+      }
+    },
+    {
+      "module": "jpa-postgresql",
+      "date": "2024-10-26T18:30:59.918516Z",
+      "properties": {
+        "projectName": "JHipster Lite Sample Application",
+        "baseName": "litesample",
+        "packageName": "tech.jhipster.lite.sample"
+      }
+    },
+    {
+      "module": "liquibase",
+      "date": "2024-10-26T18:31:00.033382Z",
+      "properties": {
+        "projectName": "JHipster Lite Sample Application",
+        "baseName": "litesample",
+        "packageName": "tech.jhipster.lite.sample"
+      }
+    },
+    {
+      "module": "spring-boot-oauth2",
+      "date": "2024-10-26T18:31:00.176510Z",
+      "properties": {
+        "projectName": "JHipster Lite Sample Application",
+        "baseName": "litesample",
+        "packageName": "tech.jhipster.lite.sample"
+      }
+    },
+    {
+      "module": "spring-boot-oauth2-account",
+      "date": "2024-10-26T18:31:00.259699Z",
+      "properties": {
+        "projectName": "JHipster Lite Sample Application",
+        "baseName": "litesample",
+        "packageName": "tech.jhipster.lite.sample"
+      }
+    },
+    {
+      "module": "springdoc-mvc-openapi",
+      "date": "2024-10-26T18:31:00.382221Z",
+      "properties": {
+        "projectName": "JHipster Lite Sample Application",
+        "baseName": "litesample",
+        "packageName": "tech.jhipster.lite.sample"
+      }
+    },
+    {
+      "module": "springdoc-oauth2",
+      "date": "2024-10-26T18:31:00.527693Z",
+      "properties": {
+        "projectName": "JHipster Lite Sample Application",
+        "baseName": "litesample",
+        "packageName": "tech.jhipster.lite.sample"
+      }
+    },
+    {
+      "module": "spring-boot-cucumber-mvc",
+      "date": "2024-10-26T18:31:00.755057Z",
+      "properties": {
+        "projectName": "JHipster Lite Sample Application",
+        "baseName": "litesample",
+        "packageName": "tech.jhipster.lite.sample"
+      }
+    },
+    {
+      "module": "spring-boot-cucumber-oauth2-authentication",
+      "date": "2024-10-26T18:31:00.862241Z",
+      "properties": {
+        "projectName": "JHipster Lite Sample Application",
+        "baseName": "litesample",
+        "packageName": "tech.jhipster.lite.sample"
+      }
+    },
+    {
+      "module": "kipe-expression",
+      "date": "2024-10-26T18:31:00.905746Z",
+      "properties": {
+        "projectName": "JHipster Lite Sample Application",
+        "baseName": "litesample",
+        "packageName": "tech.jhipster.lite.sample"
+      }
+    },
+    {
+      "module": "kipe-authorization",
+      "date": "2024-10-26T18:31:00.953733Z",
+      "properties": {
+        "projectName": "JHipster Lite Sample Application",
+        "baseName": "litesample",
+        "packageName": "tech.jhipster.lite.sample"
+      }
+    },
+    {
+      "module": "sample-feature",
+      "date": "2024-10-26T18:31:01.006369Z",
+      "properties": {
+        "projectName": "JHipster Lite Sample Application",
+        "baseName": "litesample",
+        "packageName": "tech.jhipster.lite.sample"
+      }
     }
-  }, {
-    "module" : "maven-java",
-    "date" : "2024-10-25T20:09:34.697140529Z",
-    "properties" : {
-      "projectName" : "JHipster Lite Sample Application",
-      "baseName" : "litesample",
-      "packageName" : "tech.jhipster.lite.sample"
-    }
-  }, {
-    "module" : "maven-wrapper",
-    "date" : "2024-10-25T20:09:34.730649690Z",
-    "properties" : {
-      "projectName" : "JHipster Lite Sample Application",
-      "baseName" : "litesample",
-      "packageName" : "tech.jhipster.lite.sample"
-    }
-  }, {
-    "module" : "java-base",
-    "date" : "2024-10-25T20:09:34.825982940Z",
-    "properties" : {
-      "projectName" : "JHipster Lite Sample Application",
-      "baseName" : "litesample",
-      "packageName" : "tech.jhipster.lite.sample"
-    }
-  }, {
-    "module" : "jacoco-with-min-coverage-check",
-    "date" : "2024-10-25T20:09:34.880805425Z",
-    "properties" : {
-      "projectName" : "JHipster Lite Sample Application",
-      "baseName" : "litesample",
-      "packageName" : "tech.jhipster.lite.sample"
-    }
-  }, {
-    "module" : "java-memoizers",
-    "date" : "2024-10-25T20:09:34.905221163Z",
-    "properties" : {
-      "projectName" : "JHipster Lite Sample Application",
-      "baseName" : "litesample",
-      "packageName" : "tech.jhipster.lite.sample"
-    }
-  }, {
-    "module" : "java-enums",
-    "date" : "2024-10-25T20:09:34.929977752Z",
-    "properties" : {
-      "projectName" : "JHipster Lite Sample Application",
-      "baseName" : "litesample",
-      "packageName" : "tech.jhipster.lite.sample"
-    }
-  }, {
-    "module" : "pagination-domain",
-    "date" : "2024-10-25T20:09:34.970860169Z",
-    "properties" : {
-      "projectName" : "JHipster Lite Sample Application",
-      "baseName" : "litesample",
-      "packageName" : "tech.jhipster.lite.sample"
-    }
-  }, {
-    "module" : "application-service-hexagonal-architecture-documentation",
-    "date" : "2024-10-25T20:09:34.993655342Z",
-    "properties" : {
-      "projectName" : "JHipster Lite Sample Application",
-      "baseName" : "litesample",
-      "packageName" : "tech.jhipster.lite.sample"
-    }
-  }, {
-    "module" : "spring-boot",
-    "date" : "2024-10-25T20:09:35.139504075Z",
-    "properties" : {
-      "projectName" : "JHipster Lite Sample Application",
-      "baseName" : "litesample",
-      "packageName" : "tech.jhipster.lite.sample"
-    }
-  }, {
-    "module" : "logs-spy",
-    "date" : "2024-10-25T20:09:35.160402079Z",
-    "properties" : {
-      "projectName" : "JHipster Lite Sample Application",
-      "baseName" : "litesample",
-      "packageName" : "tech.jhipster.lite.sample"
-    }
-  }, {
-    "module" : "spring-boot-mvc-empty",
-    "date" : "2024-10-25T20:09:35.180449622Z",
-    "properties" : {
-      "projectName" : "JHipster Lite Sample Application",
-      "baseName" : "litesample",
-      "packageName" : "tech.jhipster.lite.sample"
-    }
-  }, {
-    "module" : "spring-boot-tomcat",
-    "date" : "2024-10-25T20:09:35.228449368Z",
-    "properties" : {
-      "projectName" : "JHipster Lite Sample Application",
-      "baseName" : "litesample",
-      "packageName" : "tech.jhipster.lite.sample"
-    }
-  }, {
-    "module" : "spring-boot-actuator",
-    "date" : "2024-10-25T20:09:35.259503604Z",
-    "properties" : {
-      "projectName" : "JHipster Lite Sample Application",
-      "baseName" : "litesample",
-      "packageName" : "tech.jhipster.lite.sample"
-    }
-  }, {
-    "module" : "spring-boot-async",
-    "date" : "2024-10-25T20:09:35.290700122Z",
-    "properties" : {
-      "projectName" : "JHipster Lite Sample Application",
-      "baseName" : "litesample",
-      "packageName" : "tech.jhipster.lite.sample"
-    }
-  }, {
-    "module" : "spring-boot-devtools",
-    "date" : "2024-10-25T20:09:35.317489448Z",
-    "properties" : {
-      "projectName" : "JHipster Lite Sample Application",
-      "baseName" : "litesample",
-      "packageName" : "tech.jhipster.lite.sample"
-    }
-  }, {
-    "module" : "java-archunit",
-    "date" : "2024-10-25T20:09:35.346393794Z",
-    "properties" : {
-      "projectName" : "JHipster Lite Sample Application",
-      "baseName" : "litesample",
-      "packageName" : "tech.jhipster.lite.sample"
-    }
-  }, {
-    "module" : "git-information",
-    "date" : "2024-10-25T20:09:35.384128641Z",
-    "properties" : {
-      "projectName" : "JHipster Lite Sample Application",
-      "baseName" : "litesample",
-      "packageName" : "tech.jhipster.lite.sample"
-    }
-  }, {
-    "module" : "prettier",
-    "date" : "2024-10-25T20:09:35.409729591Z",
-    "properties" : {
-      "projectName" : "JHipster Lite Sample Application",
-      "baseName" : "litesample",
-      "packageName" : "tech.jhipster.lite.sample"
-    }
-  }, {
-    "module" : "typescript",
-    "date" : "2024-10-25T20:09:35.446595035Z",
-    "properties" : {
-      "projectName" : "JHipster Lite Sample Application",
-      "baseName" : "litesample",
-      "packageName" : "tech.jhipster.lite.sample"
-    }
-  }, {
-    "module" : "frontend-maven-plugin",
-    "date" : "2024-10-25T20:09:35.502815501Z",
-    "properties" : {
-      "projectName" : "JHipster Lite Sample Application",
-      "baseName" : "litesample",
-      "packageName" : "tech.jhipster.lite.sample"
-    }
-  }, {
-    "module" : "vue-core",
-    "date" : "2024-10-25T20:09:35.540880814Z",
-    "properties" : {
-      "projectName" : "JHipster Lite Sample Application",
-      "baseName" : "litesample",
-      "packageName" : "tech.jhipster.lite.sample"
-    }
-  }, {
-    "module" : "sonar-qube-java-backend-and-frontend",
-    "date" : "2024-10-25T20:09:35.592824681Z",
-    "properties" : {
-      "projectName" : "JHipster Lite Sample Application",
-      "baseName" : "litesample",
-      "packageName" : "tech.jhipster.lite.sample"
-    }
-  }, {
-    "module" : "jpa-postgresql",
-    "date" : "2024-10-25T20:09:35.695389604Z",
-    "properties" : {
-      "projectName" : "JHipster Lite Sample Application",
-      "baseName" : "litesample",
-      "packageName" : "tech.jhipster.lite.sample"
-    }
-  }, {
-    "module" : "liquibase",
-    "date" : "2024-10-25T20:09:35.725965286Z",
-    "properties" : {
-      "projectName" : "JHipster Lite Sample Application",
-      "baseName" : "litesample",
-      "packageName" : "tech.jhipster.lite.sample"
-    }
-  }, {
-    "module" : "spring-boot-oauth2",
-    "date" : "2024-10-25T20:09:35.863218058Z",
-    "properties" : {
-      "projectName" : "JHipster Lite Sample Application",
-      "baseName" : "litesample",
-      "packageName" : "tech.jhipster.lite.sample"
-    }
-  }, {
-    "module" : "spring-boot-oauth2-account",
-    "date" : "2024-10-25T20:09:35.889634864Z",
-    "properties" : {
-      "projectName" : "JHipster Lite Sample Application",
-      "baseName" : "litesample",
-      "packageName" : "tech.jhipster.lite.sample"
-    }
-  }, {
-    "module" : "springdoc-mvc-openapi",
-    "date" : "2024-10-25T20:09:35.960829127Z",
-    "properties" : {
-      "projectName" : "JHipster Lite Sample Application",
-      "baseName" : "litesample",
-      "packageName" : "tech.jhipster.lite.sample"
-    }
-  }, {
-    "module" : "springdoc-oauth2",
-    "date" : "2024-10-25T20:09:35.987661921Z",
-    "properties" : {
-      "projectName" : "JHipster Lite Sample Application",
-      "baseName" : "litesample",
-      "packageName" : "tech.jhipster.lite.sample"
-    }
-  }, {
-    "module" : "spring-boot-cucumber-mvc",
-    "date" : "2024-10-25T20:09:36.057368357Z",
-    "properties" : {
-      "projectName" : "JHipster Lite Sample Application",
-      "baseName" : "litesample",
-      "packageName" : "tech.jhipster.lite.sample"
-    }
-  }, {
-    "module" : "spring-boot-cucumber-oauth2-authentication",
-    "date" : "2024-10-25T20:09:36.103026217Z",
-    "properties" : {
-      "projectName" : "JHipster Lite Sample Application",
-      "baseName" : "litesample",
-      "packageName" : "tech.jhipster.lite.sample"
-    }
-  }, {
-    "module" : "kipe-expression",
-    "date" : "2024-10-25T20:09:36.126291991Z",
-    "properties" : {
-      "projectName" : "JHipster Lite Sample Application",
-      "baseName" : "litesample",
-      "packageName" : "tech.jhipster.lite.sample"
-    }
-  }, {
-    "module" : "kipe-authorization",
-    "date" : "2024-10-25T20:09:36.148099992Z",
-    "properties" : {
-      "projectName" : "JHipster Lite Sample Application",
-      "baseName" : "litesample",
-      "packageName" : "tech.jhipster.lite.sample"
-    }
-  }, {
-    "module" : "sample-feature",
-    "date" : "2024-10-25T20:09:36.172859245Z",
-    "properties" : {
-      "projectName" : "JHipster Lite Sample Application",
-      "baseName" : "litesample",
-      "packageName" : "tech.jhipster.lite.sample"
-    }
-  } ]
+  ]
 }

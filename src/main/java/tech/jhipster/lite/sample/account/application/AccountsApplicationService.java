@@ -1,9 +1,9 @@
 package tech.jhipster.lite.sample.account.application;
 
-import tech.jhipster.lite.sample.account.domain.Account;
-import tech.jhipster.lite.sample.account.domain.AccountsRepository;
 import java.util.Optional;
 import org.springframework.stereotype.Service;
+import tech.jhipster.lite.sample.account.domain.Account;
+import tech.jhipster.lite.sample.account.domain.AccountsRepository;
 
 @Service
 public class AccountsApplicationService {

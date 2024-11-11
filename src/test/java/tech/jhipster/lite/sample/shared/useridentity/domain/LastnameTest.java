@@ -4,9 +4,7 @@ import static org.assertj.core.api.Assertions.*;
 
 import java.util.List;
 import java.util.stream.Stream;
-
 import org.junit.jupiter.api.Test;
-
 import tech.jhipster.lite.sample.UnitTest;
 import tech.jhipster.lite.sample.shared.error.domain.MissingMandatoryValueException;
 import tech.jhipster.lite.sample.shared.error.domain.StringTooLongException;

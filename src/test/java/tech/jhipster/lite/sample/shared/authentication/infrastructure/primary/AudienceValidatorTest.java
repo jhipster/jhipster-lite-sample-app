@@ -3,10 +3,10 @@ package tech.jhipster.lite.sample.shared.authentication.infrastructure.primary;
 import static org.assertj.core.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
-import tech.jhipster.lite.sample.UnitTest;
 import java.util.List;
 import org.junit.jupiter.api.Test;
 import org.springframework.security.oauth2.jwt.Jwt;
+import tech.jhipster.lite.sample.UnitTest;
 
 /**
  * Test class for the {@link AudienceValidator} utility class.

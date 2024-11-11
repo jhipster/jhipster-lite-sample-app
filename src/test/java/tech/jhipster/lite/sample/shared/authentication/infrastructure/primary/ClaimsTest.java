@@ -2,13 +2,13 @@ package tech.jhipster.lite.sample.shared.authentication.infrastructure.primary;
 
 import static org.assertj.core.api.Assertions.*;
 
-import tech.jhipster.lite.sample.UnitTest;
-import tech.jhipster.lite.sample.shared.authentication.domain.Role;
 import java.util.List;
 import java.util.Map;
 import org.junit.jupiter.api.Test;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import tech.jhipster.lite.sample.UnitTest;
+import tech.jhipster.lite.sample.shared.authentication.domain.Role;
 
 @UnitTest
 class ClaimsTest {

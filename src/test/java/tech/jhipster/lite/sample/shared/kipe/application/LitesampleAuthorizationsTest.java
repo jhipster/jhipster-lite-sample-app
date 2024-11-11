@@ -23,9 +23,7 @@ import tech.jhipster.lite.sample.shared.error.domain.MissingMandatoryValueExcept
 @UnitTest
 class LitesampleAuthorizationsTest {
 
-  private static final LitesampleAuthorizations authorizations = new LitesampleAuthorizations(
-    List.of(rolesAccesses())
-  );
+  private static final LitesampleAuthorizations authorizations = new LitesampleAuthorizations(List.of(rolesAccesses()));
 
   @Nested
   @DisplayName("All authorized")

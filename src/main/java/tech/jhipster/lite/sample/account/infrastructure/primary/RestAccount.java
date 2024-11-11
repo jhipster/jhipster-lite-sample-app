@@ -1,12 +1,10 @@
 package tech.jhipster.lite.sample.account.infrastructure.primary;
 
-import java.util.Collection;
-
-import tech.jhipster.lite.sample.account.domain.Account;
-import tech.jhipster.lite.sample.shared.authentication.domain.Role;
-
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.media.Schema.RequiredMode;
+import java.util.Collection;
+import tech.jhipster.lite.sample.account.domain.Account;
+import tech.jhipster.lite.sample.shared.authentication.domain.Role;
 
 @Schema(name = "user", description = "Information for an user")
 final class RestAccount {

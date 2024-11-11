@@ -1,16 +1,16 @@
 package tech.jhipster.lite.sample.sample.infrastructure.secondary;
 
+import java.util.Map;
+import java.util.Optional;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.function.Predicate;
+import org.springframework.stereotype.Repository;
 import tech.jhipster.lite.sample.sample.domain.BeerId;
 import tech.jhipster.lite.sample.sample.domain.beer.Beer;
 import tech.jhipster.lite.sample.sample.domain.beer.BeerSellingState;
 import tech.jhipster.lite.sample.sample.domain.beer.Beers;
 import tech.jhipster.lite.sample.sample.domain.beer.BeersRepository;
 import tech.jhipster.lite.sample.shared.error.domain.Assert;
-import java.util.Map;
-import java.util.Optional;
-import java.util.concurrent.ConcurrentHashMap;
-import java.util.function.Predicate;
-import org.springframework.stereotype.Repository;
 
 @Repository
 class InMemoryBeersRepository implements BeersRepository {

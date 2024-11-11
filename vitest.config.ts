@@ -1,8 +1,8 @@
 /// <reference types="vitest" />
 
+import vue from '@vitejs/plugin-vue';
 import tsconfigPaths from 'vite-tsconfig-paths';
 import { configDefaults, defineConfig } from 'vitest/config';
-import vue from '@vitejs/plugin-vue';
 
 export default defineConfig({
   plugins: [vue(), tsconfigPaths()],
@@ -31,7 +31,7 @@ export default defineConfig({
       include: ['src/main/webapp/**/*.ts?(x)'],
       exclude: [
         // keep this comment to be able to apply other front module after prettier format
-        ...configDefaults.coverage.exclude as string[],
+        ...(configDefaults.coverage.exclude as string[]),
         'src/main/webapp/app/main.ts',
         'src/main/webapp/app/injections.ts',
         'src/main/webapp/app/router.ts',

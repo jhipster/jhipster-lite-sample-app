@@ -84,13 +84,13 @@ management:
       base-path: /management
       exposure:
         include:
-        - configprops
-        - env
-        - health
-        - info
-        - logfile
-        - loggers
-        - threaddump
+          - configprops
+          - env
+          - health
+          - info
+          - logfile
+          - loggers
+          - threaddump
   info:
     env:
       enabled: true

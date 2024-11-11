@@ -1,13 +1,11 @@
 package tech.jhipster.lite.sample.shared.useridentity.domain;
 
-import static tech.jhipster.lite.sample.shared.useridentity.domain.UsersIdentitiesFixture.*;
 import static org.assertj.core.api.Assertions.*;
+import static tech.jhipster.lite.sample.shared.useridentity.domain.UsersIdentitiesFixture.*;
 
 import java.util.List;
 import java.util.stream.Stream;
-
 import org.junit.jupiter.api.Test;
-
 import tech.jhipster.lite.sample.UnitTest;
 import tech.jhipster.lite.sample.shared.error.domain.MissingMandatoryValueException;
 
@@ -39,8 +37,7 @@ class NameTest {
 
   @Test
   void shouldSortNames() {
-    List<Name> names = Stream
-      .of(null, new Name("paul", "Dupond"), new Name("jean", "Dupont"), new Name("jean", "Dupond"))
+    List<Name> names = Stream.of(null, new Name("paul", "Dupond"), new Name("jean", "Dupont"), new Name("jean", "Dupond"))
       .sorted()
       .toList();
 

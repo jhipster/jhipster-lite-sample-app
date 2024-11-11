@@ -3,7 +3,6 @@ package tech.jhipster.lite.sample.account.domain;
 import static tech.jhipster.lite.sample.shared.useridentity.domain.UsersIdentitiesFixture.*;
 
 import java.util.List;
-
 import tech.jhipster.lite.sample.shared.authentication.domain.Role;
 
 public final class AccountsFixture {
@@ -19,5 +18,4 @@ public final class AccountsFixture {
       .roles(List.of(Role.ADMIN.key()))
       .build();
   }
-
 }

@@ -108,7 +108,7 @@ Apart from the code used to make the business operations we'll find ports in the
 
 The application layer **MUST NOT CONTAIN ANY BUSINESS RULE**, its responsibilities are:
 
-- Very simple orchestration:
+- Basic orchestration:
   - Get something from a port;
   - Make an operation on that thing (call a method on the object);
   - Save that thing using a port;

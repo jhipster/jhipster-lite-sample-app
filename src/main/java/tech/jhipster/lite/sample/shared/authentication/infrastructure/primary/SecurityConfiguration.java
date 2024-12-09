@@ -72,7 +72,7 @@ class SecurityConfiguration {
         .contentSecurityPolicy(csp -> csp.policyDirectives(applicationSecurityProperties.getContentSecurityPolicy()))
         .frameOptions(FrameOptionsConfig::sameOrigin)
         .referrerPolicy(referrer -> referrer.policy(ReferrerPolicyHeaderWriter.ReferrerPolicy.STRICT_ORIGIN_WHEN_CROSS_ORIGIN))
-        .permissionsPolicy(permissions ->
+        .permissionsPolicyHeader(permissions ->
           permissions.policy("camera=(), fullscreen=(self), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), midi=(), payment=(), sync-xhr=()"))
       )
       .authorizeHttpRequests(authz -> authz
@@ -145,7 +145,7 @@ class SecurityConfiguration {
     jwtDecoder.setClaimSetConverter(
       new CustomClaimConverter(
         clientRegistrationRepository.findByRegistrationId("oidc"),
-        restTemplateBuilder.setConnectTimeout(Duration.ofMillis(TIMEOUT)).setReadTimeout(Duration.ofMillis(TIMEOUT)).build()
+        restTemplateBuilder.connectTimeout(Duration.ofMillis(TIMEOUT)).readTimeout(Duration.ofMillis(TIMEOUT)).build()
       )
     );
 

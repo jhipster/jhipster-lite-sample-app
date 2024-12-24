@@ -50,7 +50,7 @@ final class RestAccount {
     return roles;
   }
 
-  private static class RestAccountBuilder {
+  private static final class RestAccountBuilder {
 
     private String username;
     private String name;

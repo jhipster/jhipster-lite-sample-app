@@ -124,7 +124,7 @@ class CustomClaimConverter implements Converter<Map<String, Object>, Map<String,
     }
   }
 
-  private static class NameClaimAppender implements ClaimAppender {
+  private static final class NameClaimAppender implements ClaimAppender {
 
     @Override
     public void append(Map<String, Object> claim, ObjectNode user) {
@@ -140,7 +140,7 @@ class CustomClaimConverter implements Converter<Map<String, Object>, Map<String,
     }
   }
 
-  private static class GroupClaimAppender implements ClaimAppender {
+  private static final class GroupClaimAppender implements ClaimAppender {
 
     @Override
     public void append(Map<String, Object> claim, ObjectNode user) {
@@ -152,7 +152,7 @@ class CustomClaimConverter implements Converter<Map<String, Object>, Map<String,
     }
   }
 
-  private static class RolesClaimAppender implements ClaimAppender {
+  private static final class RolesClaimAppender implements ClaimAppender {
 
     @Override
     public void append(Map<String, Object> claim, ObjectNode user) {

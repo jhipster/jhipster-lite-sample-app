@@ -21,3 +21,9 @@ bracketSameLine: false
 
 # xml rules:
 xmlWhitespaceSensitivity: ignore
+
+# https://github.com/prettier/prettier/issues/15956
+overrides:
+  - files: ['*.jsonc']
+    options:
+      trailingComma: none

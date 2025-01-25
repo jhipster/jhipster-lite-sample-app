@@ -31,7 +31,7 @@ We often talk about three types of complexity:
 
 - **Essential**: When building Software we have to solve a problem of complexity X: this is the essential complexity. This complexity directly relates to the problem we are trying to solve and we can't really make that lower.
 - **Mandatory**: No matter the efforts, we are going to have to add some complexity to the system since we have technical stuff to do (persist data, send messages, ...). This complexity is called mandatory complexity.
-- **Accidental**: On top of the two previous complexities comes the accidental complexity, the one we don't want because it's not needed. Example: if you have a configuration that is standing still for the past 10 years you probably don't need to put that in a database, handling that in code will be easier and more efficient (and no, you probably don't need microservices with one team of 3).
+- **Accidental**: On top of the two previous complexities comes the accidental complexity, the one we don't want because it's unnecessary. Example: if you have a configuration that is standing still for the past 10 years you probably don't need to put that in a database, handling that in code will be easier and more efficient (and no, you probably don't need microservices with one team of 3).
 
 The hexagonal architecture allows us to reduce all those complexities to their bare minimum by giving clear responsibilities to each part of our Software.
 

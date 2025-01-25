@@ -40,10 +40,13 @@ public final class CucumberRestTestContext {
   public static Object getElement(String uri, String jsonPath) {
     return queries
       .stream()
-      .filter(query -> query.response.isPresent() && StringUtils.isNotBlank(query.response.get()))
       .filter(query -> query.forUri(uri))
+      .map(RestQuery::response)
+      .filter(Optional::isPresent)
+      .map(Optional::orElseThrow)
+      .filter(StringUtils::isNotBlank)
+      .map(toElement(jsonPath))
       .findFirst()
-      .flatMap(response -> response.response.map(toElement(jsonPath)))
       .orElse(null);
   }
 
@@ -129,7 +132,7 @@ public final class CucumberRestTestContext {
     public RestQuery(HttpRequest request, ClientHttpResponse response, ClientHttpRequestExecution execution, byte[] body) {
       this.request = request;
       try {
-        uri = URLDecoder.decode(request.getURI().toString(), StandardCharsets.UTF_8.displayName());
+        uri = URLDecoder.decode(request.getURI().toString(), StandardCharsets.UTF_8);
         responseHeaders = response.getHeaders();
         status = (HttpStatus) response.getStatusCode();
       } catch (IOException e) {

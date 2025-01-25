@@ -39,7 +39,7 @@ class OAuth2AuthenticationReaderTest {
   void shouldReadOAuth2Authentication() {
     context.setAuthentication(testAuthenticationToken());
 
-    assertThat(tokens.authenticatedUserAccount().get()).usingRecursiveComparison().isEqualTo(account());
+    assertThat(tokens.authenticatedUserAccount().orElseThrow()).usingRecursiveComparison().isEqualTo(account());
   }
 
   @Test
@@ -50,13 +50,13 @@ class OAuth2AuthenticationReaderTest {
 
     context.setAuthentication(buildToken(claims));
 
-    assertThat(tokens.authenticatedUserAccount().get()).usingRecursiveComparison().isEqualTo(account());
+    assertThat(tokens.authenticatedUserAccount().orElseThrow()).usingRecursiveComparison().isEqualTo(account());
   }
 
   @Test
   void shouldReadJwtAuthentication() {
     context.setAuthentication(testJwtAuthenticationToken());
 
-    assertThat(tokens.authenticatedUserAccount().get()).usingRecursiveComparison().isEqualTo(account());
+    assertThat(tokens.authenticatedUserAccount().orElseThrow()).usingRecursiveComparison().isEqualTo(account());
   }
 }

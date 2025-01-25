@@ -54,7 +54,7 @@ public final class CucumberRestAssertions {
   }
 
   static String responseBody() {
-    return CucumberRestTestContext.getResponse().get();
+    return CucumberRestTestContext.getResponse().orElseThrow();
   }
 
   private static final class CallDescription extends Description {

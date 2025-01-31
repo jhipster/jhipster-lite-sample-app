@@ -30,7 +30,6 @@ export default defineConfig({
       },
       include: ['src/main/webapp/**/*.ts?(x)'],
       exclude: [
-        // keep this comment to be able to apply another front module after prettier format
         ...(configDefaults.coverage.exclude as string[]),
         'src/main/webapp/app/main.ts',
         'src/main/webapp/app/injections.ts',

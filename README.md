@@ -55,7 +55,7 @@ docker compose -f src/main/docker/keycloak.yml up -d
 - [Dev tools](documentation/dev-tools.md)
 - [Vue](documentation/vue.md)
 - [sonar](documentation/sonar.md)
-- [Postgresql](documentation/postgresql.md)
+- [PostgreSQL](documentation/postgresql.md)
 - [Cucumber](documentation/cucumber.md)
 - [Cucumber authentication](documentation/cucumber-authentication.md)
 - [Kipe expression](documentation/kipe-expression.md)

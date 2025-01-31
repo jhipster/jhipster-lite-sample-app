@@ -31,10 +31,9 @@
   <logger name="com.sun" level="WARN" />
   <logger name="org.springframework" level="WARN" />
   <logger name="org.springframework.web" level="ERROR" />
-  <logger name="org.hibernate.validator" level="WARN" />
+  <logger name="org.postgresql" level="WARN" />
   <logger name="org.hibernate.orm" level="WARN" />
   <logger name="org.hibernate.ejb.HibernatePersistence" level="OFF" />
-  <logger name="org.postgresql" level="WARN" />
   <logger name="liquibase" level="WARN" />
   <logger name="LiquibaseSchemaResolver" level="INFO" />
   <logger name="com.zaxxer.hikari" level="WARN" />

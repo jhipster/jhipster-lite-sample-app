@@ -30,11 +30,11 @@ export default typescript.config(
       globals: { ...globals.browser },
     },
     rules: {
-      quotes: ['error', 'single', { avoidEscape: true }],
       '@typescript-eslint/consistent-type-imports': 'error',
       '@typescript-eslint/no-empty-object-type': 'off',
       '@typescript-eslint/no-explicit-any': 'off',
       'vue/html-self-closing': 'off',
+      quotes: ['error', 'single', { avoidEscape: true }],
     },
   },
 );

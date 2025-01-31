@@ -25,10 +25,6 @@ spring:
       enabled: false
     restart:
       enabled: false
-  data:
-    jpa:
-      repositories:
-        bootstrap-mode: deferred
   datasource:
     driver-class-name: org.postgresql.Driver
     hikari:
@@ -38,6 +34,10 @@ spring:
     type: com.zaxxer.hikari.HikariDataSource
     url: jdbc:postgresql://localhost:5432/litesample
     username: litesample
+  data:
+    jpa:
+      repositories:
+        bootstrap-mode: deferred
   jpa:
     hibernate:
       ddl-auto: none

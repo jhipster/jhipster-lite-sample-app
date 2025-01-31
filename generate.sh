@@ -91,6 +91,7 @@ applyModules \
   "sonar-qube-java-backend-and-frontend"
 
 applyModules \
+  "datasource-postgresql" \
   "jpa-postgresql" \
   "liquibase"
 

@@ -20,7 +20,7 @@ class MemoizersTest {
 
   @Test
   void shouldMemoizeFunctionResult() {
-    AtomicInteger result = new AtomicInteger();
+    var result = new AtomicInteger();
 
     Function<Object, Integer> memoizer = Memoizers.of(d -> result.incrementAndGet());
 
@@ -30,7 +30,7 @@ class MemoizersTest {
 
   @Test
   void shouldMemoizeNullResult() {
-    NullFactory factory = new NullFactory();
+    var factory = new NullFactory();
     Function<Object, String> memoizer = Memoizers.of(factory);
 
     memoizer.apply(1);

@@ -21,7 +21,7 @@ const wrap = (): VueWrapper => {
 };
 
 describe('Router', () => {
-  describe.each([['/'], ['/home']])('Navigation on HomepageVue', url => {
+  describe.for([['/'], ['/home']])('Navigation on HomepageVue', url => {
     it(`should navigate on HomepageVue when the URL is ${url}`, async () => {
       router.push(url);
 

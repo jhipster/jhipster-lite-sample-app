@@ -17,7 +17,7 @@ class AuthenticationExceptionAdvice {
 
   @ExceptionHandler(NotAuthenticatedUserException.class)
   public ProblemDetail handleNotAuthenticateUser(NotAuthenticatedUserException ex) {
-    ProblemDetail detail = ProblemDetail.forStatus(HttpStatus.UNAUTHORIZED);
+    var detail = ProblemDetail.forStatus(HttpStatus.UNAUTHORIZED);
     detail.setTitle("not authenticated");
     detail.setProperty(MESSAGE_KEY, "error.http.401");
 
@@ -26,7 +26,7 @@ class AuthenticationExceptionAdvice {
 
   @ExceptionHandler(UnknownAuthenticationException.class)
   public ProblemDetail handleUnknownAuthentication(UnknownAuthenticationException ex) {
-    ProblemDetail detail = ProblemDetail.forStatus(HttpStatus.INTERNAL_SERVER_ERROR);
+    var detail = ProblemDetail.forStatus(HttpStatus.INTERNAL_SERVER_ERROR);
     detail.setTitle("unknown authentication");
     detail.setProperty(MESSAGE_KEY, "error.http.500");
 

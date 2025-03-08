@@ -87,7 +87,7 @@ class LitesampleAuthorizationsTest {
     }
 
     private static Authentication createDummyAuthenticationWithPrincipalDetails(String username) {
-      UserDetails principalDetails = createUserDetailsWithUsername(username);
+      var principalDetails = createUserDetailsWithUsername(username);
       Authentication authentication = mock(Authentication.class);
       when(authentication.getPrincipal()).thenReturn(principalDetails);
       when(authentication.toString()).thenReturn("Authentication with userDetails, username=" + username);

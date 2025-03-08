@@ -3,7 +3,6 @@ services:
   sonar:
     image: sonarqube:10.7.0-community
     container_name: sonar
-    platform: linux/x86_64
     # Authentication is turned off for out of the box experience while trying out SonarQube
     # For real use cases delete sonar.forceAuthentication variable or set sonar.forceAuthentication=true
     environment:

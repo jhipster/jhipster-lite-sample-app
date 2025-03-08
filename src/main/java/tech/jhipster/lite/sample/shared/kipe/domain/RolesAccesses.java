@@ -38,7 +38,7 @@ public final class RolesAccesses {
 
   private Predicate<Role> allAuthorized(Action action, Resource resource) {
     return role -> {
-      Accesses accesses = roles.get(role);
+      var accesses = roles.get(role);
 
       if (accesses == null) {
         return false;
@@ -58,7 +58,7 @@ public final class RolesAccesses {
 
   private Predicate<Role> specificAuthorized(Action action, Resource resource) {
     return role -> {
-      Accesses accesses = roles.get(role);
+      var accesses = roles.get(role);
 
       if (accesses == null) {
         return false;

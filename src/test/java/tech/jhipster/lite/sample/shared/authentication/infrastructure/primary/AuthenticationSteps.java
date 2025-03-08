@@ -35,7 +35,7 @@ public class AuthenticationSteps {
   private List<ClientHttpRequestInterceptor> interceptorsWithAuthentication(String user) {
     List<ClientHttpRequestInterceptor> interceptors = new ArrayList<>(rest.getRestTemplate().getInterceptors());
 
-    User userToAuthenticate = users.get(user);
+    var userToAuthenticate = users.get(user);
 
     assertThat(userToAuthenticate).as(unknownUserMessage(user)).isNotNull();
 

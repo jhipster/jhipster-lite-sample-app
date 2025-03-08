@@ -34,7 +34,7 @@ class AccessEvaluatorTest {
 
   @Test
   void shouldResolveOnDefaultCheckerForNullObject() {
-    AccessEvaluator canEvaluator = new AccessEvaluator(List.of(new ObjectAccessChecker()));
+    var canEvaluator = new AccessEvaluator(List.of(new ObjectAccessChecker()));
 
     boolean can = canEvaluator.can(authentication, "action", null);
 
@@ -44,7 +44,7 @@ class AccessEvaluatorTest {
 
   @Test
   void shouldResolveOnDefaultCheckerForUnknownType() {
-    AccessEvaluator canEvaluator = new AccessEvaluator(List.of(new ObjectAccessChecker()));
+    var canEvaluator = new AccessEvaluator(List.of(new ObjectAccessChecker()));
 
     boolean can = canEvaluator.can(authentication, "action", "yo");
 
@@ -54,14 +54,14 @@ class AccessEvaluatorTest {
 
   @Test
   void shouldGetMatchingEvaluator() {
-    AccessEvaluator canEvaluator = new AccessEvaluator(List.of(new ObjectAccessChecker(), new KipeDummyAccessChecker()));
+    var canEvaluator = new AccessEvaluator(List.of(new ObjectAccessChecker(), new KipeDummyAccessChecker()));
 
     assertThat(canEvaluator.can(authentication, "action", new KipeDummy("authorized"))).isTrue();
   }
 
   @Test
   void shouldGetMatchingEvaluatorForChildClass() {
-    AccessEvaluator canEvaluator = new AccessEvaluator(List.of(new ObjectAccessChecker(), new KipeDummyAccessChecker()));
+    var canEvaluator = new AccessEvaluator(List.of(new ObjectAccessChecker(), new KipeDummyAccessChecker()));
 
     assertThat(canEvaluator.can(authentication, "action", new KipeDummyChild("authorized"))).isTrue();
     logs.shouldHave(Level.INFO, "evaluator", 1);

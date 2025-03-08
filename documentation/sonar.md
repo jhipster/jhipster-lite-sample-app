@@ -19,7 +19,7 @@ or
 For Gradle
 
 ```bash
-./gradlew clean build sonar --info"
+./gradlew clean build sonar --info
 ```
 
 You can see the result at [http://localhost:9001/](http://localhost:9001/)

@@ -20,7 +20,7 @@ class BeersTest {
       .sellingState(BeerSellingState.SOLD)
       .build();
 
-    Beers beers = new Beers(List.of(beer(), anteMeridiem));
+    var beers = new Beers(List.of(beer(), anteMeridiem));
 
     assertThat(beers.get()).usingRecursiveFieldByFieldElementComparator().containsExactly(anteMeridiem, beer());
   }

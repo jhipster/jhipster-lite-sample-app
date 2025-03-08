@@ -10,7 +10,7 @@ class GitInfoConfiguration {
 
   @Bean
   public PropertySourcesPlaceholderConfigurer placeholderConfigurer() {
-    PropertySourcesPlaceholderConfigurer propsConfig = new PropertySourcesPlaceholderConfigurer();
+    var propsConfig = new PropertySourcesPlaceholderConfigurer();
     propsConfig.setLocation(new ClassPathResource("git.properties"));
     propsConfig.setIgnoreResourceNotFound(true);
     propsConfig.setIgnoreUnresolvablePlaceholders(true);

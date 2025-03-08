@@ -33,7 +33,7 @@ class LitesamplePageableTest {
 
   @Test
   void shouldGetFirstPageInformation() {
-    LitesamplePageable pageable = new LitesamplePageable(0, 15);
+    var pageable = new LitesamplePageable(0, 15);
 
     assertThat(pageable.page()).isZero();
     assertThat(pageable.pageSize()).isEqualTo(15);
@@ -42,7 +42,7 @@ class LitesamplePageableTest {
 
   @Test
   void shouldGetPageableInformation() {
-    LitesamplePageable pageable = new LitesamplePageable(2, 15);
+    var pageable = new LitesamplePageable(2, 15);
 
     assertThat(pageable.page()).isEqualTo(2);
     assertThat(pageable.pageSize()).isEqualTo(15);

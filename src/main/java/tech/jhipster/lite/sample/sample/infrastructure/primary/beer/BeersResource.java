@@ -16,7 +16,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import tech.jhipster.lite.sample.sample.application.BeersApplicationService;
 import tech.jhipster.lite.sample.sample.domain.BeerId;
-import tech.jhipster.lite.sample.sample.domain.beer.Beer;
 
 @RestController
 @Tag(name = "Beers")
@@ -33,7 +32,7 @@ class BeersResource {
   @Operation(summary = "Add a beer to the catalog")
   @ApiResponse(description = "Beer added to the catalog", responseCode = "201")
   ResponseEntity<RestBeer> addBeer(@Validated @RequestBody RestBeerToCreate beerToCreate) {
-    Beer createdBeer = beers.create(beerToCreate.toDomain());
+    var createdBeer = beers.create(beerToCreate.toDomain());
 
     return new ResponseEntity<>(RestBeer.from(createdBeer), HttpStatus.CREATED);
   }

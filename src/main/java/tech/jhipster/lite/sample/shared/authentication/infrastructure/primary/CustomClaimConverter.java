@@ -75,7 +75,7 @@ class CustomClaimConverter implements Converter<Map<String, Object>, Map<String,
   }
 
   private ObjectNode loadUser(ClientRegistration registration, RestTemplate restTemplate, SubAttributes subAttributes) {
-    HttpHeaders headers = new HttpHeaders();
+    var headers = new HttpHeaders();
     headers.set(HttpHeaders.AUTHORIZATION, buildBearer(getToken(subAttributes.attributes)));
 
     ResponseEntity<ObjectNode> userInfo = restTemplate.exchange(

@@ -38,7 +38,7 @@ export default defineConfig({
       ],
       provider: 'istanbul',
       reportsDirectory: 'target/test-results/',
-      reporter: ['html', 'json-summary', 'text', 'text-summary', 'lcov', 'clover'],
+      reporter: ['html', 'json', 'json-summary', 'text', 'text-summary', 'lcov', 'clover'],
       watermarks: {
         statements: [100, 100],
         branches: [100, 100],

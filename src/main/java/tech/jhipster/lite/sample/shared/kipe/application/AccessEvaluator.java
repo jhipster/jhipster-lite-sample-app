@@ -19,7 +19,7 @@ import tech.jhipster.lite.sample.shared.generation.domain.ExcludeFromGeneratedCo
 @Service
 class AccessEvaluator {
 
-  private static final Logger logger = LoggerFactory.getLogger(AccessEvaluator.class);
+  private static final Logger log = LoggerFactory.getLogger(AccessEvaluator.class);
 
   private final AccessChecker<?> defaultEvaluator;
   private final Map<Class<?>, AccessChecker<?>> evaluators;
@@ -28,8 +28,8 @@ class AccessEvaluator {
   public AccessEvaluator(List<AccessChecker<?>> checkers) {
     evaluators = new ConcurrentHashMap<>(checkers.stream().collect(Collectors.toMap(this::getCheckerResourceClass, Function.identity())));
 
-    if (logger.isInfoEnabled()) {
-      logger.info("Authorized types: {}", evaluators.keySet().stream().map(Class::getName).collect(Collectors.joining(", ")));
+    if (log.isInfoEnabled()) {
+      log.info("Authorized types: {}", evaluators.keySet().stream().map(Class::getName).collect(Collectors.joining(", ")));
     }
 
     defaultEvaluator = evaluators.get(Object.class);
@@ -66,7 +66,7 @@ class AccessEvaluator {
       .findFirst()
       .orElse(Object.class);
 
-    logger.info("Using {} evaluator for {}", matchingClass, itemClass);
+    log.info("Using {} evaluator for {}", matchingClass, itemClass);
 
     return evaluators.get(matchingClass);
   }

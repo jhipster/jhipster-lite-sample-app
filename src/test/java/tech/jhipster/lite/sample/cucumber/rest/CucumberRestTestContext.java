@@ -187,7 +187,9 @@ public final class CucumberRestTestContext {
      */
     @SuppressWarnings("java:S1144")
     private boolean forUri(String uri) {
-      if (!uri.matches("[\\w-]+")) Assertions.fail("URI should be the name of a REST resource");
+      if (!uri.matches("[\\w-]+")) {
+        Assertions.fail("URI should be the name of a REST resource");
+      }
 
       return this.uri.matches(String.format(URI_MATCHER, uri));
     }

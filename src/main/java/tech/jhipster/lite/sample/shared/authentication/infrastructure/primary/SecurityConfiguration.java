@@ -32,9 +32,8 @@ import org.springframework.security.oauth2.server.resource.authentication.JwtAut
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.csrf.CsrfFilter;
 import org.springframework.security.web.header.writers.ReferrerPolicyHeaderWriter;
-import org.springframework.security.web.servlet.util.matcher.MvcRequestMatcher;
+import org.springframework.security.web.servlet.util.matcher.PathPatternRequestMatcher;
 import org.springframework.web.filter.CorsFilter;
-import org.springframework.web.servlet.handler.HandlerMappingIntrospector;
 import tech.jhipster.lite.sample.shared.authentication.domain.Role;
 import tech.jhipster.lite.sample.shared.generation.domain.ExcludeFromGeneratedCodeCoverage;
 
@@ -47,19 +46,13 @@ class SecurityConfiguration {
 
   private final ApplicationSecurityProperties applicationSecurityProperties;
   private final CorsFilter corsFilter;
-  private final HandlerMappingIntrospector introspector;
 
   @Value("${spring.security.oauth2.client.provider.oidc.issuer-uri}")
   private String issuerUri;
 
-  public SecurityConfiguration(
-    CorsFilter corsFilter,
-    ApplicationSecurityProperties applicationSecurityProperties,
-    HandlerMappingIntrospector introspector
-  ) {
+  public SecurityConfiguration(CorsFilter corsFilter, ApplicationSecurityProperties applicationSecurityProperties) {
     this.corsFilter = corsFilter;
     this.applicationSecurityProperties = applicationSecurityProperties;
-    this.introspector = introspector;
   }
 
   @Bean
@@ -84,15 +77,15 @@ class SecurityConfiguration {
         .requestMatchers(antMatcher("/swagger-ui.html")).permitAll()
         .requestMatchers(antMatcher("/v3/api-docs/**")).permitAll()
         .requestMatchers(antMatcher("/test/**")).permitAll()
-        .requestMatchers(new MvcRequestMatcher(introspector, "/api/authenticate")).permitAll()
-        .requestMatchers(new MvcRequestMatcher(introspector, "/api/auth-info")).permitAll()
-        .requestMatchers(new MvcRequestMatcher(introspector, "/api/admin/**")).hasAuthority(Role.ADMIN.key())
-        .requestMatchers(new MvcRequestMatcher(introspector, "/api/**")).authenticated()
-        .requestMatchers(new MvcRequestMatcher(introspector, "/management/health")).permitAll()
-        .requestMatchers(new MvcRequestMatcher(introspector, "/management/health/**")).permitAll()
-        .requestMatchers(new MvcRequestMatcher(introspector, "/management/info")).permitAll()
-        .requestMatchers(new MvcRequestMatcher(introspector, "/management/prometheus")).permitAll()
-        .requestMatchers(new MvcRequestMatcher(introspector, "/management/**")).hasAuthority(Role.ADMIN.key())
+        .requestMatchers(PathPatternRequestMatcher.withDefaults().matcher("/api/authenticate")).permitAll()
+        .requestMatchers(PathPatternRequestMatcher.withDefaults().matcher("/api/auth-info")).permitAll()
+        .requestMatchers(PathPatternRequestMatcher.withDefaults().matcher("/api/admin/**")).hasAuthority(Role.ADMIN.key())
+        .requestMatchers(PathPatternRequestMatcher.withDefaults().matcher("/api/**")).authenticated()
+        .requestMatchers(PathPatternRequestMatcher.withDefaults().matcher("/management/health")).permitAll()
+        .requestMatchers(PathPatternRequestMatcher.withDefaults().matcher("/management/health/**")).permitAll()
+        .requestMatchers(PathPatternRequestMatcher.withDefaults().matcher("/management/info")).permitAll()
+        .requestMatchers(PathPatternRequestMatcher.withDefaults().matcher("/management/prometheus")).permitAll()
+        .requestMatchers(PathPatternRequestMatcher.withDefaults().matcher("/management/**")).hasAuthority(Role.ADMIN.key())
         .anyRequest().authenticated()
       )
       .oauth2Login(withDefaults())

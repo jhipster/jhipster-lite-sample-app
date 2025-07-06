@@ -14,7 +14,7 @@ export default defineComponent({
       required: true,
     },
   },
-  //…
+  // …
 });
 ```
 
@@ -36,7 +36,7 @@ export default defineComponent({
       required: true,
     },
   },
-  //…
+  // …
 });
 ```
 
@@ -57,7 +57,7 @@ export default defineComponent({
       required: true,
     },
   },
-  //…
+  // …
 });
 ```
 

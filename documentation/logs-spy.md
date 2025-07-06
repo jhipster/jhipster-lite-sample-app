@@ -25,5 +25,4 @@ class MyTest {
     logs.shouldNotHave(Level.ERROR, "this is an error");
   }
 }
-
 ```

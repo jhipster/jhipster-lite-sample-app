@@ -74,7 +74,9 @@ class LitesamplePageTest {
 
   @Test
   void shouldMapPage() {
-    LitesamplePage<String> page = pageBuilder().build().map(entry -> "hey");
+    LitesamplePage<String> page = pageBuilder()
+      .build()
+      .map(entry -> "hey");
 
     assertThat(page.content()).containsExactly("hey");
     assertThat(page.currentPage()).isEqualTo(2);

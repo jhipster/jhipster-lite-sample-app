@@ -4,6 +4,13 @@ logging:
       jhipster:
         lite:
           sample: DEBUG
+management:
+  endpoints:
+    access:
+      default: unrestricted
+    web:
+      exposure:
+        include: '*'
 spring:
   devtools:
     livereload:

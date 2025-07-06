@@ -5,7 +5,7 @@ import { beforeEach, describe, expect, it } from 'vitest';
 import { createRouter, createWebHistory, type Router } from 'vue-router';
 
 let router: Router;
-beforeEach(async () => {
+beforeEach(() => {
   router = createRouter({
     history: createWebHistory(),
     routes,
@@ -23,9 +23,7 @@ const wrap = (): VueWrapper => {
 describe('Router', () => {
   describe.for([['/'], ['/home']])('Navigation on HomepageVue', url => {
     it(`should navigate on HomepageVue when the URL is ${url}`, async () => {
-      router.push(url);
-
-      await router.isReady();
+      await router.push(url);
 
       const wrapper = wrap();
 

@@ -21,7 +21,6 @@ enum MyResource implements Resource {
     return key;
   }
 }
-
 ```
 
 You'll then have to define one (or more) `RolesAccesses` spring beans:
@@ -32,7 +31,7 @@ class RolesConfiguration {
 
   @Bean
   RolesAccesses myRoles() {
-    //@formatter:off
+    // @formatter:off
     return RolesAccesses.builder()
         .role(Role.ADMIN)
           .allAuthorized("read", MyResource.USERS)
@@ -41,10 +40,9 @@ class RolesConfiguration {
           .specificAuthorized("read", MyResource.USERS)
           .and()
         .build();
-    //@formatter:on
+    // @formatter:on
   }
 }
-
 ```
 
 For each role, you'll be able to define multiple accesses. There are three things defining an access:
@@ -78,7 +76,6 @@ class MyObjectAccessChecker implements AccessChecker<MyObject> {
     return false;
   }
 }
-
 ```
 
 This way, you'll have fine-grained, easy to test authorizations check allowing custom configuration for each action in your application.

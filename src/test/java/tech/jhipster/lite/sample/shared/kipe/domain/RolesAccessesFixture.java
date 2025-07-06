@@ -7,7 +7,7 @@ public final class RolesAccessesFixture {
   private RolesAccessesFixture() {}
 
   public static RolesAccesses rolesAccesses() {
-    //@formatter:off
+    // @formatter:off
     return RolesAccesses.builder()
         .role(Role.ADMIN)
           .allAuthorized("read", TestResource.USERS)
@@ -19,7 +19,7 @@ public final class RolesAccessesFixture {
           .specificAuthorized("delete", TestResource.USERS)
           .and()
         .build();
-    //@formatter:on
+    // @formatter:on
   }
 
   public enum TestResource implements Resource {

@@ -28,3 +28,6 @@ overrides:
   - files: ['*.jsonc']
     options:
       trailingComma: none
+  - files: '**/*.{ts,tsx}' # Remove when https://github.com/prettier/plugin-xml/pull/893 will be released
+    options:
+      parser: typescript

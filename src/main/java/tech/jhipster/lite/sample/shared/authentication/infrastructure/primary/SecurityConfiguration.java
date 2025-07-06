@@ -1,7 +1,6 @@
 package tech.jhipster.lite.sample.shared.authentication.infrastructure.primary;
 
 import static org.springframework.security.config.Customizer.withDefaults;
-import static org.springframework.security.web.util.matcher.AntPathRequestMatcher.*;
 
 import java.time.Duration;
 import java.util.HashSet;
@@ -16,6 +15,7 @@ import org.springframework.security.authentication.AbstractAuthenticationToken;
 import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
 import org.springframework.security.config.annotation.web.configurers.HeadersConfigurer.FrameOptionsConfig;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.mapping.GrantedAuthoritiesMapper;
@@ -59,7 +59,7 @@ class SecurityConfiguration {
   public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
     // @formatter:off
     return http
-      .csrf(csrf -> csrf.disable())
+      .csrf(AbstractHttpConfigurer::disable)
       .addFilterBefore(corsFilter, CsrfFilter.class)
       .headers(headers -> headers
         .contentSecurityPolicy(csp -> csp.policyDirectives(applicationSecurityProperties.getContentSecurityPolicy()))
@@ -69,14 +69,14 @@ class SecurityConfiguration {
           permissions.policy("camera=(), fullscreen=(self), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), midi=(), payment=(), sync-xhr=()"))
       )
       .authorizeHttpRequests(authz -> authz
-        .requestMatchers(antMatcher(HttpMethod.OPTIONS, "/**")).permitAll()
-        .requestMatchers(antMatcher("/app/**")).permitAll()
-        .requestMatchers(antMatcher("/i18n/**")).permitAll()
-        .requestMatchers(antMatcher("/content/**")).permitAll()
-        .requestMatchers(antMatcher("/swagger-ui/**")).permitAll()
-        .requestMatchers(antMatcher("/swagger-ui.html")).permitAll()
-        .requestMatchers(antMatcher("/v3/api-docs/**")).permitAll()
-        .requestMatchers(antMatcher("/test/**")).permitAll()
+        .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
+        .requestMatchers("/app/**").permitAll()
+        .requestMatchers("/i18n/**").permitAll()
+        .requestMatchers("/content/**").permitAll()
+        .requestMatchers("/swagger-ui/**").permitAll()
+        .requestMatchers("/swagger-ui.html").permitAll()
+        .requestMatchers("/v3/api-docs/**").permitAll()
+        .requestMatchers("/test/**").permitAll()
         .requestMatchers(PathPatternRequestMatcher.withDefaults().matcher("/api/authenticate")).permitAll()
         .requestMatchers(PathPatternRequestMatcher.withDefaults().matcher("/api/auth-info")).permitAll()
         .requestMatchers(PathPatternRequestMatcher.withDefaults().matcher("/api/admin/**")).hasAuthority(Role.ADMIN.key())

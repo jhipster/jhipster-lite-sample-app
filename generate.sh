@@ -88,7 +88,7 @@ applyModules \
   "vue-core"
 
 applyModules \
-  "sonar-qube-java-backend-and-frontend"
+  "sonarqube-java-backend-and-frontend"
 
 applyModules \
   "datasource-postgresql" \

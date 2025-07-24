@@ -199,7 +199,7 @@
       }
     },
     {
-      "module": "sonar-qube-java-backend-and-frontend",
+      "module": "sonarqube-java-backend-and-frontend",
       "date": "2025-07-06T15:01:03.445717020Z",
       "properties": {
         "projectName": "JHipster Lite Sample Application",

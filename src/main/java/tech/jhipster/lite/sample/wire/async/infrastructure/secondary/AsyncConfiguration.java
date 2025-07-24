@@ -14,7 +14,7 @@ class AsyncConfiguration {
 
   @Bean
   public Executor taskExecutor() {
-    ThreadPoolTaskExecutor executor = new ThreadPoolTaskExecutor();
+    var executor = new ThreadPoolTaskExecutor();
     executor.initialize();
     return executor;
   }

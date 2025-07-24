@@ -52,7 +52,6 @@ public final class BeanValidationAssertions {
     private final BeanAsserter<T> beanAsserter;
     private final ConstraintViolation<T> violation;
 
-    @SuppressWarnings("java:S1144")
     private InvalidPropertyAsserter(BeanAsserter<T> beanAsserter, ConstraintViolation<T> violation) {
       this.beanAsserter = beanAsserter;
       this.violation = violation;

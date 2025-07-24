@@ -92,7 +92,6 @@ public class AuthenticationSteps {
       claims = Map.of("preferred_username", username, "roles", Stream.of(roles).map(Role::key).toList());
     }
 
-    @SuppressWarnings("java:S1144")
     private String token() {
       return Jwts.builder()
         .subject("authentication")

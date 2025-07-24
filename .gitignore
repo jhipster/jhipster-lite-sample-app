@@ -128,5 +128,10 @@ Desktop.ini
 # ESLint
 ######################
 .eslintcache
+
+######################
+# Sonar
+######################
+.scannerwork/
 # Maven Wrapper
 !.mvn/wrapper/maven-wrapper.jar

@@ -1,3 +1,7 @@
+# Forked
+
+⚠️ **This project will no longer be maintained, as it has been forked and will now be maintained at this organization: [seed4j](https://github.com/seed4j)**
+
 # JHipster Lite Sample Application
 
 ## Prerequisites
